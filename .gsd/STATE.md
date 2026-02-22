@@ -1,56 +1,44 @@
 # STATE.md — Project Memory
 
-> **Last Updated**: 2026-02-22
-> **Current Phase**: 2 (planned)
+> **Last Updated**: 2026-02-23
+> **Current Phase**: 4 (in progress)
 > **Session**: 2
 
 ## Current Position
+- **Phase**: 4 - Draft UI & Integration
+- **Task**: Initializing tRPC routes and UI panels
+- **Status**: Paused at 2026-02-23T05:04:03+07:00
 
-- **Phase**: 2 (planned, not yet executed)
-- **Plans created**: 3 (1-PLAN.md, 2-PLAN.md, 3-PLAN.md)
-- **Status**: Ready for `/execute 2`
+## Last Session Summary
+- Fully implemented Phase 3 deterministic Scoring Engine.
+- Constructed and tested all 7 sub-components (Base, Synergy, Composition, Counter, Threat, Flexibility, Risk).
+- Achieved >80% code coverage.
+- Validated scoring accuracy natively via Vitest against PostgreSQL mock state.
+- Set up Zustand `draftStore.ts` for Phase 4 state management.
 
-## Phase 2 Plans
+## In-Progress Work
+- Creating empty React Components for Application Shell and tRPC backend structure.
+- Files modified: `src/store/draftStore.ts`, `.gsd/phases/4/1-PLAN.md`
+- Tests status: Passing
 
-### Plan 2.1 — Scraper Infrastructure + Champion Data Extraction (5 tasks)
-- Install scraping deps (puppeteer, cheerio)
-- Create scraper config, logger, utils
-- Scrape tier list page (all champions + roles + tiers)
-- Scrape individual champion pages (detailed stats + threats)
-- Create main scraper orchestrator with dry-run mode
+## Blockers
+None currently. Pausing per user request before scaffolding the tRPC API endpoints and UI layouts.
 
-### Plan 2.2 — Normalization + Validation + Counter Matrix (2 tasks)
-- Create Zod validation schemas (raw + normalized)
-- Create normalization layer (role normalization, damage profiles, attributes, tags, counter matrix)
+## Context Dump
 
-### Plan 2.3 — Database Seeding + Pipeline Integration (3 tasks)
-- Create database seed script with dry-run mode
-- Add npm scripts for pipeline commands
-- Verify full pipeline end-to-end
+### Decisions Made
+- Scoring logic works flawlessly on 0-100 deterministic clamp.
+- Draft state modeled with 5 active RoleSlots tracked natively via Zustand `draftStore`.
+- React query/tRPC loading will feed the precomputed mock matrices into the Application client bundle to ensure zero roundtrips.
 
-## Research Findings (wr-meta.com)
+### Current Hypothesis
+- We need to expose a generic tRPC procedure `getChampions` and `getCounterMatrix` next to feed into the components.
 
-Key selectors discovered:
-- Tier list: `.wr-cn-slot` class encodes role+tier, `.wr-tl-card` for champion cards
-- Champion stats: `.wr-cn-fs-m` (Win: X%, Pick: X%, Ban: X%)
-- Tier: `.wr-tier-ico` alt attribute
-- Counters: `.tabs-sel2` tabs ("Extreme [N]", "Major [N]", "Even [N]")
-- Counter champs: `.counter-champion > a`
-- Premium wall: Only "Extreme" tab is free
-- Data update: "Updated: 22 FEB 2026 UTC 00:00"
+### Files of Interest
+- `src/store/draftStore.ts`: Local draft state manager.
+- `src/lib/scoring/engine.ts`: Core calculator logic to attach to UI effect hooks.
 
 ## Next Steps
-
-1. `/execute 2` — Execute Phase 2 plans
-
-## Key Decisions Made
-
-1. Client-side scoring
-2. Counter matrix from categorical scraping
-3. Synergy from algorithmic tag system
-4. PostgreSQL + monolithic Next.js
-5. ~40 package lean stack
-6. Prisma 7 with PrismaPg driver adapter
-7. **Puppeteer for scraping** (JS-rendered content on wr-meta.com)
-8. **Only "Extreme" threats available** (free tier — premium locks Major/Even)
-9. **Heuristic attribute derivation** from role tags (no per-champion manual data)
+1. Create tRPC router endpoints (`getChampions`, `getMatrices`) via `server/api`.
+2. Scaffold `AllyPanel.tsx`, `EnemyPanel.tsx`, and `ChampionPool.tsx`.
+3. Link the scoring `scoreAllChampions` algorithm to re-trigger on `useDraftStore` updates.
