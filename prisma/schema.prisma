@@ -7,6 +7,7 @@ generator client {
 
 datasource db {
   provider = "postgresql"
+  url      = env("DATABASE_URL")
 }
 
 /// Champion data with all base and derived attributes.
@@ -14,7 +15,7 @@ datasource db {
 model Champion {
   id                String   @id // kebab-case, e.g. "lee-sin"
   name              String   @unique // display name, e.g. "Lee Sin"
-  roles             String[] // e.g. ["jungle", "baron"]
+  roles             String   // Comma-separated or JSON string, e.g. "jungle,baron"
   winrate           Float    // 0-100
   pickRate          Float    // 0-100
   banRate           Float    // 0-100
@@ -37,9 +38,14 @@ model Champion {
   healingScore      Float    @default(0)
   shieldScore       Float    @default(0)
   waveclearScore    Float    @default(0)
+  burstScore        Float    @default(0)
+  rangeScore        Float    @default(0)
+  sustainScore      Float    @default(0)
+  teamfightScore    Float    @default(0)
+  objectiveScore    Float    @default(0)
 
   // Tags for synergy/composition analysis
-  tags              String[] // e.g. ["engage", "frontline", "cc-heavy"]
+  tags              String   // Comma-separated or JSON string, e.g. "engage,frontline"
   iconUrl           String   @default("")
 
   updatedAt         DateTime @updatedAt
@@ -73,4 +79,15 @@ model DataMeta {
   lastScrapedAt  DateTime
   championCount  Int
   version        String   @default("1.0.0")
+}
+
+/// Tracks background synchronization jobs.
+model SyncJob {
+  id        String   @id @default(cuid())
+  status    String   // "RUNNING", "COMPLETED", "FAILED"
+  progress  Float    @default(0) // 0-100
+  message   String?
+  logs      String?
+  startedAt DateTime @default(now())
+  endedAt   DateTime?
 }

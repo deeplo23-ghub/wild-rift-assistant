@@ -29,8 +29,12 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+## Legal & Disclaimer
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Wild Rift Draft Assistant isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot Games or anyone officially involved in producing or managing Riot Games properties. Riot Games, and all associated properties are trademarks or registered trademarks of Riot Games, Inc.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is a non-commercial fan-made tool intended for competitive analysis and community use.
+
+### Data Sources
+*   **Stats & Tier Lists**: Scraped from [wr-meta.com](https://wr-meta.com) and [jungler.gg](https://jungler.gg).
+*   **Image Assets**: Champion icons are property of Riot Games and are used under the Fan Content Policy.

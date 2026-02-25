@@ -1,0 +1,31 @@
+
+> wild-rift-draft-assistant@0.1.0 seed
+> tsx scripts/seed.ts
+
+[2026-02-25T03:41:03.033Z] [INFO ] ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
+[2026-02-25T03:41:03.034Z] [INFO ]   Wild Rift Draft Assistant ΓÇö Database Seeder  
+[2026-02-25T03:41:03.034Z] [INFO ] ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
+[2026-02-25T03:41:03.034Z] [INFO ] Config {"dryRun":false,"inputPath":"D:\\Programs\\Arduino\\Wild Rift Assistant\\scripts\\scraper\\output\\raw-data.json"}
+[2026-02-25T03:41:03.038Z] [INFO ] ΓöÇΓöÇ Step 1: Validating raw data ΓöÇΓöÇ
+[2026-02-25T03:41:03.041Z] [INFO ] Raw data valid Γ£ô {"champions":135}
+[2026-02-25T03:41:03.041Z] [INFO ] ΓöÇΓöÇ Step 2: Normalizing data ΓöÇΓöÇ
+[2026-02-25T03:41:03.043Z] [INFO ] DEBUG: First normalized champ: "{\n  \"id\": \"teemo\",\n  \"name\": \"TEEMO\",\n  \"roles\": [\n    \"mid\",\n    \"baron\"\n  ],\n  \"winrate\": 54.13,\n  \"pickRate\": 5.34,\n  \"banRate\": 24.73,\n  \"tier\": \"S+\",\n  \"damageProfileAd\": 0.5,\n  \"damageProfileAp\": 0.5,\n  \"damageProfileTrue\": 0,\n  \"durabilityScore\": 4,\n  \"engageScore\": 4,\n  \"peelScore\": 4,\n  \"ccScore\": 6,\n  \"scalingScore\": 9,\n  \"earlyGameScore\": 5,\n  \"mobilityScore\": 4,\n  \"healingScore\": 1,\n  \"shieldScore\": 1,\n  \"waveclearScore\": 8,\n  \"burstScore\": 8,\n  \"rangeScore\": 9,\n  \"sustainScore\": 5,\n  \"teamfightScore\": 7,\n  \"objectiveScore\": 9,\n  \"tags\": [\n    \"poke\",\n    \"waveclear\",\n    \"aoe\",\n    \"hypercarry\",\n    \"scaling\",\n    \"range\"\n  ],\n  \"iconUrl\": \"https://jungler.gg/games/wildrift/images/champion-squares-new/teemo.webp?v=1771599633417\"\n}"
+[2026-02-25T03:41:03.046Z] [INFO ] Normalization complete {"normalized":135,"errors":0}
+[2026-02-25T03:41:03.046Z] [INFO ] ΓöÇΓöÇ Step 3: Building counter matchups ΓöÇΓöÇ
+[2026-02-25T03:41:03.048Z] [INFO ] Counter matchups {"total":1592}
+[2026-02-25T03:41:03.050Z] [INFO ] Normalized data written {"path":"D:\\Programs\\Arduino\\Wild Rift Assistant\\scripts\\scraper\\output\\normalized-data.json"}
+[2026-02-25T03:41:03.050Z] [INFO ] ΓöÇΓöÇ Step 4: Running validation checks ΓöÇΓöÇ
+[2026-02-25T03:41:03.050Z] [INFO ] All validation checks passed Γ£ô
+[2026-02-25T03:41:03.052Z] [INFO ] Clearing existing data...
+[2026-02-25T03:41:03.084Z] [INFO ] Inserting 135 champions...
+[2026-02-25T03:41:03.856Z] [INFO ] Inserting 1592 counter matchups...
+[2026-02-25T03:41:12.448Z] [INFO ] Database seeded successfully! Γ£ô
+[2026-02-25T03:41:12.450Z] [INFO ] DB verification {"champions":135,"counters":1592}
+[2026-02-25T03:41:12.451Z] [INFO ] ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
+[2026-02-25T03:41:12.451Z] [INFO ]   PIPELINE SUMMARY
+[2026-02-25T03:41:12.451Z] [INFO ] ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
+[2026-02-25T03:41:12.451Z] [INFO ] Champions:         135
+[2026-02-25T03:41:12.451Z] [INFO ] Counter matchups:  1592
+[2026-02-25T03:41:12.451Z] [INFO ] Role distribution: {"mid":43,"baron":39,"support":35,"jungle":41,"dragon":23}
+[2026-02-25T03:41:12.451Z] [INFO ] Tier distribution: {"S+":15,"S":25,"A":75,"B":20}
+[2026-02-25T03:41:12.451Z] [INFO ] ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
