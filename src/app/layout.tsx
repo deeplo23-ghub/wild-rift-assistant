@@ -16,6 +16,7 @@ export const metadata: Metadata = {
 import { TRPCProvider } from "@/lib/trpc/TRPCProvider";
 import { Background } from "@/components/ui/background";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import { Analytics } from "@vercel/analytics/next";
 
 export default function RootLayout({
   children,
@@ -29,6 +30,7 @@ export default function RootLayout({
         <TooltipProvider>
           <TRPCProvider>{children}</TRPCProvider>
         </TooltipProvider>
+        <Analytics />
       </body>
     </html>
   );
