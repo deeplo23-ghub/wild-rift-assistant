@@ -13,7 +13,8 @@
     "seed": "tsx scripts/seed.ts",
     "seed:dry": "tsx scripts/seed.ts --dry-run",
     "pipeline": "tsx scripts/scrape.ts && tsx scripts/seed.ts --dry-run",
-    "pipeline:full": "tsx scripts/scrape.ts && tsx scripts/seed.ts"
+    "pipeline:full": "tsx scripts/scrape.ts && tsx scripts/seed.ts",
+    "postinstall": "prisma generate"
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
