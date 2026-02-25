@@ -156,12 +156,16 @@ export const appRouter = router({
 
   // Legacy/Scoped routers (keeping for compatibility)
   champion: router({
-    getAll: publicProcedure.query(async ({ ctx }) => {
-      const champions = await ctx.prisma.champion.findMany({
+    getChampions: t.procedure.query(async ({ ctx }) => {
+    try {
+      return await ctx.prisma.champion.findMany({
         orderBy: { name: "asc" },
       });
-      return champions.map(mapPrismaChampion);
-    }),
+    } catch (error) {
+      console.error("DEBUG [getChampions] Error:", error);
+      throw error;
+    }
+  }),
   }),
 
   counter: router({
