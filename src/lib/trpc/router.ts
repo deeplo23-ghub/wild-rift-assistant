@@ -65,6 +65,15 @@ const mapPrismaChampion = (pc: any): Champion => ({
 export const appRouter = router({
   /** Start a background database sync */
   syncDatabase: publicProcedure.mutation(async ({ ctx }) => {
+    // ENFORCEMENT: Scraping on Vercel infrastructure violates their Acceptable Use Policy for serverless functions.
+    // This process must be run in a local or dedicated VPS environment only.
+    if (process.env.NODE_ENV === "production" || process.env.VERCEL) {
+      throw new TRPCError({
+        code: "FORBIDDEN",
+        message: "Database synchronization is disabled in production to comply with Vercel's Acceptable Use Policy regarding automated scrapers. Please run synchronization locally or on a dedicated scraping server.",
+      });
+    }
+
     try {
       // 1. Create a job record using Raw SQL since Prisma Client is out of sync
       const jobId = `sync_${Date.now()}`;
@@ -100,10 +109,15 @@ export const appRouter = router({
   getSyncStatus: publicProcedure
     .input(String)
     .query(async ({ ctx, input }) => {
-      const results: any[] = await ctx.prisma.$queryRawUnsafe(`
-        SELECT * FROM SyncJob WHERE id = '${input}' LIMIT 1
-      `);
-      return results[0] || null;
+      try {
+        const results: any[] = await ctx.prisma.$queryRawUnsafe(`
+          SELECT * FROM "SyncJob" WHERE id = '${input}' LIMIT 1
+        `);
+        return results[0] || null;
+      } catch (error) {
+        console.error("DEBUG [getSyncStatus] Error:", error);
+        return null;
+      }
     }),
 
   cancelSync: publicProcedure
@@ -130,49 +144,46 @@ export const appRouter = router({
     }),
 
   getChampions: publicProcedure.query(async ({ ctx }) => {
-    const champions: any[] = await ctx.prisma.$queryRawUnsafe(
-      "SELECT * FROM Champion ORDER BY name ASC",
-    );
-    return champions.map(mapPrismaChampion);
+    try {
+      const champions = await ctx.prisma.champion.findMany({
+        orderBy: { name: "asc" },
+      });
+      return champions.map(mapPrismaChampion);
+    } catch (error) {
+      console.error("DEBUG [getChampions] Error:", error);
+      throw new TRPCError({
+        code: "INTERNAL_SERVER_ERROR",
+        message: "Failed to fetch champions from the cloud data layer.",
+        cause: error,
+      });
+    }
   }),
 
   getCounterMatrix: publicProcedure.query(async ({ ctx }) => {
-    const matchups = await ctx.prisma.counterMatchup.findMany();
-
-    // Build nested Map structure for CounterMatrix
-    const matrix = new Map<string, Map<string, number>>();
-
-    matchups.forEach(
-      (m: { championId: string; opponentId: string; value: number }) => {
-        if (!matrix.has(m.championId)) {
-          matrix.set(m.championId, new Map());
-        }
-        matrix.get(m.championId)!.set(m.opponentId, m.value);
-      },
-    );
-
-    return matrix as CounterMatrix;
-  }),
-
-  // Legacy/Scoped routers (keeping for compatibility)
-  champion: router({
-    getChampions: t.procedure.query(async ({ ctx }) => {
     try {
-      return await ctx.prisma.champion.findMany({
-        orderBy: { name: "asc" },
-      });
-    } catch (error) {
-      console.error("DEBUG [getChampions] Error:", error);
-      throw error;
-    }
-  }),
-  }),
-
-  counter: router({
-    getMatrix: publicProcedure.query(async ({ ctx }) => {
       const matchups = await ctx.prisma.counterMatchup.findMany();
-      return matchups;
-    }),
+
+      // Build nested Map structure for CounterMatrix
+      const matrix = new Map<string, Map<string, number>>();
+
+      matchups.forEach(
+        (m: { championId: string; opponentId: string; value: number }) => {
+          if (!matrix.has(m.championId)) {
+            matrix.set(m.championId, new Map());
+          }
+          matrix.get(m.championId)!.set(m.opponentId, m.value);
+        },
+      );
+
+      return matrix as CounterMatrix;
+    } catch (error) {
+      console.error("DEBUG [getCounterMatrix] Error:", error);
+      throw new TRPCError({
+        code: "INTERNAL_SERVER_ERROR",
+        message: "Failed to fetch counter matrix from the cloud data layer.",
+        cause: error,
+      });
+    }
   }),
 });
 
