@@ -1,0 +1,1 @@
+[   19118ms] [WARNING] An iframe which has both allow-scripts and allow-same-origin for its sandbox attribute can escape its sandboxing. @ https://wr-meta.com/alternative2.php:0

@@ -1,0 +1,16 @@
+<svg width="400" height="60" viewBox="0 0 400 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <style>
+            @import
+            url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&amp;display=swap');
+        </style>
+    </defs>
+    <text
+        x="0"
+        y="45"
+        font-family="'Space Grotesk', sans-serif"
+        font-size="40"
+        font-weight="500"
+        fill="currentColor"
+    >Draft Pick Assistant</text>
+</svg>

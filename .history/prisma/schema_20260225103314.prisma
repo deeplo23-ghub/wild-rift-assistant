@@ -1,0 +1,82 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+/// Champion data with all base and derived attributes.
+/// Populated by the scraper pipeline (Phase 2).
+model Champion {
+  id                String   @id // kebab-case, e.g. "lee-sin"
+  name              String   @unique // display name, e.g. "Lee Sin"
+  roles             String   // Comma-separated or JSON string, e.g. "jungle,baron"
+  winrate           Float    // 0-100
+  pickRate          Float    // 0-100
+  banRate           Float    // 0-100
+  tier              String   // e.g. "S+", "A", "D"
+
+  // Damage profile (each 0-1, should sum to ~1)
+  damageProfileAd   Float    @default(0)
+  damageProfileAp   Float    @default(0)
+  damageProfileTrue Float    @default(0)
+
+  // Derived attribute scores (each 0-10)
+  // See ARCHITECTURE.md §5.5 for derivation formulas
+  durabilityScore   Float    @default(0)
+  engageScore       Float    @default(0)
+  peelScore         Float    @default(0)
+  ccScore           Float    @default(0)
+  scalingScore      Float    @default(0)
+  earlyGameScore    Float    @default(0)
+  mobilityScore     Float    @default(0)
+  healingScore      Float    @default(0)
+  shieldScore       Float    @default(0)
+  waveclearScore    Float    @default(0)
+  burstScore        Float    @default(0)
+  rangeScore        Float    @default(0)
+  sustainScore      Float    @default(0)
+  teamfightScore    Float    @default(0)
+  objectiveScore    Float    @default(0)
+
+  // Tags for synergy/composition analysis
+  tags              String   // Comma-separated or JSON string, e.g. "engage,frontline"
+  iconUrl           String   @default("")
+
+  updatedAt         DateTime @updatedAt
+
+  // Relations
+  counterAs         CounterMatchup[] @relation("CounterChampion")
+  counterAgainst    CounterMatchup[] @relation("CounterOpponent")
+}
+
+/// Pairwise counter matchup values between champions.
+/// Populated from wr-meta.com categorical matchup data.
+/// See ARCHITECTURE.md §4.6 and §5.4 for normalization.
+model CounterMatchup {
+  id          String  @id @default(cuid())
+  championId  String
+  opponentId  String
+  value       Float   // -5 to +5
+
+  champion    Champion @relation("CounterChampion", fields: [championId], references: [id])
+  opponent    Champion @relation("CounterOpponent", fields: [opponentId], references: [id])
+
+  @@unique([championId, opponentId])
+  @@index([championId])
+  @@index([opponentId])
+}
+
+/// Metadata about the last data scrape.
+/// Singleton row (id = "singleton").
+model DataMeta {
+  id             String   @id @default("singleton")
+  lastScrapedAt  DateTime
+  championCount  Int
+  version        String   @default("1.0.0")
+}

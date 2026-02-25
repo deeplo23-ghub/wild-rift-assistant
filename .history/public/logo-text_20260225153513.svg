@@ -1,0 +1,68 @@
+<svg width="800" height="200" viewBox="0 0 800 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- 
+    "Draft Pick Assistant" Logo
+    Font: Space Grotesk
+    Style: Premium / Modern / Agentic
+  -->
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap');
+      
+      .brand-base {
+        font-family: 'Space Grotesk', sans-serif;
+        letter-spacing: -0.04em;
+      }
+      
+      .draft {
+        font-weight: 700;
+        fill: #FFFFFF;
+        font-size: 72px;
+      }
+      
+      .pick {
+        font-weight: 300;
+        fill: #94A3B8;
+        font-size: 72px;
+      }
+      
+      .assistant {
+        font-weight: 700;
+        fill: url(#brandGradient);
+        font-size: 72px;
+      }
+
+      .tagline {
+        font-family: 'Space Grotesk', sans-serif;
+        font-weight: 500;
+        fill: #64748B;
+        font-size: 18px;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+      }
+    </style>
+    
+    <linearGradient id="brandGradient" x1="0" y1="0" x2="100%" y2="0">
+      <stop offset="0%" stop-color="#38BDF8" />
+      <stop offset="100%" stop-color="#818CF8" />
+    </linearGradient>
+
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Content -->
+  <g transform="translate(50, 100)">
+    <text y="0" class="brand-base">
+      <tspan class="draft" filter="url(#glow)">DRAFT</tspan>
+      <tspan class="pick" dx="15">PICK</tspan>
+      <tspan class="assistant" dx="20">ASSISTANT</tspan>
+    </text>
+    
+    <!-- Decorative Line -->
+    <rect y="25" width="700" height="1" fill="url(#brandGradient)" opacity="0.3" />
+    
+    <text y="60" x="2" class="tagline">Strategic Combat Intelligence</text>
+  </g>
+</svg>

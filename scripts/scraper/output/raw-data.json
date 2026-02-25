@@ -1,0 +1,7747 @@
+{
+  "meta": {
+    "scrapedAt": "2026-02-25T22:22:09.289Z",
+    "championCount": 135,
+    "version": "1.0.0",
+    "pagesScraped": 0
+  },
+  "champions": [
+    {
+      "id": "norra",
+      "name": "NORRA",
+      "roles": [
+        "mid",
+        "support"
+      ],
+      "winrate": 54.34,
+      "pickRate": 1.43,
+      "banRate": 57.8,
+      "tier": "S+",
+      "roleTags": [
+        "mage"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2025-11/1763285653_g53kx9xwyaa8pxq_11zon11.webp",
+      "pageUrl": "https://wr-meta.com/552-norra.html",
+      "extremeThreats": [],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "teemo",
+      "name": "TEEMO",
+      "roles": [
+        "mid",
+        "baron"
+      ],
+      "winrate": 53.98,
+      "pickRate": 5.54,
+      "banRate": 25.3,
+      "tier": "S+",
+      "roleTags": [
+        "mage",
+        "marksman"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2023-01/1675036202_1644098317_teemo_52_11zon.webp",
+      "pageUrl": "https://wr-meta.com/59-teemo.html",
+      "extremeThreats": [
+        "GRAGAS",
+        "RENGAR",
+        "SION",
+        "VLADIMIR"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "brand",
+      "name": "BRAND",
+      "roles": [
+        "mid",
+        "support"
+      ],
+      "winrate": 51.16,
+      "pickRate": 2.75,
+      "banRate": 6.82,
+      "tier": "S+",
+      "roleTags": [
+        "mage",
+        "support"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2023-01/1675025350_1644099012_brand_69_11zon.webp",
+      "pageUrl": "https://wr-meta.com/313-brand.html",
+      "extremeThreats": [
+        "FIZZ",
+        "IRELIA",
+        "VEL'KOZ",
+        "KINDRED",
+        "ZED"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "morgana",
+      "name": "MORGANA",
+      "roles": [
+        "mid",
+        "jungle",
+        "support"
+      ],
+      "winrate": 49.16,
+      "pickRate": 1.29,
+      "banRate": 30.24,
+      "tier": "S+",
+      "roleTags": [
+        "mage",
+        "support"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2024-01/1705767322_blade-mistress-morgana-splash-art-new-update-lol-8k-uhdpaper_com-18_11zon.webp",
+      "pageUrl": "https://wr-meta.com/318-morgana.html",
+      "extremeThreats": [
+        "KARMA",
+        "JANNA",
+        "VAYNE",
+        "VEL'KOZ",
+        "DRAVEN"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "zyra",
+      "name": "ZYRA",
+      "roles": [
+        "mid",
+        "support"
+      ],
+      "winrate": 51.9,
+      "pickRate": 2.21,
+      "banRate": 26.98,
+      "tier": "S+",
+      "roleTags": [
+        "mage",
+        "support"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2023-12/1703106451_zyra2_11zon.webp",
+      "pageUrl": "https://wr-meta.com/418-zyra.html",
+      "extremeThreats": [],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "smolder",
+      "name": "SMOLDER",
+      "roles": [
+        "mid",
+        "baron",
+        "dragon"
+      ],
+      "winrate": 52.83,
+      "pickRate": 1.96,
+      "banRate": 58.08,
+      "tier": "S+",
+      "roleTags": [
+        "mage",
+        "marksman"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2024-02/1706881983_smolder1_11zon.webp",
+      "pageUrl": "https://wr-meta.com/506-smolder.html",
+      "extremeThreats": [],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "kennen",
+      "name": "KENNEN",
+      "roles": [
+        "mid",
+        "baron"
+      ],
+      "winrate": 53.08,
+      "pickRate": 1.48,
+      "banRate": 0.35,
+      "tier": "S",
+      "roleTags": [
+        "mage",
+        "marksman"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2023-01/1675026691_1644098207_kennen_49_11zon.webp",
+      "pageUrl": "https://wr-meta.com/58-kennen.html",
+      "extremeThreats": [
+        "MAOKAI",
+        "DR. MUNDO",
+        "NASUS",
+        "MALPHITE",
+        "OLAF",
+        "SION",
+        "RUMBLE"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "swain",
+      "name": "SWAIN",
+      "roles": [
+        "mid",
+        "baron",
+        "support"
+      ],
+      "winrate": 46.31,
+      "pickRate": 1.59,
+      "banRate": 4.75,
+      "tier": "S",
+      "roleTags": [
+        "mage",
+        "support",
+        "tank"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2022-10/1665253648_swain_10_6_11zon.webp",
+      "pageUrl": "https://wr-meta.com/396-swain.html",
+      "extremeThreats": [
+        "PANTHEON",
+        "KASSADIN",
+        "TRISTANA",
+        "FIZZ",
+        "GRAGAS",
+        "ZOE",
+        "BRAND",
+        "AURELION SOL"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "nasus",
+      "name": "NASUS",
+      "roles": [
+        "mid",
+        "baron"
+      ],
+      "winrate": 50.74,
+      "pickRate": 1.46,
+      "banRate": 6.67,
+      "tier": "S",
+      "roleTags": [
+        "fighter",
+        "tank"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2023-01/1675035470_1644096405_nasus_19_11zon.webp",
+      "pageUrl": "https://wr-meta.com/20-nasus.html",
+      "extremeThreats": [
+        "URGOT",
+        "GRAGAS",
+        "POPPY",
+        "DARIUS",
+        "AATROX",
+        "AMBESSA",
+        "RUMBLE"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "viktor",
+      "name": "VIKTOR",
+      "roles": [
+        "mid"
+      ],
+      "winrate": 50.98,
+      "pickRate": 5.35,
+      "banRate": 1.27,
+      "tier": "A",
+      "roleTags": [
+        "mage"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2024-11/1732724300_gdpxgo3wi1aaqz11ct_11zon-1.webp",
+      "pageUrl": "https://wr-meta.com/409-viktor.html",
+      "extremeThreats": [
+        "EKKO",
+        "YONE",
+        "IRELIA",
+        "AKALI",
+        "AKSHAN",
+        "KASSADIN"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "heimerdinger",
+      "name": "HEIMERDINGER",
+      "roles": [
+        "mid"
+      ],
+      "winrate": 50.89,
+      "pickRate": 1.71,
+      "banRate": 1.42,
+      "tier": "A",
+      "roleTags": [
+        "mage",
+        "support"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2022-07/1656968030_heimerdinger_10-min.jpg",
+      "pageUrl": "https://wr-meta.com/346-heimerdinger.html",
+      "extremeThreats": [
+        "VEX",
+        "DIANA",
+        "AKALI",
+        "IRELIA",
+        "BRAND",
+        "AKSHAN",
+        "KASSADIN",
+        "GALIO",
+        "LISSANDRA"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "ahri",
+      "name": "AHRI",
+      "roles": [
+        "mid"
+      ],
+      "winrate": 50.87,
+      "pickRate": 5.58,
+      "banRate": 0.18,
+      "tier": "A",
+      "roleTags": [
+        "assassin",
+        "mage"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2023-01/1675024933_1644094522_ahri_3_11zon.webp",
+      "pageUrl": "https://wr-meta.com/1-ahri.html",
+      "extremeThreats": [
+        "TWISTED FATE",
+        "AKSHAN",
+        "ZED"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "vex",
+      "name": "VEX",
+      "roles": [
+        "mid"
+      ],
+      "winrate": 50.73,
+      "pickRate": 3.25,
+      "banRate": 0.71,
+      "tier": "A",
+      "roleTags": [
+        "mage"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2022-09/1663373736_vex_01_11zon.webp",
+      "pageUrl": "https://wr-meta.com/381-vex.html",
+      "extremeThreats": [
+        "RYZE",
+        "KARMA",
+        "SWAIN",
+        "ANNIE",
+        "VLADIMIR",
+        "GALIO",
+        "AURELION SOL",
+        "ZED"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "syndra",
+      "name": "SYNDRA",
+      "roles": [
+        "mid"
+      ],
+      "winrate": 50.54,
+      "pickRate": 7.07,
+      "banRate": 4.71,
+      "tier": "A",
+      "roleTags": [
+        "mage"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2024-02/1707864029_1cy5icpp_400x400_11zon.webp",
+      "pageUrl": "https://wr-meta.com/398-syndra.html",
+      "extremeThreats": [
+        "IRELIA",
+        "GRAGAS",
+        "DIANA",
+        "FIZZ",
+        "YASUO",
+        "EKKO",
+        "KASSADIN",
+        "VIKTOR",
+        "VEL'KOZ"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "lissandra",
+      "name": "LISSANDRA",
+      "roles": [
+        "mid"
+      ],
+      "winrate": 50.49,
+      "pickRate": 4.97,
+      "banRate": 7.03,
+      "tier": "A",
+      "roleTags": [
+        "mage",
+        "support"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2022-07/1657054352_lissandra-lol-splash-art-uhdpaper_com-4k-809-min.jpg",
+      "pageUrl": "https://wr-meta.com/357-lissandra.html",
+      "extremeThreats": [
+        "TRISTANA",
+        "SWAIN",
+        "AKSHAN",
+        "ZOE"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "twisted-fate",
+      "name": "TWISTED FATE",
+      "roles": [
+        "mid"
+      ],
+      "winrate": 50.42,
+      "pickRate": 5.05,
+      "banRate": 0.24,
+      "tier": "A",
+      "roleTags": [
+        "mage",
+        "marksman"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2023-01/1675036324_1644097555_twisted-fate_35_11zon.webp",
+      "pageUrl": "https://wr-meta.com/38-twisted-fate.html",
+      "extremeThreats": [
+        "SWAIN",
+        "FIZZ",
+        "IRELIA",
+        "YASUO",
+        "ORIANNA",
+        "AURELION SOL",
+        "YONE",
+        "VIKTOR",
+        "SYNDRA",
+        "AURORA"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "veigar",
+      "name": "VEIGAR",
+      "roles": [
+        "mid",
+        "support"
+      ],
+      "winrate": 50.1,
+      "pickRate": 3.86,
+      "banRate": 14.76,
+      "tier": "A",
+      "roleTags": [
+        "mage",
+        "support"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2023-01/1675036484_1644099032_veigar_70_11zon.webp",
+      "pageUrl": "https://wr-meta.com/315-vejgar.html",
+      "extremeThreats": [
+        "TALON",
+        "IRELIA",
+        "KASSADIN",
+        "ZOE",
+        "ZED",
+        "AKALI",
+        "YONE",
+        "ORIANNA",
+        "VIKTOR",
+        "AURORA"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "orianna",
+      "name": "ORIANNA",
+      "roles": [
+        "mid"
+      ],
+      "winrate": 50.3,
+      "pickRate": 3.83,
+      "banRate": 0.26,
+      "tier": "A",
+      "roleTags": [
+        "mage",
+        "support"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2023-01/1675035633_1644097217_orianna_31_11zon.webp",
+      "pageUrl": "https://wr-meta.com/33-orianna.html",
+      "extremeThreats": [
+        "AURELION SOL",
+        "TRISTANA",
+        "IRELIA",
+        "KARMA",
+        "VEL'KOZ",
+        "ZOE",
+        "ZIGGS",
+        "AKSHAN"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "lux",
+      "name": "LUX",
+      "roles": [
+        "mid",
+        "support"
+      ],
+      "winrate": 51.41,
+      "pickRate": 11.44,
+      "banRate": 21.8,
+      "tier": "S+",
+      "roleTags": [
+        "mage",
+        "support"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2023-01/1675035226_1644097052_lux_28_11zon.webp",
+      "pageUrl": "https://wr-meta.com/30-lux.html",
+      "extremeThreats": [
+        "MAOKAI",
+        "BARD",
+        "JANNA",
+        "BLITZCRANK",
+        "JINX",
+        "DRAVEN"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "ryze",
+      "name": "RYZE",
+      "roles": [
+        "mid",
+        "baron"
+      ],
+      "winrate": 52.69,
+      "pickRate": 1.95,
+      "banRate": 2.66,
+      "tier": "S+",
+      "roleTags": [
+        "mage"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2022-10/1665252163_ryze_10_8_11zon.webp",
+      "pageUrl": "https://wr-meta.com/391-ryze.html",
+      "extremeThreats": [
+        "AURELION SOL",
+        "TWISTED FATE",
+        "AKSHAN",
+        "VEIGAR",
+        "ANNIE",
+        "ORIANNA",
+        "PYKE",
+        "LUCIAN"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "kayle",
+      "name": "KAYLE",
+      "roles": [
+        "mid",
+        "baron"
+      ],
+      "winrate": 50.12,
+      "pickRate": 1.16,
+      "banRate": 0.85,
+      "tier": "A",
+      "roleTags": [
+        "fighter",
+        "support"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2023-01/1675026640_1644104392_kale_76_11zon.webp",
+      "pageUrl": "https://wr-meta.com/319-kayle.html",
+      "extremeThreats": [
+        "MALPHITE",
+        "TRYNDAMERE",
+        "OLAF",
+        "IRELIA",
+        "RIVEN",
+        "AKSHAN",
+        "KASSADIN"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "yasuo",
+      "name": "YASUO",
+      "roles": [
+        "mid",
+        "baron"
+      ],
+      "winrate": 47.14,
+      "pickRate": 3.38,
+      "banRate": 18.66,
+      "tier": "A",
+      "roleTags": [
+        "assassin",
+        "fighter"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2023-01/1675036655_1644095698_yasuo_11_11zon.webp",
+      "pageUrl": "https://wr-meta.com/11-yasuo.html",
+      "extremeThreats": [],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "kassadin",
+      "name": "KASSADIN",
+      "roles": [
+        "mid"
+      ],
+      "winrate": 49.71,
+      "pickRate": 1.85,
+      "banRate": 0.26,
+      "tier": "A",
+      "roleTags": [
+        "assassin",
+        "mage"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2022-07/1659040689_posterkasadin.webp",
+      "pageUrl": "https://wr-meta.com/329-kassadin.html",
+      "extremeThreats": [
+        "PANTHEON",
+        "TALON",
+        "TRISTANA",
+        "ANNIE",
+        "HEIMERDINGER",
+        "SYNDRA",
+        "LUCIAN"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "fizz",
+      "name": "FIZZ",
+      "roles": [
+        "mid",
+        "jungle"
+      ],
+      "winrate": 50.4,
+      "pickRate": 3.27,
+      "banRate": 3.72,
+      "tier": "A",
+      "roleTags": [
+        "assassin",
+        "mage"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2023-01/1675026035_1644095401_fizz_8_11zon.webp",
+      "pageUrl": "https://wr-meta.com/8-fizz.html",
+      "extremeThreats": [
+        "GRAGAS",
+        "TRISTANA",
+        "ANNIE",
+        "ORIANNA",
+        "VEIGAR"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "ziggs",
+      "name": "ZIGGS",
+      "roles": [
+        "mid"
+      ],
+      "winrate": 49.59,
+      "pickRate": 6.31,
+      "banRate": 2.26,
+      "tier": "A",
+      "roleTags": [
+        "mage"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2023-01/1675036780_1644096955_ziggs_11zon.webp",
+      "pageUrl": "https://wr-meta.com/29-ziggs.html",
+      "extremeThreats": [],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "aurora",
+      "name": "AURORA",
+      "roles": [
+        "mid"
+      ],
+      "winrate": 49.59,
+      "pickRate": 3.65,
+      "banRate": 5.09,
+      "tier": "A",
+      "roleTags": [
+        "assassin",
+        "mage"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2024-08/1724180150_aurora-splash-art-lol-4k-wallpaper-uhdpaper_c1om-2303b_11zon.webp",
+      "pageUrl": "https://wr-meta.com/526-aurora.html",
+      "extremeThreats": [
+        "ZOE",
+        "SYNDRA",
+        "IRELIA",
+        "ZED",
+        "ZIGGS",
+        "DIANA",
+        "PANTHEON",
+        "KENNEN"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "galio",
+      "name": "GALIO",
+      "roles": [
+        "mid",
+        "support"
+      ],
+      "winrate": 51.23,
+      "pickRate": 2.28,
+      "banRate": 1.86,
+      "tier": "A",
+      "roleTags": [
+        "mage",
+        "tank"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2023-01/1675026058_1644098624_galio_58_11zon.webp",
+      "pageUrl": "https://wr-meta.com/238-galio.html",
+      "extremeThreats": [
+        "SWAIN",
+        "TALON",
+        "TRISTANA",
+        "YASUO",
+        "MORGANA"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "zed",
+      "name": "ZED",
+      "roles": [
+        "mid",
+        "jungle"
+      ],
+      "winrate": 49.45,
+      "pickRate": 2.66,
+      "banRate": 1.75,
+      "tier": "A",
+      "roleTags": [
+        "assassin"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2023-01/1675036691_1644095119_zed_4_11zon.webp",
+      "pageUrl": "https://wr-meta.com/4-zed.html",
+      "extremeThreats": [],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "aurelion-sol",
+      "name": "AURELION SOL",
+      "roles": [
+        "mid"
+      ],
+      "winrate": 49.18,
+      "pickRate": 7.64,
+      "banRate": 6.37,
+      "tier": "A",
+      "roleTags": [
+        "mage"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2023-01/1675025268_1644096739_aurelion-sol_25_11zon.webp",
+      "pageUrl": "https://wr-meta.com/24-aurelion-sol.html",
+      "extremeThreats": [
+        "FIZZ",
+        "YONE",
+        "TRISTANA",
+        "TALON",
+        "IRELIA"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "velkoz",
+      "name": "VEL'KOZ",
+      "roles": [
+        "mid",
+        "support"
+      ],
+      "winrate": 50.33,
+      "pickRate": 2.14,
+      "banRate": 1.6,
+      "tier": "A",
+      "roleTags": [
+        "mage",
+        "support"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2022-10/1665259643_velkoz_10_20_11zon.webp",
+      "pageUrl": "https://wr-meta.com/407-velkoz.html",
+      "extremeThreats": [
+        "AKSHAN",
+        "YASUO",
+        "FIZZ",
+        "KASSADIN",
+        "YONE"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "yone",
+      "name": "YONE",
+      "roles": [
+        "mid",
+        "baron",
+        "jungle"
+      ],
+      "winrate": 48.77,
+      "pickRate": 4.1,
+      "banRate": 10.22,
+      "tier": "A",
+      "roleTags": [
+        "assassin",
+        "fighter"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2022-09/1662399395_esben-lash-rasmussen-riot-yone-esbenlash2_11zon.webp",
+      "pageUrl": "https://wr-meta.com/363-yone.html",
+      "extremeThreats": [],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "vladimir",
+      "name": "VLADIMIR",
+      "roles": [
+        "mid"
+      ],
+      "winrate": 49.1,
+      "pickRate": 3.34,
+      "banRate": 1.39,
+      "tier": "B",
+      "roleTags": [
+        "mage"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2023-08/1692112398_f3hfipawaaalq_1b_11zon.webp",
+      "pageUrl": "https://wr-meta.com/410-vladimir.html",
+      "extremeThreats": [],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "diana",
+      "name": "DIANA",
+      "roles": [
+        "mid",
+        "jungle"
+      ],
+      "winrate": 49.83,
+      "pickRate": 1.02,
+      "banRate": 0.1,
+      "tier": "A",
+      "roleTags": [
+        "fighter",
+        "mage"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2023-01/1675025650_1644098540_diana_56_11zon.webp",
+      "pageUrl": "https://wr-meta.com/216-diana.html",
+      "extremeThreats": [
+        "SWAIN",
+        "GRAGAS",
+        "AKSHAN",
+        "EKKO",
+        "TRISTANA",
+        "PANTHEON",
+        "BRAND",
+        "LISSANDRA",
+        "TWISTED FATE",
+        "MALPHITE",
+        "KATARINA",
+        "GALIO",
+        "KARMA",
+        "AKALI",
+        "IRELIA",
+        "VLADIMIR",
+        "VEX",
+        "RYZE"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "annie",
+      "name": "ANNIE",
+      "roles": [
+        "mid"
+      ],
+      "winrate": 48.25,
+      "pickRate": 1.63,
+      "banRate": 0.08,
+      "tier": "B",
+      "roleTags": [
+        "mage",
+        "support"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2023-01/1675025121_1644097791_annie_41_11zon.webp",
+      "pageUrl": "https://wr-meta.com/45-annie.html",
+      "extremeThreats": [
+        "JAYCE",
+        "PANTHEON",
+        "AURELION SOL",
+        "SYNDRA",
+        "DIANA"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "jayce",
+      "name": "JAYCE",
+      "roles": [
+        "mid",
+        "baron"
+      ],
+      "winrate": 47.37,
+      "pickRate": 1.43,
+      "banRate": 0.45,
+      "tier": "A",
+      "roleTags": [
+        "fighter",
+        "marksman"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2023-01/1675026412_1644099095_jayce_73_11zon.webp",
+      "pageUrl": "https://wr-meta.com/316-jayce.html",
+      "extremeThreats": [
+        "NASUS",
+        "DR. MUNDO",
+        "POPPY",
+        "MAOKAI",
+        "MALPHITE",
+        "AKSHAN",
+        "OLAF",
+        "RENGAR",
+        "GRAGAS",
+        "YASUO",
+        "IRELIA",
+        "WARWICK",
+        "GAREN",
+        "SHEN",
+        "CAMILLE"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "malphite",
+      "name": "MALPHITE",
+      "roles": [
+        "mid",
+        "baron",
+        "support"
+      ],
+      "winrate": 47.21,
+      "pickRate": 1.08,
+      "banRate": 20.07,
+      "tier": "S",
+      "roleTags": [
+        "support",
+        "tank"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2023-01/1675035302_1644097911_malphite_44_11zon.webp",
+      "pageUrl": "https://wr-meta.com/47-malphite.html",
+      "extremeThreats": [
+        "DR. MUNDO",
+        "MORDEKAISER",
+        "DARIUS",
+        "SION",
+        "RUMBLE"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "irelia",
+      "name": "IRELIA",
+      "roles": [
+        "mid",
+        "baron"
+      ],
+      "winrate": 49.39,
+      "pickRate": 2.85,
+      "banRate": 1.83,
+      "tier": "A",
+      "roleTags": [
+        "assassin",
+        "fighter"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2023-01/1675026263_1644098750_irelia_63_11zon.webp",
+      "pageUrl": "https://wr-meta.com/282-irelia.html",
+      "extremeThreats": [
+        "WARWICK",
+        "MALPHITE",
+        "JAX",
+        "POPPY",
+        "FIORA"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "ekko",
+      "name": "EKKO",
+      "roles": [
+        "mid",
+        "jungle"
+      ],
+      "winrate": 51.1,
+      "pickRate": 1.62,
+      "banRate": 0.13,
+      "tier": "A",
+      "roleTags": [
+        "assassin",
+        "mage"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2023-01/1675025864_1651947781_ekko-min_79_11zon.webp",
+      "pageUrl": "https://wr-meta.com/328-ekko.html",
+      "extremeThreats": [
+        "GRAGAS",
+        "TWISTED FATE",
+        "GALIO",
+        "ZED",
+        "AHRI"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "katarina",
+      "name": "KATARINA",
+      "roles": [
+        "mid"
+      ],
+      "winrate": 45.76,
+      "pickRate": 1.89,
+      "banRate": 0.43,
+      "tier": "B",
+      "roleTags": [
+        "assassin",
+        "mage"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2023-01/1675026617_1644098440_katarina_55_11zon.webp",
+      "pageUrl": "https://wr-meta.com/211-katarina.html",
+      "extremeThreats": [
+        "AHRI",
+        "HEIMERDINGER",
+        "ZIGGS",
+        "LUX",
+        "AKSHAN",
+        "VEX",
+        "VLADIMIR"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "akali",
+      "name": "AKALI",
+      "roles": [
+        "mid"
+      ],
+      "winrate": 45.72,
+      "pickRate": 2.92,
+      "banRate": 0.45,
+      "tier": "B",
+      "roleTags": [
+        "assassin",
+        "mage"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2023-01/1675024912_1644094456_akali_2_11zon.webp",
+      "pageUrl": "https://wr-meta.com/2-akali.html",
+      "extremeThreats": [
+        "TWISTED FATE",
+        "GALIO",
+        "GRAGAS",
+        "AKSHAN",
+        "RUMBLE"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "vayne",
+      "name": "VAYNE",
+      "roles": [
+        "baron",
+        "dragon"
+      ],
+      "winrate": 53.86,
+      "pickRate": 1.86,
+      "banRate": 9.8,
+      "tier": "S+",
+      "roleTags": [
+        "assassin",
+        "marksman"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2025-01/1737556346_vayne-lol-splash-art-uhdpaper_com-4k-609.webp",
+      "pageUrl": "https://wr-meta.com/3-vayne.html",
+      "extremeThreats": [
+        "CAITLYN",
+        "DRAVEN",
+        "NILAH"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "wukong",
+      "name": "WUKONG",
+      "roles": [
+        "baron",
+        "jungle"
+      ],
+      "winrate": 52.42,
+      "pickRate": 2.39,
+      "banRate": 0.63,
+      "tier": "S",
+      "roleTags": [
+        "fighter",
+        "tank"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2023-01/1675036534_1644097973_wukong_46_11zon.webp",
+      "pageUrl": "https://wr-meta.com/50-vukong.html",
+      "extremeThreats": [
+        "GRAGAS",
+        "POPPY",
+        "SHEN",
+        "KARMA",
+        "RENGAR",
+        "GWEN",
+        "SION",
+        "MORDEKAISER",
+        "TRYNDAMERE",
+        "SETT",
+        "AATROX",
+        "SINGED",
+        "DR. MUNDO",
+        "ORNN",
+        "MALPHITE",
+        "YONE",
+        "HEIMERDINGER",
+        "LEONA"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "renekton",
+      "name": "RENEKTON",
+      "roles": [
+        "baron"
+      ],
+      "winrate": 51.65,
+      "pickRate": 8.01,
+      "banRate": 1.17,
+      "tier": "S",
+      "roleTags": [
+        "fighter"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2023-01/1675035777_1644098775_renekton_64_11zon.webp",
+      "pageUrl": "https://wr-meta.com/264-renekton.html",
+      "extremeThreats": [
+        "GNAR",
+        "WARWICK",
+        "GRAGAS",
+        "KAYLE",
+        "JAYCE",
+        "KENNEN",
+        "VAYNE",
+        "ORNN"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "garen",
+      "name": "GAREN",
+      "roles": [
+        "baron"
+      ],
+      "winrate": 51.44,
+      "pickRate": 18.63,
+      "banRate": 4.81,
+      "tier": "S",
+      "roleTags": [
+        "fighter",
+        "tank"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2023-01/1675026104_1644095831_garen_13_11zon.webp",
+      "pageUrl": "https://wr-meta.com/13-garen.html",
+      "extremeThreats": [
+        "VAYNE",
+        "KAYLE",
+        "TEEMO",
+        "AKSHAN"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "rumble",
+      "name": "RUMBLE",
+      "roles": [
+        "baron"
+      ],
+      "winrate": 51.38,
+      "pickRate": 3.49,
+      "banRate": 1.34,
+      "tier": "S",
+      "roleTags": [
+        "fighter",
+        "mage"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2022-10/1665251971_rumble_10_6_11zon.webp",
+      "pageUrl": "https://wr-meta.com/390-rumble.html",
+      "extremeThreats": [
+        "VEX",
+        "GALIO",
+        "AURELION SOL",
+        "IRELIA",
+        "VIKTOR",
+        "LUX",
+        "GRAGAS"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "tryndamere",
+      "name": "TRYNDAMERE",
+      "roles": [
+        "baron",
+        "jungle"
+      ],
+      "winrate": 50.52,
+      "pickRate": 3.16,
+      "banRate": 33.9,
+      "tier": "S",
+      "roleTags": [
+        "fighter"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2023-01/1675036282_1644096449_tryndamere_21_11zon.webp",
+      "pageUrl": "https://wr-meta.com/22-tryndamere.html",
+      "extremeThreats": [
+        "MALPHITE",
+        "VAYNE",
+        "POPPY",
+        "RENGAR",
+        "SINGED",
+        "WARWICK",
+        "DARIUS",
+        "GRAGAS",
+        "CAMILLE",
+        "VOLIBEAR",
+        "NASUS"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "ambessa",
+      "name": "AMBESSA",
+      "roles": [
+        "baron"
+      ],
+      "winrate": 52.01,
+      "pickRate": 1.78,
+      "banRate": 0.65,
+      "tier": "A",
+      "roleTags": [
+        "assassin",
+        "fighter"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2024-10/1729619132_gacsdslw8a11au11q0i_11zon.webp",
+      "pageUrl": "https://wr-meta.com/528-ambessa.html",
+      "extremeThreats": [
+        "RENEKTON",
+        "IRELIA",
+        "TRYNDAMERE",
+        "WARWICK",
+        "DARIUS",
+        "WUKONG"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "kalista",
+      "name": "KALISTA",
+      "roles": [
+        "baron",
+        "dragon"
+      ],
+      "winrate": 51.55,
+      "pickRate": 1.28,
+      "banRate": 2.37,
+      "tier": "A",
+      "roleTags": [
+        "marksman"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2022-07/1657049452_riotx_championlist_kalista1-min.jpg",
+      "pageUrl": "https://wr-meta.com/349-kalista.html",
+      "extremeThreats": [
+        "NILAH",
+        "SENNA",
+        "SMOLDER",
+        "VAYNE",
+        "LULU",
+        "MAOKAI",
+        "SONA"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "ornn",
+      "name": "ORNN",
+      "roles": [
+        "baron",
+        "support"
+      ],
+      "winrate": 50.93,
+      "pickRate": 1.34,
+      "banRate": 0.17,
+      "tier": "A",
+      "roleTags": [
+        "fighter",
+        "tank"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2022-09/1664571126_or2nn_0_11zon-1.webp",
+      "pageUrl": "https://wr-meta.com/383-ornn.html",
+      "extremeThreats": [
+        "DARIUS",
+        "FIORA",
+        "SINGED",
+        "CAMILLE",
+        "AATROX",
+        "GWEN",
+        "IRELIA",
+        "WARWICK",
+        "VAYNE"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "shen",
+      "name": "SHEN",
+      "roles": [
+        "baron"
+      ],
+      "winrate": 51.04,
+      "pickRate": 1.33,
+      "banRate": 0.08,
+      "tier": "A",
+      "roleTags": [
+        "fighter",
+        "tank"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2023-01/1675035992_1646576785_shen_01-min_77_11zon.webp",
+      "pageUrl": "https://wr-meta.com/322-shen.html",
+      "extremeThreats": [
+        "RUMBLE",
+        "VLADIMIR",
+        "PANTHEON",
+        "AURORA",
+        "RYZE",
+        "AATROX",
+        "DARIUS",
+        "FIORA"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "singed",
+      "name": "SINGED",
+      "roles": [
+        "baron"
+      ],
+      "winrate": 50.97,
+      "pickRate": 1.21,
+      "banRate": 0.22,
+      "tier": "A",
+      "roleTags": [
+        "mage",
+        "tank"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2023-01/1675036112_1644097381_singed_33_11zon.webp",
+      "pageUrl": "https://wr-meta.com/35-singed.html",
+      "extremeThreats": [
+        "JAYCE",
+        "VAYNE",
+        "AKSHAN",
+        "HEIMERDINGER",
+        "RYZE",
+        "KARMA",
+        "URGOT"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "nautilus",
+      "name": "NAUTILUS",
+      "roles": [
+        "baron",
+        "jungle",
+        "support"
+      ],
+      "winrate": 50.8,
+      "pickRate": 2.49,
+      "banRate": 4.24,
+      "tier": "A",
+      "roleTags": [
+        "support",
+        "tank"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2024-01/1706053890_1675035519_1652125924_05092022_wrnewcontentpatch3_1article_naut-spwash-min_80_11zon.webp",
+      "pageUrl": "https://wr-meta.com/327-nautilus.html",
+      "extremeThreats": [
+        "SONA",
+        "ALISTAR",
+        "SORAKA",
+        "BARD",
+        "TWITCH",
+        "KALISTA"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "sion",
+      "name": "SION",
+      "roles": [
+        "baron"
+      ],
+      "winrate": 50.47,
+      "pickRate": 2.95,
+      "banRate": 0.36,
+      "tier": "A",
+      "roleTags": [
+        "fighter"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2023-01/1675036128_1656270877_banner_ask_riot-1_z1o8n3xc52f3vpllwn6x-min_83_11zon.webp",
+      "pageUrl": "https://wr-meta.com/331-sion.html",
+      "extremeThreats": [
+        "VAYNE",
+        "GWEN",
+        "FIORA",
+        "WARWICK",
+        "DARIUS",
+        "AKALI",
+        "SINGED"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "urgot",
+      "name": "URGOT",
+      "roles": [
+        "baron"
+      ],
+      "winrate": 50.41,
+      "pickRate": 6.19,
+      "banRate": 3.54,
+      "tier": "A",
+      "roleTags": [
+        "fighter",
+        "tank"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2022-10/1665259302_urgot_10_13_11zon.webp",
+      "pageUrl": "https://wr-meta.com/406-urgot.html",
+      "extremeThreats": [
+        "DARIUS",
+        "YASUO",
+        "AATROX",
+        "HEIMERDINGER",
+        "MORDEKAISER",
+        "OLAF",
+        "TRYNDAMERE",
+        "KAYLE",
+        "RUMBLE"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "fiora",
+      "name": "FIORA",
+      "roles": [
+        "baron"
+      ],
+      "winrate": 50.38,
+      "pickRate": 4.55,
+      "banRate": 2.05,
+      "tier": "A",
+      "roleTags": [
+        "assassin",
+        "fighter"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2023-01/1675025985_1644095474_fiora_9_11zon.webp",
+      "pageUrl": "https://wr-meta.com/9-fiora.html",
+      "extremeThreats": [
+        "RENEKTON",
+        "POPPY",
+        "KENNEN",
+        "GRAGAS",
+        "RYZE"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "mordekaiser",
+      "name": "MORDEKAISER",
+      "roles": [
+        "baron"
+      ],
+      "winrate": 50.09,
+      "pickRate": 10.55,
+      "banRate": 25.37,
+      "tier": "A",
+      "roleTags": [
+        "fighter"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2022-09/1662400967_mordekaiser_q0_11zon.webp",
+      "pageUrl": "https://wr-meta.com/365-mordekaiser.html",
+      "extremeThreats": [
+        "VAYNE",
+        "FIORA",
+        "OLAF",
+        "JAX",
+        "GAREN"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "sett",
+      "name": "SETT",
+      "roles": [
+        "baron",
+        "support"
+      ],
+      "winrate": 50.54,
+      "pickRate": 1.11,
+      "banRate": 0.74,
+      "tier": "A",
+      "roleTags": [
+        "fighter",
+        "tank"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2023-01/1675036039_1644099302_sett_75_11zon.webp",
+      "pageUrl": "https://wr-meta.com/320-sett.html",
+      "extremeThreats": [
+        "VAYNE",
+        "AKSHAN",
+        "MAOKAI",
+        "KAYLE",
+        "RENEKTON",
+        "RIVEN",
+        "AKALI"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "gnar",
+      "name": "GNAR",
+      "roles": [
+        "baron"
+      ],
+      "winrate": 49.97,
+      "pickRate": 2.29,
+      "banRate": 0.29,
+      "tier": "A",
+      "roleTags": [
+        "fighter"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2022-07/1656885093_gn2ar_0-min.jpg",
+      "pageUrl": "https://wr-meta.com/343-gnar.html",
+      "extremeThreats": [
+        "VAYNE",
+        "KARMA",
+        "GWEN",
+        "IRELIA",
+        "DARIUS",
+        "TEEMO"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "poppy",
+      "name": "POPPY",
+      "roles": [
+        "baron"
+      ],
+      "winrate": 49.97,
+      "pickRate": 1.94,
+      "banRate": 0.33,
+      "tier": "A",
+      "roleTags": [
+        "tank"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2022-10/1665249656_poppy_10_1_11zon.webp",
+      "pageUrl": "https://wr-meta.com/384-poppy.html",
+      "extremeThreats": [
+        "OLAF",
+        "WARWICK",
+        "KARMA",
+        "VAYNE",
+        "DARIUS",
+        "VLADIMIR",
+        "HEIMERDINGER",
+        "KENNEN"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "camille",
+      "name": "CAMILLE",
+      "roles": [
+        "baron"
+      ],
+      "winrate": 49.56,
+      "pickRate": 1.89,
+      "banRate": 0.09,
+      "tier": "A",
+      "roleTags": [
+        "fighter"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2023-04/1680697747_1_11zon.webp",
+      "pageUrl": "https://wr-meta.com/18-camille.html",
+      "extremeThreats": [
+        "WARWICK",
+        "RENGAR",
+        "RENEKTON"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "volibear",
+      "name": "VOLIBEAR",
+      "roles": [
+        "baron",
+        "jungle"
+      ],
+      "winrate": 47.59,
+      "pickRate": 2.36,
+      "banRate": 3.77,
+      "tier": "A",
+      "roleTags": [
+        "fighter",
+        "tank"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2022-10/1665261229_volibear_10_17_11zon.webp",
+      "pageUrl": "https://wr-meta.com/411-volibear.html",
+      "extremeThreats": [
+        "VAYNE",
+        "KARMA",
+        "PANTHEON",
+        "TEEMO",
+        "JAX",
+        "AKALI",
+        "AURORA"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "dr-mundo",
+      "name": "DR. MUNDO",
+      "roles": [
+        "baron",
+        "jungle"
+      ],
+      "winrate": 48.14,
+      "pickRate": 1.03,
+      "banRate": 0.98,
+      "tier": "A",
+      "roleTags": [
+        "fighter",
+        "tank"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2023-01/1675025769_1644099229_dr-mundo.webp",
+      "pageUrl": "https://wr-meta.com/17-dr-mundo.html",
+      "extremeThreats": [],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "aatrox",
+      "name": "AATROX",
+      "roles": [
+        "baron",
+        "jungle"
+      ],
+      "winrate": 45.12,
+      "pickRate": 1.69,
+      "banRate": 8.4,
+      "tier": "A",
+      "roleTags": [
+        "fighter",
+        "tank"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2023-01/1675024764_1656622041_aatrox_10-min.jpg",
+      "pageUrl": "https://wr-meta.com/332-aatrox.html",
+      "extremeThreats": [
+        "VAYNE",
+        "WARWICK",
+        "SINGED",
+        "CAMILLE",
+        "JAX"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "darius",
+      "name": "DARIUS",
+      "roles": [
+        "baron",
+        "jungle"
+      ],
+      "winrate": 48.35,
+      "pickRate": 3.25,
+      "banRate": 8.31,
+      "tier": "A",
+      "roleTags": [
+        "fighter"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2023-01/1675025649_1644097926_darius_45_11zon.webp",
+      "pageUrl": "https://wr-meta.com/49-darius.html",
+      "extremeThreats": [
+        "VAYNE",
+        "JAX",
+        "KENNEN",
+        "JAYCE"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "jax",
+      "name": "JAX",
+      "roles": [
+        "baron",
+        "jungle"
+      ],
+      "winrate": 47.95,
+      "pickRate": 2.67,
+      "banRate": 0.23,
+      "tier": "B",
+      "roleTags": [
+        "fighter"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2023-10/1698181357_1336994_11zon.webp",
+      "pageUrl": "https://wr-meta.com/15-jax.html",
+      "extremeThreats": [
+        "DR. MUNDO",
+        "MAOKAI",
+        "POPPY",
+        "URGOT",
+        "MALPHITE",
+        "GAREN",
+        "RENGAR",
+        "FIORA"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "gwen",
+      "name": "GWEN",
+      "roles": [
+        "baron"
+      ],
+      "winrate": 47.85,
+      "pickRate": 2.75,
+      "banRate": 0.67,
+      "tier": "B",
+      "roleTags": [
+        "fighter"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2023-01/1675026237_1656966553_1141364-min_85_11zon.webp",
+      "pageUrl": "https://wr-meta.com/344-gwen.html",
+      "extremeThreats": [
+        "VAYNE",
+        "RIVEN",
+        "WARWICK",
+        "KAYLE",
+        "GRAGAS",
+        "FIORA"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "riven",
+      "name": "RIVEN",
+      "roles": [
+        "baron",
+        "jungle"
+      ],
+      "winrate": 48.56,
+      "pickRate": 1.69,
+      "banRate": 0.84,
+      "tier": "A",
+      "roleTags": [
+        "assassin",
+        "fighter"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2023-01/1675035871_1644098833_riven_65_11zon.webp",
+      "pageUrl": "https://wr-meta.com/283-riven.html",
+      "extremeThreats": [
+        "VAYNE",
+        "MALPHITE",
+        "KENNEN",
+        "MAOKAI",
+        "TEEMO",
+        "RENEKTON"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "rammus",
+      "name": "RAMMUS",
+      "roles": [
+        "jungle"
+      ],
+      "winrate": 55.95,
+      "pickRate": 4.44,
+      "banRate": 5.38,
+      "tier": "S+",
+      "roleTags": [
+        "tank"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2023-01/1675035755_1644098653_rammus_60_11zon.webp",
+      "pageUrl": "https://wr-meta.com/242-rammus.html",
+      "extremeThreats": [
+        "TALON",
+        "AMUMU",
+        "OLAF",
+        "LEE SIN",
+        "EVELYNN"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "amumu",
+      "name": "AMUMU",
+      "roles": [
+        "jungle"
+      ],
+      "winrate": 55.78,
+      "pickRate": 3.51,
+      "banRate": 0.18,
+      "tier": "S+",
+      "roleTags": [
+        "support",
+        "tank"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2023-01/1675025110_1644097883_amumu_43_11zon.webp",
+      "pageUrl": "https://wr-meta.com/46-amumu.html",
+      "extremeThreats": [
+        "LILLIA",
+        "VAYNE",
+        "OLAF",
+        "DR. MUNDO"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "warwick",
+      "name": "WARWICK",
+      "roles": [
+        "jungle"
+      ],
+      "winrate": 53.02,
+      "pickRate": 3.74,
+      "banRate": 1.25,
+      "tier": "S+",
+      "roleTags": [
+        "fighter",
+        "tank"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2022-09/1662398658_warwick_10.webp",
+      "pageUrl": "https://wr-meta.com/362-warwick.html",
+      "extremeThreats": [
+        "AMUMU",
+        "XIN ZHAO",
+        "KINDRED",
+        "MORGANA",
+        "NOCTURNE",
+        "VOLIBEAR",
+        "KAYN"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "shyvana",
+      "name": "SHYVANA",
+      "roles": [
+        "jungle"
+      ],
+      "winrate": 52.34,
+      "pickRate": 9.59,
+      "banRate": 9.6,
+      "tier": "S+",
+      "roleTags": [
+        "fighter",
+        "tank"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2023-01/1675036071_1644096582_shyvana_22_11zon.webp",
+      "pageUrl": "https://wr-meta.com/23-shyvana.html",
+      "extremeThreats": [
+        "RAMMUS",
+        "POPPY",
+        "EKKO",
+        "JAX",
+        "RENGAR",
+        "MORDEKAISER"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "master-yi",
+      "name": "MASTER YI",
+      "roles": [
+        "jungle"
+      ],
+      "winrate": 51.91,
+      "pickRate": 9.99,
+      "banRate": 79.65,
+      "tier": "S+",
+      "roleTags": [
+        "assassin",
+        "fighter"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2023-01/1675035299_1644095340_master-yi_7_11zon.webp",
+      "pageUrl": "https://wr-meta.com/7-master-yi.html",
+      "extremeThreats": [
+        "JAX",
+        "KHA'ZIX",
+        "EVELYNN"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "nunu-and-willump",
+      "name": "NUNU & WILLUMP",
+      "roles": [
+        "jungle"
+      ],
+      "winrate": 53,
+      "pickRate": 1.4,
+      "banRate": 0.13,
+      "tier": "S",
+      "roleTags": [
+        "mage",
+        "tank"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2024-07/1721150812_screenshot-2024-07-16-192103_11zon-1.webp",
+      "pageUrl": "https://wr-meta.com/314-nunu-amp-willump.html",
+      "extremeThreats": [
+        "JAX",
+        "KAYN",
+        "KINDRED",
+        "LEE SIN",
+        "NIDALEE",
+        "MORDEKAISER",
+        "RUMBLE"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "lillia",
+      "name": "LILLIA",
+      "roles": [
+        "jungle"
+      ],
+      "winrate": 52.56,
+      "pickRate": 3.29,
+      "banRate": 1.28,
+      "tier": "S",
+      "roleTags": [
+        "fighter"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2023-01/1675035145_1657054098_1085890-min_87_11zon.webp",
+      "pageUrl": "https://wr-meta.com/356-lillia.html",
+      "extremeThreats": [
+        "LEE SIN",
+        "HECARIM",
+        "FIDDLESTICKS",
+        "GRAVES",
+        "JARVAN IV",
+        "KAYN",
+        "KINDRED",
+        "MASTER YI",
+        "RENGAR",
+        "TALON"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "pantheon",
+      "name": "PANTHEON",
+      "roles": [
+        "jungle"
+      ],
+      "winrate": 51.69,
+      "pickRate": 4.82,
+      "banRate": 2.76,
+      "tier": "S",
+      "roleTags": [
+        "assassin",
+        "fighter"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2023-01/1675035635_1644098630_pantheon_59_11zon.webp",
+      "pageUrl": "https://wr-meta.com/217-pantheon.html",
+      "extremeThreats": [
+        "LILLIA",
+        "RAMMUS",
+        "GRAGAS",
+        "TRYNDAMERE",
+        "AMUMU",
+        "POPPY"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "graves",
+      "name": "GRAVES",
+      "roles": [
+        "jungle"
+      ],
+      "winrate": 51.47,
+      "pickRate": 10.33,
+      "banRate": 1.01,
+      "tier": "S",
+      "roleTags": [
+        "fighter",
+        "marksman"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2023-01/1675026234_1644095952_graves_14_11zon.webp",
+      "pageUrl": "https://wr-meta.com/14-graves.html",
+      "extremeThreats": [
+        "HECARIM",
+        "RENGAR",
+        "EVELYNN",
+        "MASTER YI",
+        "JAX",
+        "RUMBLE"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "xin-zhao",
+      "name": "XIN ZHAO",
+      "roles": [
+        "jungle"
+      ],
+      "winrate": 51.11,
+      "pickRate": 11.08,
+      "banRate": 2.12,
+      "tier": "S",
+      "roleTags": [
+        "fighter",
+        "tank"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2023-01/1675036624_1644096310_xin-zhao_18_11zon.webp",
+      "pageUrl": "https://wr-meta.com/19-xin-zhao.html",
+      "extremeThreats": [
+        "JAX",
+        "VOLIBEAR",
+        "RAMMUS",
+        "WUKONG",
+        "KHA'ZIX"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "nocturne",
+      "name": "NOCTURNE",
+      "roles": [
+        "jungle"
+      ],
+      "winrate": 50.64,
+      "pickRate": 3.58,
+      "banRate": 9.84,
+      "tier": "S",
+      "roleTags": [
+        "assassin"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2022-09/1664570482_nocturne1_0_11zon.webp",
+      "pageUrl": "https://wr-meta.com/382-nocturne.html",
+      "extremeThreats": [
+        "RAMMUS",
+        "VI",
+        "JAX",
+        "OLAF",
+        "DR. MUNDO",
+        "VIEGO"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "gragas",
+      "name": "GRAGAS",
+      "roles": [
+        "jungle"
+      ],
+      "winrate": 51.48,
+      "pickRate": 1.35,
+      "banRate": 0.07,
+      "tier": "A",
+      "roleTags": [
+        "mage",
+        "tank"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2023-01/1675026138_1644096731_gragas_24_11zon.webp",
+      "pageUrl": "https://wr-meta.com/26-gragas.html",
+      "extremeThreats": [
+        "SWAIN",
+        "ZED",
+        "VLADIMIR",
+        "HEIMERDINGER",
+        "LUCIAN",
+        "AURORA"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "jarvan-iv",
+      "name": "JARVAN IV",
+      "roles": [
+        "jungle"
+      ],
+      "winrate": 51,
+      "pickRate": 5.49,
+      "banRate": 0.43,
+      "tier": "A",
+      "roleTags": [
+        "fighter",
+        "tank"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2023-01/1675026348_1644096064_jarvan-iv_16_11zon.webp",
+      "pageUrl": "https://wr-meta.com/16-jarvan-iv.html",
+      "extremeThreats": [
+        "WARWICK",
+        "EVELYNN",
+        "VIEGO",
+        "MASTER YI",
+        "HECARIM",
+        "POPPY",
+        "KINDRED"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "vi",
+      "name": "VI",
+      "roles": [
+        "jungle"
+      ],
+      "winrate": 50.96,
+      "pickRate": 6.01,
+      "banRate": 0.52,
+      "tier": "A",
+      "roleTags": [
+        "fighter"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2023-01/1675036468_1644095816_vi_12_11zon.webp",
+      "pageUrl": "https://wr-meta.com/12-vi.html",
+      "extremeThreats": [
+        "WUKONG",
+        "AMUMU",
+        "FIDDLESTICKS",
+        "KINDRED",
+        "TALON"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "nidalee",
+      "name": "NIDALEE",
+      "roles": [
+        "jungle"
+      ],
+      "winrate": 50.81,
+      "pickRate": 1.89,
+      "banRate": 4.53,
+      "tier": "A",
+      "roleTags": [
+        "assassin",
+        "mage"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2025-10/1760129311_111.webp",
+      "pageUrl": "https://wr-meta.com/367-nidalee.html",
+      "extremeThreats": [],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "kindred",
+      "name": "KINDRED",
+      "roles": [
+        "jungle"
+      ],
+      "winrate": 50.71,
+      "pickRate": 2.35,
+      "banRate": 0.26,
+      "tier": "A",
+      "roleTags": [
+        "marksman"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2024-12/1734372058_1348542.webp",
+      "pageUrl": "https://wr-meta.com/352-kindred.html",
+      "extremeThreats": [
+        "MASTER YI",
+        "DIANA",
+        "NUNU & WILLUMP",
+        "KAYN",
+        "JAX"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "evelynn",
+      "name": "EVELYNN",
+      "roles": [
+        "jungle"
+      ],
+      "winrate": 50.65,
+      "pickRate": 3.27,
+      "banRate": 1.69,
+      "tier": "A",
+      "roleTags": [
+        "assassin"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2023-01/1675025879_1644095513_evelynn_10_11zon.webp",
+      "pageUrl": "https://wr-meta.com/10-evelynn.html",
+      "extremeThreats": [
+        "VOLIBEAR",
+        "TWISTED FATE",
+        "VLADIMIR",
+        "ANNIE",
+        "AKALI",
+        "NIDALEE",
+        "DR. MUNDO"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "fiddlesticks",
+      "name": "FIDDLESTICKS",
+      "roles": [
+        "jungle"
+      ],
+      "winrate": 50.58,
+      "pickRate": 2.45,
+      "banRate": 1.02,
+      "tier": "A",
+      "roleTags": [
+        "mage"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2022-07/1656884068_011422_fiddlesticks_sp1lash_v1-min.jpg",
+      "pageUrl": "https://wr-meta.com/341-fiddlesticks.html",
+      "extremeThreats": [
+        "MAOKAI",
+        "OLAF",
+        "HECARIM",
+        "KINDRED",
+        "EKKO",
+        "ALISTAR",
+        "GALIO",
+        "BLITZCRANK",
+        "RUMBLE"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "viego",
+      "name": "VIEGO",
+      "roles": [
+        "jungle"
+      ],
+      "winrate": 50.17,
+      "pickRate": 12.79,
+      "banRate": 13.83,
+      "tier": "A",
+      "roleTags": [
+        "assassin"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2022-10/1665260082_viego_10_14_11zon.webp",
+      "pageUrl": "https://wr-meta.com/408-viego.html",
+      "extremeThreats": [
+        "RAMMUS",
+        "LILLIA",
+        "JAX",
+        "OLAF",
+        "PANTHEON",
+        "XIN ZHAO"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "khazix",
+      "name": "KHA'ZIX",
+      "roles": [
+        "jungle"
+      ],
+      "winrate": 49.38,
+      "pickRate": 5.09,
+      "banRate": 0.35,
+      "tier": "A",
+      "roleTags": [
+        "assassin"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2023-01/1675026748_1644098699_khazix_61_11zon.webp",
+      "pageUrl": "https://wr-meta.com/253-kha-zix.html",
+      "extremeThreats": [
+        "RENGAR",
+        "GRAVES",
+        "YUUMI",
+        "MAOKAI"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "kayn",
+      "name": "KAYN",
+      "roles": [
+        "jungle"
+      ],
+      "winrate": 48.89,
+      "pickRate": 3.4,
+      "banRate": 0.2,
+      "tier": "A",
+      "roleTags": [
+        "assassin",
+        "fighter"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2023-01/1675026614_1657051031_848954-min_86_11zon.webp",
+      "pageUrl": "https://wr-meta.com/351-kayn.html",
+      "extremeThreats": [
+        "MAOKAI",
+        "VOLIBEAR",
+        "EVELYNN",
+        "MASTER YI",
+        "HECARIM"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "lee-sin",
+      "name": "LEE SIN",
+      "roles": [
+        "jungle"
+      ],
+      "winrate": 48.35,
+      "pickRate": 19.49,
+      "banRate": 10.28,
+      "tier": "A",
+      "roleTags": [
+        "assassin",
+        "fighter"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2023-01/1675035069_1644095231_lee-sin_6_11zon.webp",
+      "pageUrl": "https://wr-meta.com/6-lee-sin.html",
+      "extremeThreats": [
+        "LILLIA",
+        "NUNU & WILLUMP",
+        "OLAF",
+        "XIN ZHAO",
+        "KHA'ZIX"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "rengar",
+      "name": "RENGAR",
+      "roles": [
+        "jungle"
+      ],
+      "winrate": 48.39,
+      "pickRate": 1.45,
+      "banRate": 0.98,
+      "tier": "B",
+      "roleTags": [
+        "assassin",
+        "fighter"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2023-01/1675035875_1644098741_rengar_62_11zon.webp",
+      "pageUrl": "https://wr-meta.com/252-rengar.html",
+      "extremeThreats": [
+        "RAMMUS",
+        "POPPY",
+        "MAOKAI",
+        "WARWICK",
+        "JAX"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "olaf",
+      "name": "OLAF",
+      "roles": [
+        "jungle"
+      ],
+      "winrate": 48.33,
+      "pickRate": 1.66,
+      "banRate": 1.1,
+      "tier": "B",
+      "roleTags": [
+        "fighter"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2023-01/1675035561_1644096408_olaf_20_11zon.webp",
+      "pageUrl": "https://wr-meta.com/21-olaf.html",
+      "extremeThreats": [
+        "KINDRED",
+        "LILLIA",
+        "EKKO",
+        "KAYN",
+        "CAMILLE"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "talon",
+      "name": "TALON",
+      "roles": [
+        "jungle"
+      ],
+      "winrate": 47.78,
+      "pickRate": 2.38,
+      "banRate": 0.38,
+      "tier": "B",
+      "roleTags": [
+        "assassin"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2022-10/1665254953_talon_10_18_11zon.webp",
+      "pageUrl": "https://wr-meta.com/401-talon.html",
+      "extremeThreats": [
+        "ORIANNA",
+        "DIANA",
+        "PYKE",
+        "HEIMERDINGER",
+        "AKALI",
+        "VEX",
+        "AURORA"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "hecarim",
+      "name": "HECARIM",
+      "roles": [
+        "jungle"
+      ],
+      "winrate": 45.47,
+      "pickRate": 8.99,
+      "banRate": 24.42,
+      "tier": "B",
+      "roleTags": [
+        "fighter"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2023-06/1687897020_hecarim_0-1_11zon.webp",
+      "pageUrl": "https://wr-meta.com/345-hecarim.html",
+      "extremeThreats": [
+        "LILLIA",
+        "MASTER YI",
+        "XIN ZHAO",
+        "ALISTAR",
+        "JANNA",
+        "GRAVES",
+        "TALON"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "kogmaw",
+      "name": "KOG'MAW",
+      "roles": [
+        "dragon"
+      ],
+      "winrate": 51.76,
+      "pickRate": 3.78,
+      "banRate": 1.24,
+      "tier": "S",
+      "roleTags": [
+        "mage",
+        "marksman"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2022-07/1657052453_kogmaw_01-min.jpg",
+      "pageUrl": "https://wr-meta.com/354-kogmaw.html",
+      "extremeThreats": [],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "miss-fortune",
+      "name": "MISS FORTUNE",
+      "roles": [
+        "dragon"
+      ],
+      "winrate": 51.15,
+      "pickRate": 16.43,
+      "banRate": 2.23,
+      "tier": "S",
+      "roleTags": [
+        "mage",
+        "marksman"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2023-01/1675035395_1644097108_miss-fortune_29_11zon.webp",
+      "pageUrl": "https://wr-meta.com/31-miss-fortune.html",
+      "extremeThreats": [
+        "DRAVEN",
+        "NILAH",
+        "SAMIRA",
+        "SENNA",
+        "BRAUM",
+        "MAOKAI",
+        "SERAPHINE"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "caitlyn",
+      "name": "CAITLYN",
+      "roles": [
+        "dragon"
+      ],
+      "winrate": 51.05,
+      "pickRate": 27.26,
+      "banRate": 4.44,
+      "tier": "S",
+      "roleTags": [
+        "marksman"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2023-01/1675025427_1644099077_caitlyn_72_11zon.webp",
+      "pageUrl": "https://wr-meta.com/317-caitlyn.html",
+      "extremeThreats": [
+        "KOG'MAW",
+        "LEONA",
+        "TRISTANA",
+        "LUCIAN",
+        "NAUTILUS"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "ashe",
+      "name": "ASHE",
+      "roles": [
+        "dragon"
+      ],
+      "winrate": 51.11,
+      "pickRate": 11.97,
+      "banRate": 0.24,
+      "tier": "A",
+      "roleTags": [
+        "marksman",
+        "support"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2023-01/1675025262_1644097676_ashe_38_11zon.webp",
+      "pageUrl": "https://wr-meta.com/41-ashe.html",
+      "extremeThreats": [
+        "CAITLYN",
+        "DRAVEN",
+        "LUCIAN",
+        "VARUS",
+        "KALISTA",
+        "NAUTILUS",
+        "THRESH",
+        "AMUMU"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "jinx",
+      "name": "JINX",
+      "roles": [
+        "dragon"
+      ],
+      "winrate": 50.22,
+      "pickRate": 13.26,
+      "banRate": 0.52,
+      "tier": "A",
+      "roleTags": [
+        "marksman"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2023-01/1675026445_1644097592_jinx_36_11zon.webp",
+      "pageUrl": "https://wr-meta.com/39-jinx.html",
+      "extremeThreats": [
+        "ASHE",
+        "AMUMU",
+        "VAYNE",
+        "TWITCH",
+        "LEONA",
+        "RAKAN"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "jhin",
+      "name": "JHIN",
+      "roles": [
+        "dragon"
+      ],
+      "winrate": 50.06,
+      "pickRate": 12.64,
+      "banRate": 0.36,
+      "tier": "A",
+      "roleTags": [
+        "mage",
+        "marksman"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2023-01/1675026385_1644096787_jhin_26_11zon.webp",
+      "pageUrl": "https://wr-meta.com/27-jhin.html",
+      "extremeThreats": [
+        "KALISTA",
+        "DRAVEN",
+        "MORGANA",
+        "ZILEAN",
+        "TRISTANA",
+        "ALISTAR"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "xayah",
+      "name": "XAYAH",
+      "roles": [
+        "dragon"
+      ],
+      "winrate": 49.96,
+      "pickRate": 4.92,
+      "banRate": 0.18,
+      "tier": "A",
+      "roleTags": [
+        "marksman"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2023-01/1675036571_1644098432_xayah_54_11zon.webp",
+      "pageUrl": "https://wr-meta.com/165-xayah.html",
+      "extremeThreats": [
+        "SENNA",
+        "KALISTA",
+        "MISS FORTUNE",
+        "LEONA",
+        "KAI'SA",
+        "DRAVEN"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "lucian",
+      "name": "LUCIAN",
+      "roles": [
+        "dragon"
+      ],
+      "winrate": 49,
+      "pickRate": 7.91,
+      "banRate": 0.32,
+      "tier": "A",
+      "roleTags": [
+        "marksman"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2023-01/1675035126_1644098915_lucian_67_11zon.webp",
+      "pageUrl": "https://wr-meta.com/295-lucian.html",
+      "extremeThreats": [
+        "SENNA",
+        "DRAVEN",
+        "CAITLYN",
+        "SERAPHINE",
+        "LULU",
+        "HEIMERDINGER"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "ezreal",
+      "name": "EZREAL",
+      "roles": [
+        "dragon"
+      ],
+      "winrate": 48.74,
+      "pickRate": 12.87,
+      "banRate": 0.39,
+      "tier": "A",
+      "roleTags": [
+        "mage",
+        "marksman"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2023-01/1675025950_1644097692_ezreal_39_11zon.webp",
+      "pageUrl": "https://wr-meta.com/40-ezreal.html",
+      "extremeThreats": [
+        "KAI'SA",
+        "TRISTANA",
+        "PYKE",
+        "LUX",
+        "SAMIRA"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "tristana",
+      "name": "TRISTANA",
+      "roles": [
+        "dragon"
+      ],
+      "winrate": 48.73,
+      "pickRate": 6.57,
+      "banRate": 0.14,
+      "tier": "A",
+      "roleTags": [
+        "marksman"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2023-01/1675036242_1644098102_tristana_47_11zon.webp",
+      "pageUrl": "https://wr-meta.com/55-tristana.html",
+      "extremeThreats": [
+        "NILAH",
+        "VAYNE",
+        "DRAVEN",
+        "ALISTAR",
+        "BLITZCRANK",
+        "GALIO",
+        "LEONA",
+        "MALPHITE",
+        "NAUTILUS"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "samira",
+      "name": "SAMIRA",
+      "roles": [
+        "dragon"
+      ],
+      "winrate": 48.24,
+      "pickRate": 10.39,
+      "banRate": 8.79,
+      "tier": "A",
+      "roleTags": [
+        "marksman"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2023-01/1675035947_1656270620_samira.webp",
+      "pageUrl": "https://wr-meta.com/330-samira.html",
+      "extremeThreats": [
+        "NILAH",
+        "KALISTA",
+        "ALISTAR",
+        "LEONA",
+        "BRAUM",
+        "NAUTILUS"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "sivir",
+      "name": "SIVIR",
+      "roles": [
+        "dragon"
+      ],
+      "winrate": 48.43,
+      "pickRate": 3.7,
+      "banRate": 0.06,
+      "tier": "B",
+      "roleTags": [
+        "marksman"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2023-08/1692113336_sivir_11zon.webp",
+      "pageUrl": "https://wr-meta.com/394-sivir.html",
+      "extremeThreats": [
+        "SENNA",
+        "TWITCH",
+        "DRAVEN",
+        "KALISTA",
+        "SAMIRA",
+        "LUCIAN",
+        "YUUMI",
+        "SERAPHINE",
+        "YASUO"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "twitch",
+      "name": "TWITCH",
+      "roles": [
+        "dragon"
+      ],
+      "winrate": 48.4,
+      "pickRate": 4.25,
+      "banRate": 0.19,
+      "tier": "B",
+      "roleTags": [
+        "marksman"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2022-10/1665258439_twitch_10_11_11zon.webp",
+      "pageUrl": "https://wr-meta.com/404-twitch.html",
+      "extremeThreats": [
+        "NILAH",
+        "DRAVEN",
+        "CAITLYN",
+        "NAUTILUS",
+        "THRESH",
+        "LEONA",
+        "SONA"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "zeri",
+      "name": "ZERI",
+      "roles": [
+        "dragon"
+      ],
+      "winrate": 48.15,
+      "pickRate": 1.37,
+      "banRate": 0.01,
+      "tier": "B",
+      "roleTags": [
+        "marksman"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2022-10/1665262235_zeri_10_20_11zon.webp",
+      "pageUrl": "https://wr-meta.com/415-zeri.html",
+      "extremeThreats": [
+        "DRAVEN",
+        "TWITCH",
+        "NILAH",
+        "KOG'MAW",
+        "JINX"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "varus",
+      "name": "VARUS",
+      "roles": [
+        "dragon"
+      ],
+      "winrate": 47.91,
+      "pickRate": 5.13,
+      "banRate": 0.47,
+      "tier": "B",
+      "roleTags": [
+        "mage",
+        "marksman"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2023-01/1675036340_1644096638_varus_23_11zon.webp",
+      "pageUrl": "https://wr-meta.com/25-varus.html",
+      "extremeThreats": [
+        "YASUO",
+        "LEONA",
+        "DRAVEN",
+        "KALISTA",
+        "SAMIRA"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "draven",
+      "name": "DRAVEN",
+      "roles": [
+        "dragon"
+      ],
+      "winrate": 47.79,
+      "pickRate": 7.21,
+      "banRate": 3.07,
+      "tier": "B",
+      "roleTags": [
+        "marksman"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2023-01/1675025773_1644098126_draven_48_11zon.webp",
+      "pageUrl": "https://wr-meta.com/51-draven.html",
+      "extremeThreats": [
+        "LEONA",
+        "CAITLYN",
+        "LUCIAN",
+        "NAUTILUS",
+        "THRESH",
+        "SERAPHINE"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "kaisa",
+      "name": "KAI'SA",
+      "roles": [
+        "dragon"
+      ],
+      "winrate": 46.89,
+      "pickRate": 11.83,
+      "banRate": 0.23,
+      "tier": "B",
+      "roleTags": [
+        "assassin",
+        "marksman"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2023-01/1675026561_1644095161_kaisa_5_11zon.webp",
+      "pageUrl": "https://wr-meta.com/5-kaisa.html",
+      "extremeThreats": [
+        "SENNA",
+        "MISS FORTUNE",
+        "DRAVEN",
+        "TWISTED FATE",
+        "LUX",
+        "LEONA",
+        "ASHE",
+        "NAUTILUS",
+        "PYKE",
+        "AMUMU",
+        "THRESH"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "corki",
+      "name": "CORKI",
+      "roles": [
+        "dragon"
+      ],
+      "winrate": 46.84,
+      "pickRate": 1.22,
+      "banRate": 0.02,
+      "tier": "B",
+      "roleTags": [
+        "mage",
+        "marksman"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2023-01/1675025603_1644098217_corki_51_11zon.webp",
+      "pageUrl": "https://wr-meta.com/57-corki.html",
+      "extremeThreats": [
+        "SENNA",
+        "TWITCH",
+        "JHIN",
+        "MISS FORTUNE",
+        "NILAH",
+        "VAYNE",
+        "ASHE",
+        "ANNIE"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "braum",
+      "name": "BRAUM",
+      "roles": [
+        "support"
+      ],
+      "winrate": 52.99,
+      "pickRate": 5.96,
+      "banRate": 1.33,
+      "tier": "S+",
+      "roleTags": [
+        "support",
+        "tank"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2023-01/1675025429_1644097809_braum_42_11zon.webp",
+      "pageUrl": "https://wr-meta.com/44-braum.html",
+      "extremeThreats": [
+        "ZILEAN",
+        "VEL'KOZ",
+        "JINX",
+        "KOG'MAW",
+        "JHIN",
+        "HEIMERDINGER",
+        "SORAKA"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "zilean",
+      "name": "ZILEAN",
+      "roles": [
+        "support"
+      ],
+      "winrate": 52.65,
+      "pickRate": 1.38,
+      "banRate": 2.35,
+      "tier": "S",
+      "roleTags": [
+        "mage",
+        "support"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2022-10/1665262547_zilean_10_21_11zon.webp",
+      "pageUrl": "https://wr-meta.com/416-zilean.html",
+      "extremeThreats": [
+        "MAOKAI",
+        "LEONA",
+        "BLITZCRANK",
+        "PYKE",
+        "ALISTAR",
+        "RAKAN",
+        "THRESH",
+        "NAUTILUS",
+        "DRAVEN",
+        "ASHE"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "nami",
+      "name": "NAMI",
+      "roles": [
+        "support"
+      ],
+      "winrate": 52.23,
+      "pickRate": 6.27,
+      "banRate": 0.15,
+      "tier": "S",
+      "roleTags": [
+        "mage",
+        "support"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2024-07/1720896783_nami-lol-art-4k-phone-wallpaper-2160x3840-uhdpaper_com-330_0_a_11zon.webp",
+      "pageUrl": "https://wr-meta.com/32-nami.html",
+      "extremeThreats": [
+        "MAOKAI",
+        "NAUTILUS",
+        "BLITZCRANK",
+        "PYKE",
+        "THRESH"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "janna",
+      "name": "JANNA",
+      "roles": [
+        "support"
+      ],
+      "winrate": 52.21,
+      "pickRate": 2.24,
+      "banRate": 0.11,
+      "tier": "S",
+      "roleTags": [
+        "mage",
+        "support"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2023-01/1675026310_1644096907_janna_27_11zon.webp",
+      "pageUrl": "https://wr-meta.com/28-janna.html",
+      "extremeThreats": [
+        "BRAND",
+        "AMUMU",
+        "VEL'KOZ",
+        "PYKE",
+        "LUX"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "maokai",
+      "name": "MAOKAI",
+      "roles": [
+        "support"
+      ],
+      "winrate": 52.16,
+      "pickRate": 4.48,
+      "banRate": 0.4,
+      "tier": "S",
+      "roleTags": [
+        "support",
+        "tank"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2024-06/1717608915_1_11zon.webp",
+      "pageUrl": "https://wr-meta.com/364-maokai.html",
+      "extremeThreats": [
+        "FIDDLESTICKS",
+        "HECARIM",
+        "TALON",
+        "AMUMU",
+        "KAYN",
+        "AMBESSA"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "soraka",
+      "name": "SORAKA",
+      "roles": [
+        "support"
+      ],
+      "winrate": 51.43,
+      "pickRate": 5.25,
+      "banRate": 1.53,
+      "tier": "S",
+      "roleTags": [
+        "mage",
+        "support"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2022-02/1644097474_soraka.webp",
+      "pageUrl": "https://wr-meta.com/37-soraka.html",
+      "extremeThreats": [
+        "MAOKAI",
+        "BARD",
+        "BLITZCRANK",
+        "YASUO",
+        "VARUS",
+        "PYKE",
+        "NAUTILUS",
+        "CAITLYN",
+        "DRAVEN"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "leona",
+      "name": "LEONA",
+      "roles": [
+        "support"
+      ],
+      "winrate": 50.61,
+      "pickRate": 10.55,
+      "banRate": 6.54,
+      "tier": "S",
+      "roleTags": [
+        "support",
+        "tank"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2023-01/1675035133_1644098551_leona_57_11zon.webp",
+      "pageUrl": "https://wr-meta.com/215-leona.html",
+      "extremeThreats": [
+        "BRAND",
+        "ALISTAR",
+        "RAKAN",
+        "GALIO",
+        "MORGANA"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "karma",
+      "name": "KARMA",
+      "roles": [
+        "support"
+      ],
+      "winrate": 51.29,
+      "pickRate": 6.18,
+      "banRate": 0.43,
+      "tier": "A",
+      "roleTags": [
+        "mage",
+        "support"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2023-01/1675026581_1646578015_karma-liga-legend-lol-oboi-3840x2160_54_78_11zon.webp",
+      "pageUrl": "https://wr-meta.com/323-karma.html",
+      "extremeThreats": [
+        "GRAGAS",
+        "AKSHAN",
+        "AURELION SOL",
+        "TRISTANA",
+        "TWISTED FATE",
+        "TALON",
+        "KASSADIN"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "sona",
+      "name": "SONA",
+      "roles": [
+        "support"
+      ],
+      "winrate": 51.05,
+      "pickRate": 2.16,
+      "banRate": 0.03,
+      "tier": "A",
+      "roleTags": [
+        "mage",
+        "support"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2023-01/1675036211_1644097486_sona_34_11zon.webp",
+      "pageUrl": "https://wr-meta.com/36-sona.html",
+      "extremeThreats": [
+        "ZILEAN",
+        "MISS FORTUNE",
+        "NAUTILUS",
+        "BLITZCRANK",
+        "PYKE",
+        "VEIGAR",
+        "MAOKAI",
+        "SAMIRA"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "milio",
+      "name": "MILIO",
+      "roles": [
+        "support"
+      ],
+      "winrate": 50.94,
+      "pickRate": 3.61,
+      "banRate": 4.32,
+      "tier": "A",
+      "roleTags": [
+        "mage",
+        "support"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2023-04/1680822721_milio_10_11zon.webp",
+      "pageUrl": "https://wr-meta.com/426-milio.html",
+      "extremeThreats": [
+        "MAOKAI",
+        "BLITZCRANK",
+        "LEONA",
+        "PYKE",
+        "NAUTILUS",
+        "THRESH"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "senna",
+      "name": "SENNA",
+      "roles": [
+        "support"
+      ],
+      "winrate": 50.4,
+      "pickRate": 4.59,
+      "banRate": 0.59,
+      "tier": "A",
+      "roleTags": [
+        "marksman",
+        "support"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2023-01/1675035911_1644098958_senna_68_11zon.webp",
+      "pageUrl": "https://wr-meta.com/296-senna.html",
+      "extremeThreats": [
+        "NAUTILUS",
+        "BLITZCRANK",
+        "LEONA",
+        "PYKE",
+        "THRESH"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "blitzcrank",
+      "name": "BLITZCRANK",
+      "roles": [
+        "support"
+      ],
+      "winrate": 49.73,
+      "pickRate": 8.01,
+      "banRate": 2.51,
+      "tier": "A",
+      "roleTags": [
+        "support",
+        "tank"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2023-01/1675025322_1644097743_blitzcrank_40_11zon.webp",
+      "pageUrl": "https://wr-meta.com/43-blitzcrank.html",
+      "extremeThreats": [
+        "MAOKAI",
+        "SIVIR",
+        "EZREAL",
+        "MORGANA",
+        "NAUTILUS",
+        "ALISTAR",
+        "VAYNE"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "seraphine",
+      "name": "SERAPHINE",
+      "roles": [
+        "support"
+      ],
+      "winrate": 49.59,
+      "pickRate": 9.07,
+      "banRate": 0.84,
+      "tier": "A",
+      "roleTags": [
+        "mage",
+        "support"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2023-01/1675035981_1644097248_seraphine_32_11zon.webp",
+      "pageUrl": "https://wr-meta.com/34-seraphine.html",
+      "extremeThreats": [
+        "MAOKAI",
+        "PYKE",
+        "THRESH",
+        "BLITZCRANK",
+        "SAMIRA",
+        "YASUO",
+        "ZYRA",
+        "LEONA"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "lulu",
+      "name": "LULU",
+      "roles": [
+        "support"
+      ],
+      "winrate": 49.47,
+      "pickRate": 9.13,
+      "banRate": 8.12,
+      "tier": "A",
+      "roleTags": [
+        "mage",
+        "support"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2023-01/1675035220_1644098216_lulu_50_11zon.webp",
+      "pageUrl": "https://wr-meta.com/56-lulu.html",
+      "extremeThreats": [
+        "RELL",
+        "SENNA",
+        "JANNA",
+        "BLITZCRANK",
+        "BRAND",
+        "EZREAL",
+        "ASHE"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "alistar",
+      "name": "ALISTAR",
+      "roles": [
+        "support"
+      ],
+      "winrate": 49.2,
+      "pickRate": 4.28,
+      "banRate": 0.56,
+      "tier": "A",
+      "roleTags": [
+        "support",
+        "tank"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2023-01/1675025085_1644097668_alistar_37_11zon.webp",
+      "pageUrl": "https://wr-meta.com/42-alistar.html",
+      "extremeThreats": [
+        "MAOKAI",
+        "JANNA",
+        "BRAND",
+        "HEIMERDINGER"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "rakan",
+      "name": "RAKAN",
+      "roles": [
+        "support"
+      ],
+      "winrate": 49.17,
+      "pickRate": 3.05,
+      "banRate": 0.36,
+      "tier": "A",
+      "roleTags": [
+        "support",
+        "tank"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2023-01/1675035749_1644098405_rakan_53_11zon.webp",
+      "pageUrl": "https://wr-meta.com/166-rakan.html",
+      "extremeThreats": [
+        "MAOKAI",
+        "POPPY",
+        "LUCIAN",
+        "JINX",
+        "BRAND",
+        "MORGANA"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "pyke",
+      "name": "PYKE",
+      "roles": [
+        "support"
+      ],
+      "winrate": 48.64,
+      "pickRate": 3.49,
+      "banRate": 1.86,
+      "tier": "A",
+      "roleTags": [
+        "assassin",
+        "support"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2024-01/1705767549_pyke-lol-uhdpaper_com-4k-3_542_11zon.webp",
+      "pageUrl": "https://wr-meta.com/326-pyke.html",
+      "extremeThreats": [
+        "POPPY",
+        "BLITZCRANK",
+        "BRAUM",
+        "CAITLYN",
+        "MORGANA",
+        "SAMIRA",
+        "SORAKA",
+        "RELL",
+        "SIVIR",
+        "VAYNE"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "thresh",
+      "name": "THRESH",
+      "roles": [
+        "support"
+      ],
+      "winrate": 48.52,
+      "pickRate": 11.74,
+      "banRate": 4.34,
+      "tier": "A",
+      "roleTags": [
+        "support",
+        "tank"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2022-02/1644098944_thresh.webp",
+      "pageUrl": "https://wr-meta.com/312-thresh.html",
+      "extremeThreats": [
+        "MAOKAI",
+        "BRAND",
+        "ZYRA",
+        "PYKE",
+        "MORGANA",
+        "POPPY",
+        "DRAVEN",
+        "SIVIR"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "bard",
+      "name": "BARD",
+      "roles": [
+        "support"
+      ],
+      "winrate": 47.9,
+      "pickRate": 1.06,
+      "banRate": 2.19,
+      "tier": "B",
+      "roleTags": [
+        "mage",
+        "support"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2022-07/1656624734_bard1_0-min.jpg",
+      "pageUrl": "https://wr-meta.com/336-bard.html",
+      "extremeThreats": [
+        "MAOKAI",
+        "VEL'KOZ",
+        "NAMI",
+        "KARMA",
+        "SENNA"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "rell",
+      "name": "RELL",
+      "roles": [
+        "support"
+      ],
+      "winrate": 47.77,
+      "pickRate": 2.59,
+      "banRate": 2.22,
+      "tier": "B",
+      "roleTags": [
+        "support",
+        "tank"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2022-10/1665251379_rell_10_2_11zon.webp",
+      "pageUrl": "https://wr-meta.com/388-rell.html",
+      "extremeThreats": [],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "yuumi",
+      "name": "YUUMI",
+      "roles": [
+        "support"
+      ],
+      "winrate": 45.81,
+      "pickRate": 9.55,
+      "banRate": 29.11,
+      "tier": "B",
+      "roleTags": [
+        "mage",
+        "support"
+      ],
+      "iconUrl": "https://wr-meta.com/uploads/posts/2023-01/1675036681_1644099270_yuumi_74_11zon.webp",
+      "pageUrl": "https://wr-meta.com/321-yuumi.html",
+      "extremeThreats": [
+        "MAOKAI",
+        "BRAUM",
+        "RELL",
+        "ALISTAR",
+        "RAKAN",
+        "BLITZCRANK",
+        "LEONA",
+        "THRESH",
+        "NAUTILUS",
+        "PYKE",
+        "MORGANA",
+        "AMUMU"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "akshan",
+      "name": "AKSHAN",
+      "roles": [
+        "mid",
+        "dragon"
+      ],
+      "winrate": 0,
+      "pickRate": 0,
+      "banRate": 0,
+      "tier": "B",
+      "roleTags": [
+        "assassin",
+        "marksman"
+      ],
+      "iconUrl": "",
+      "pageUrl": "https://wr-meta.com/311-akshan.html",
+      "extremeThreats": [
+        "MALPHITE",
+        "JAX",
+        "TRYNDAMERE",
+        "IRELIA"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "nilah",
+      "name": "NILAH",
+      "roles": [
+        "mid",
+        "dragon"
+      ],
+      "winrate": 0,
+      "pickRate": 0,
+      "banRate": 0,
+      "tier": "B",
+      "roleTags": [
+        "assassin",
+        "marksman"
+      ],
+      "iconUrl": "",
+      "pageUrl": "https://wr-meta.com/368-nilah.html",
+      "extremeThreats": [
+        "XAYAH",
+        "SERAPHINE",
+        "BRAND",
+        "VEIGAR",
+        "DRAVEN",
+        "KALISTA",
+        "ZILEAN"
+      ],
+      "extremeSynergies": [],
+      "isScraped": true
+    },
+    {
+      "id": "zoe",
+      "name": "ZOE",
+      "roles": [
+        "mid",
+        "support"
+      ],
+      "winrate": 0,
+      "pickRate": 0,
+      "banRate": 0,
+      "tier": "B",
+      "roleTags": [
+        "mage",
+        "support"
+      ],
+      "iconUrl": "",
+      "pageUrl": "https://wr-meta.com/417-zoe.html",
+      "extremeThreats": [],
+      "extremeSynergies": [],
+      "isScraped": true
+    }
+  ],
+  "counterPairs": [
+    {
+      "championId": "teemo",
+      "threatId": "gragas",
+      "category": "extreme"
+    },
+    {
+      "championId": "teemo",
+      "threatId": "rengar",
+      "category": "extreme"
+    },
+    {
+      "championId": "teemo",
+      "threatId": "sion",
+      "category": "extreme"
+    },
+    {
+      "championId": "teemo",
+      "threatId": "vladimir",
+      "category": "extreme"
+    },
+    {
+      "championId": "brand",
+      "threatId": "fizz",
+      "category": "extreme"
+    },
+    {
+      "championId": "brand",
+      "threatId": "irelia",
+      "category": "extreme"
+    },
+    {
+      "championId": "brand",
+      "threatId": "velkoz",
+      "category": "extreme"
+    },
+    {
+      "championId": "brand",
+      "threatId": "kindred",
+      "category": "extreme"
+    },
+    {
+      "championId": "brand",
+      "threatId": "zed",
+      "category": "extreme"
+    },
+    {
+      "championId": "morgana",
+      "threatId": "karma",
+      "category": "extreme"
+    },
+    {
+      "championId": "morgana",
+      "threatId": "janna",
+      "category": "extreme"
+    },
+    {
+      "championId": "morgana",
+      "threatId": "vayne",
+      "category": "extreme"
+    },
+    {
+      "championId": "morgana",
+      "threatId": "velkoz",
+      "category": "extreme"
+    },
+    {
+      "championId": "morgana",
+      "threatId": "draven",
+      "category": "extreme"
+    },
+    {
+      "championId": "kennen",
+      "threatId": "maokai",
+      "category": "extreme"
+    },
+    {
+      "championId": "kennen",
+      "threatId": "dr-mundo",
+      "category": "extreme"
+    },
+    {
+      "championId": "kennen",
+      "threatId": "nasus",
+      "category": "extreme"
+    },
+    {
+      "championId": "kennen",
+      "threatId": "malphite",
+      "category": "extreme"
+    },
+    {
+      "championId": "kennen",
+      "threatId": "olaf",
+      "category": "extreme"
+    },
+    {
+      "championId": "kennen",
+      "threatId": "sion",
+      "category": "extreme"
+    },
+    {
+      "championId": "kennen",
+      "threatId": "rumble",
+      "category": "extreme"
+    },
+    {
+      "championId": "swain",
+      "threatId": "pantheon",
+      "category": "extreme"
+    },
+    {
+      "championId": "swain",
+      "threatId": "kassadin",
+      "category": "extreme"
+    },
+    {
+      "championId": "swain",
+      "threatId": "tristana",
+      "category": "extreme"
+    },
+    {
+      "championId": "swain",
+      "threatId": "fizz",
+      "category": "extreme"
+    },
+    {
+      "championId": "swain",
+      "threatId": "gragas",
+      "category": "extreme"
+    },
+    {
+      "championId": "swain",
+      "threatId": "zoe",
+      "category": "extreme"
+    },
+    {
+      "championId": "swain",
+      "threatId": "brand",
+      "category": "extreme"
+    },
+    {
+      "championId": "swain",
+      "threatId": "aurelion-sol",
+      "category": "extreme"
+    },
+    {
+      "championId": "nasus",
+      "threatId": "urgot",
+      "category": "extreme"
+    },
+    {
+      "championId": "nasus",
+      "threatId": "gragas",
+      "category": "extreme"
+    },
+    {
+      "championId": "nasus",
+      "threatId": "poppy",
+      "category": "extreme"
+    },
+    {
+      "championId": "nasus",
+      "threatId": "darius",
+      "category": "extreme"
+    },
+    {
+      "championId": "nasus",
+      "threatId": "aatrox",
+      "category": "extreme"
+    },
+    {
+      "championId": "nasus",
+      "threatId": "ambessa",
+      "category": "extreme"
+    },
+    {
+      "championId": "nasus",
+      "threatId": "rumble",
+      "category": "extreme"
+    },
+    {
+      "championId": "viktor",
+      "threatId": "ekko",
+      "category": "extreme"
+    },
+    {
+      "championId": "viktor",
+      "threatId": "yone",
+      "category": "extreme"
+    },
+    {
+      "championId": "viktor",
+      "threatId": "irelia",
+      "category": "extreme"
+    },
+    {
+      "championId": "viktor",
+      "threatId": "akali",
+      "category": "extreme"
+    },
+    {
+      "championId": "viktor",
+      "threatId": "akshan",
+      "category": "extreme"
+    },
+    {
+      "championId": "viktor",
+      "threatId": "kassadin",
+      "category": "extreme"
+    },
+    {
+      "championId": "heimerdinger",
+      "threatId": "vex",
+      "category": "extreme"
+    },
+    {
+      "championId": "heimerdinger",
+      "threatId": "diana",
+      "category": "extreme"
+    },
+    {
+      "championId": "heimerdinger",
+      "threatId": "akali",
+      "category": "extreme"
+    },
+    {
+      "championId": "heimerdinger",
+      "threatId": "irelia",
+      "category": "extreme"
+    },
+    {
+      "championId": "heimerdinger",
+      "threatId": "brand",
+      "category": "extreme"
+    },
+    {
+      "championId": "heimerdinger",
+      "threatId": "akshan",
+      "category": "extreme"
+    },
+    {
+      "championId": "heimerdinger",
+      "threatId": "kassadin",
+      "category": "extreme"
+    },
+    {
+      "championId": "heimerdinger",
+      "threatId": "galio",
+      "category": "extreme"
+    },
+    {
+      "championId": "heimerdinger",
+      "threatId": "lissandra",
+      "category": "extreme"
+    },
+    {
+      "championId": "ahri",
+      "threatId": "twisted-fate",
+      "category": "extreme"
+    },
+    {
+      "championId": "ahri",
+      "threatId": "akshan",
+      "category": "extreme"
+    },
+    {
+      "championId": "ahri",
+      "threatId": "zed",
+      "category": "extreme"
+    },
+    {
+      "championId": "vex",
+      "threatId": "ryze",
+      "category": "extreme"
+    },
+    {
+      "championId": "vex",
+      "threatId": "karma",
+      "category": "extreme"
+    },
+    {
+      "championId": "vex",
+      "threatId": "swain",
+      "category": "extreme"
+    },
+    {
+      "championId": "vex",
+      "threatId": "annie",
+      "category": "extreme"
+    },
+    {
+      "championId": "vex",
+      "threatId": "vladimir",
+      "category": "extreme"
+    },
+    {
+      "championId": "vex",
+      "threatId": "galio",
+      "category": "extreme"
+    },
+    {
+      "championId": "vex",
+      "threatId": "aurelion-sol",
+      "category": "extreme"
+    },
+    {
+      "championId": "vex",
+      "threatId": "zed",
+      "category": "extreme"
+    },
+    {
+      "championId": "syndra",
+      "threatId": "irelia",
+      "category": "extreme"
+    },
+    {
+      "championId": "syndra",
+      "threatId": "gragas",
+      "category": "extreme"
+    },
+    {
+      "championId": "syndra",
+      "threatId": "diana",
+      "category": "extreme"
+    },
+    {
+      "championId": "syndra",
+      "threatId": "fizz",
+      "category": "extreme"
+    },
+    {
+      "championId": "syndra",
+      "threatId": "yasuo",
+      "category": "extreme"
+    },
+    {
+      "championId": "syndra",
+      "threatId": "ekko",
+      "category": "extreme"
+    },
+    {
+      "championId": "syndra",
+      "threatId": "kassadin",
+      "category": "extreme"
+    },
+    {
+      "championId": "syndra",
+      "threatId": "viktor",
+      "category": "extreme"
+    },
+    {
+      "championId": "syndra",
+      "threatId": "velkoz",
+      "category": "extreme"
+    },
+    {
+      "championId": "lissandra",
+      "threatId": "tristana",
+      "category": "extreme"
+    },
+    {
+      "championId": "lissandra",
+      "threatId": "swain",
+      "category": "extreme"
+    },
+    {
+      "championId": "lissandra",
+      "threatId": "akshan",
+      "category": "extreme"
+    },
+    {
+      "championId": "lissandra",
+      "threatId": "zoe",
+      "category": "extreme"
+    },
+    {
+      "championId": "twisted-fate",
+      "threatId": "swain",
+      "category": "extreme"
+    },
+    {
+      "championId": "twisted-fate",
+      "threatId": "fizz",
+      "category": "extreme"
+    },
+    {
+      "championId": "twisted-fate",
+      "threatId": "irelia",
+      "category": "extreme"
+    },
+    {
+      "championId": "twisted-fate",
+      "threatId": "yasuo",
+      "category": "extreme"
+    },
+    {
+      "championId": "twisted-fate",
+      "threatId": "orianna",
+      "category": "extreme"
+    },
+    {
+      "championId": "twisted-fate",
+      "threatId": "aurelion-sol",
+      "category": "extreme"
+    },
+    {
+      "championId": "twisted-fate",
+      "threatId": "yone",
+      "category": "extreme"
+    },
+    {
+      "championId": "twisted-fate",
+      "threatId": "viktor",
+      "category": "extreme"
+    },
+    {
+      "championId": "twisted-fate",
+      "threatId": "syndra",
+      "category": "extreme"
+    },
+    {
+      "championId": "twisted-fate",
+      "threatId": "aurora",
+      "category": "extreme"
+    },
+    {
+      "championId": "veigar",
+      "threatId": "talon",
+      "category": "extreme"
+    },
+    {
+      "championId": "veigar",
+      "threatId": "irelia",
+      "category": "extreme"
+    },
+    {
+      "championId": "veigar",
+      "threatId": "kassadin",
+      "category": "extreme"
+    },
+    {
+      "championId": "veigar",
+      "threatId": "zoe",
+      "category": "extreme"
+    },
+    {
+      "championId": "veigar",
+      "threatId": "zed",
+      "category": "extreme"
+    },
+    {
+      "championId": "veigar",
+      "threatId": "akali",
+      "category": "extreme"
+    },
+    {
+      "championId": "veigar",
+      "threatId": "yone",
+      "category": "extreme"
+    },
+    {
+      "championId": "veigar",
+      "threatId": "orianna",
+      "category": "extreme"
+    },
+    {
+      "championId": "veigar",
+      "threatId": "viktor",
+      "category": "extreme"
+    },
+    {
+      "championId": "veigar",
+      "threatId": "aurora",
+      "category": "extreme"
+    },
+    {
+      "championId": "orianna",
+      "threatId": "aurelion-sol",
+      "category": "extreme"
+    },
+    {
+      "championId": "orianna",
+      "threatId": "tristana",
+      "category": "extreme"
+    },
+    {
+      "championId": "orianna",
+      "threatId": "irelia",
+      "category": "extreme"
+    },
+    {
+      "championId": "orianna",
+      "threatId": "karma",
+      "category": "extreme"
+    },
+    {
+      "championId": "orianna",
+      "threatId": "velkoz",
+      "category": "extreme"
+    },
+    {
+      "championId": "orianna",
+      "threatId": "zoe",
+      "category": "extreme"
+    },
+    {
+      "championId": "orianna",
+      "threatId": "ziggs",
+      "category": "extreme"
+    },
+    {
+      "championId": "orianna",
+      "threatId": "akshan",
+      "category": "extreme"
+    },
+    {
+      "championId": "lux",
+      "threatId": "maokai",
+      "category": "extreme"
+    },
+    {
+      "championId": "lux",
+      "threatId": "bard",
+      "category": "extreme"
+    },
+    {
+      "championId": "lux",
+      "threatId": "janna",
+      "category": "extreme"
+    },
+    {
+      "championId": "lux",
+      "threatId": "blitzcrank",
+      "category": "extreme"
+    },
+    {
+      "championId": "lux",
+      "threatId": "jinx",
+      "category": "extreme"
+    },
+    {
+      "championId": "lux",
+      "threatId": "draven",
+      "category": "extreme"
+    },
+    {
+      "championId": "ryze",
+      "threatId": "aurelion-sol",
+      "category": "extreme"
+    },
+    {
+      "championId": "ryze",
+      "threatId": "twisted-fate",
+      "category": "extreme"
+    },
+    {
+      "championId": "ryze",
+      "threatId": "akshan",
+      "category": "extreme"
+    },
+    {
+      "championId": "ryze",
+      "threatId": "veigar",
+      "category": "extreme"
+    },
+    {
+      "championId": "ryze",
+      "threatId": "annie",
+      "category": "extreme"
+    },
+    {
+      "championId": "ryze",
+      "threatId": "orianna",
+      "category": "extreme"
+    },
+    {
+      "championId": "ryze",
+      "threatId": "pyke",
+      "category": "extreme"
+    },
+    {
+      "championId": "ryze",
+      "threatId": "lucian",
+      "category": "extreme"
+    },
+    {
+      "championId": "kayle",
+      "threatId": "malphite",
+      "category": "extreme"
+    },
+    {
+      "championId": "kayle",
+      "threatId": "tryndamere",
+      "category": "extreme"
+    },
+    {
+      "championId": "kayle",
+      "threatId": "olaf",
+      "category": "extreme"
+    },
+    {
+      "championId": "kayle",
+      "threatId": "irelia",
+      "category": "extreme"
+    },
+    {
+      "championId": "kayle",
+      "threatId": "riven",
+      "category": "extreme"
+    },
+    {
+      "championId": "kayle",
+      "threatId": "akshan",
+      "category": "extreme"
+    },
+    {
+      "championId": "kayle",
+      "threatId": "kassadin",
+      "category": "extreme"
+    },
+    {
+      "championId": "kassadin",
+      "threatId": "pantheon",
+      "category": "extreme"
+    },
+    {
+      "championId": "kassadin",
+      "threatId": "talon",
+      "category": "extreme"
+    },
+    {
+      "championId": "kassadin",
+      "threatId": "tristana",
+      "category": "extreme"
+    },
+    {
+      "championId": "kassadin",
+      "threatId": "annie",
+      "category": "extreme"
+    },
+    {
+      "championId": "kassadin",
+      "threatId": "heimerdinger",
+      "category": "extreme"
+    },
+    {
+      "championId": "kassadin",
+      "threatId": "syndra",
+      "category": "extreme"
+    },
+    {
+      "championId": "kassadin",
+      "threatId": "lucian",
+      "category": "extreme"
+    },
+    {
+      "championId": "fizz",
+      "threatId": "gragas",
+      "category": "extreme"
+    },
+    {
+      "championId": "fizz",
+      "threatId": "tristana",
+      "category": "extreme"
+    },
+    {
+      "championId": "fizz",
+      "threatId": "annie",
+      "category": "extreme"
+    },
+    {
+      "championId": "fizz",
+      "threatId": "orianna",
+      "category": "extreme"
+    },
+    {
+      "championId": "fizz",
+      "threatId": "veigar",
+      "category": "extreme"
+    },
+    {
+      "championId": "aurora",
+      "threatId": "zoe",
+      "category": "extreme"
+    },
+    {
+      "championId": "aurora",
+      "threatId": "syndra",
+      "category": "extreme"
+    },
+    {
+      "championId": "aurora",
+      "threatId": "irelia",
+      "category": "extreme"
+    },
+    {
+      "championId": "aurora",
+      "threatId": "zed",
+      "category": "extreme"
+    },
+    {
+      "championId": "aurora",
+      "threatId": "ziggs",
+      "category": "extreme"
+    },
+    {
+      "championId": "aurora",
+      "threatId": "diana",
+      "category": "extreme"
+    },
+    {
+      "championId": "aurora",
+      "threatId": "pantheon",
+      "category": "extreme"
+    },
+    {
+      "championId": "aurora",
+      "threatId": "kennen",
+      "category": "extreme"
+    },
+    {
+      "championId": "galio",
+      "threatId": "swain",
+      "category": "extreme"
+    },
+    {
+      "championId": "galio",
+      "threatId": "talon",
+      "category": "extreme"
+    },
+    {
+      "championId": "galio",
+      "threatId": "tristana",
+      "category": "extreme"
+    },
+    {
+      "championId": "galio",
+      "threatId": "yasuo",
+      "category": "extreme"
+    },
+    {
+      "championId": "galio",
+      "threatId": "morgana",
+      "category": "extreme"
+    },
+    {
+      "championId": "aurelion-sol",
+      "threatId": "fizz",
+      "category": "extreme"
+    },
+    {
+      "championId": "aurelion-sol",
+      "threatId": "yone",
+      "category": "extreme"
+    },
+    {
+      "championId": "aurelion-sol",
+      "threatId": "tristana",
+      "category": "extreme"
+    },
+    {
+      "championId": "aurelion-sol",
+      "threatId": "talon",
+      "category": "extreme"
+    },
+    {
+      "championId": "aurelion-sol",
+      "threatId": "irelia",
+      "category": "extreme"
+    },
+    {
+      "championId": "velkoz",
+      "threatId": "akshan",
+      "category": "extreme"
+    },
+    {
+      "championId": "velkoz",
+      "threatId": "yasuo",
+      "category": "extreme"
+    },
+    {
+      "championId": "velkoz",
+      "threatId": "fizz",
+      "category": "extreme"
+    },
+    {
+      "championId": "velkoz",
+      "threatId": "kassadin",
+      "category": "extreme"
+    },
+    {
+      "championId": "velkoz",
+      "threatId": "yone",
+      "category": "extreme"
+    },
+    {
+      "championId": "diana",
+      "threatId": "swain",
+      "category": "extreme"
+    },
+    {
+      "championId": "diana",
+      "threatId": "gragas",
+      "category": "extreme"
+    },
+    {
+      "championId": "diana",
+      "threatId": "akshan",
+      "category": "extreme"
+    },
+    {
+      "championId": "diana",
+      "threatId": "ekko",
+      "category": "extreme"
+    },
+    {
+      "championId": "diana",
+      "threatId": "tristana",
+      "category": "extreme"
+    },
+    {
+      "championId": "diana",
+      "threatId": "pantheon",
+      "category": "extreme"
+    },
+    {
+      "championId": "diana",
+      "threatId": "brand",
+      "category": "extreme"
+    },
+    {
+      "championId": "diana",
+      "threatId": "lissandra",
+      "category": "extreme"
+    },
+    {
+      "championId": "diana",
+      "threatId": "twisted-fate",
+      "category": "extreme"
+    },
+    {
+      "championId": "diana",
+      "threatId": "malphite",
+      "category": "extreme"
+    },
+    {
+      "championId": "diana",
+      "threatId": "katarina",
+      "category": "extreme"
+    },
+    {
+      "championId": "diana",
+      "threatId": "galio",
+      "category": "extreme"
+    },
+    {
+      "championId": "diana",
+      "threatId": "karma",
+      "category": "extreme"
+    },
+    {
+      "championId": "diana",
+      "threatId": "akali",
+      "category": "extreme"
+    },
+    {
+      "championId": "diana",
+      "threatId": "irelia",
+      "category": "extreme"
+    },
+    {
+      "championId": "diana",
+      "threatId": "vladimir",
+      "category": "extreme"
+    },
+    {
+      "championId": "diana",
+      "threatId": "vex",
+      "category": "extreme"
+    },
+    {
+      "championId": "diana",
+      "threatId": "ryze",
+      "category": "extreme"
+    },
+    {
+      "championId": "annie",
+      "threatId": "jayce",
+      "category": "extreme"
+    },
+    {
+      "championId": "annie",
+      "threatId": "pantheon",
+      "category": "extreme"
+    },
+    {
+      "championId": "annie",
+      "threatId": "aurelion-sol",
+      "category": "extreme"
+    },
+    {
+      "championId": "annie",
+      "threatId": "syndra",
+      "category": "extreme"
+    },
+    {
+      "championId": "annie",
+      "threatId": "diana",
+      "category": "extreme"
+    },
+    {
+      "championId": "jayce",
+      "threatId": "nasus",
+      "category": "extreme"
+    },
+    {
+      "championId": "jayce",
+      "threatId": "dr-mundo",
+      "category": "extreme"
+    },
+    {
+      "championId": "jayce",
+      "threatId": "poppy",
+      "category": "extreme"
+    },
+    {
+      "championId": "jayce",
+      "threatId": "maokai",
+      "category": "extreme"
+    },
+    {
+      "championId": "jayce",
+      "threatId": "malphite",
+      "category": "extreme"
+    },
+    {
+      "championId": "jayce",
+      "threatId": "akshan",
+      "category": "extreme"
+    },
+    {
+      "championId": "jayce",
+      "threatId": "olaf",
+      "category": "extreme"
+    },
+    {
+      "championId": "jayce",
+      "threatId": "rengar",
+      "category": "extreme"
+    },
+    {
+      "championId": "jayce",
+      "threatId": "gragas",
+      "category": "extreme"
+    },
+    {
+      "championId": "jayce",
+      "threatId": "yasuo",
+      "category": "extreme"
+    },
+    {
+      "championId": "jayce",
+      "threatId": "irelia",
+      "category": "extreme"
+    },
+    {
+      "championId": "jayce",
+      "threatId": "warwick",
+      "category": "extreme"
+    },
+    {
+      "championId": "jayce",
+      "threatId": "garen",
+      "category": "extreme"
+    },
+    {
+      "championId": "jayce",
+      "threatId": "shen",
+      "category": "extreme"
+    },
+    {
+      "championId": "jayce",
+      "threatId": "camille",
+      "category": "extreme"
+    },
+    {
+      "championId": "malphite",
+      "threatId": "dr-mundo",
+      "category": "extreme"
+    },
+    {
+      "championId": "malphite",
+      "threatId": "mordekaiser",
+      "category": "extreme"
+    },
+    {
+      "championId": "malphite",
+      "threatId": "darius",
+      "category": "extreme"
+    },
+    {
+      "championId": "malphite",
+      "threatId": "sion",
+      "category": "extreme"
+    },
+    {
+      "championId": "malphite",
+      "threatId": "rumble",
+      "category": "extreme"
+    },
+    {
+      "championId": "irelia",
+      "threatId": "warwick",
+      "category": "extreme"
+    },
+    {
+      "championId": "irelia",
+      "threatId": "malphite",
+      "category": "extreme"
+    },
+    {
+      "championId": "irelia",
+      "threatId": "jax",
+      "category": "extreme"
+    },
+    {
+      "championId": "irelia",
+      "threatId": "poppy",
+      "category": "extreme"
+    },
+    {
+      "championId": "irelia",
+      "threatId": "fiora",
+      "category": "extreme"
+    },
+    {
+      "championId": "ekko",
+      "threatId": "gragas",
+      "category": "extreme"
+    },
+    {
+      "championId": "ekko",
+      "threatId": "twisted-fate",
+      "category": "extreme"
+    },
+    {
+      "championId": "ekko",
+      "threatId": "galio",
+      "category": "extreme"
+    },
+    {
+      "championId": "ekko",
+      "threatId": "zed",
+      "category": "extreme"
+    },
+    {
+      "championId": "ekko",
+      "threatId": "ahri",
+      "category": "extreme"
+    },
+    {
+      "championId": "katarina",
+      "threatId": "ahri",
+      "category": "extreme"
+    },
+    {
+      "championId": "katarina",
+      "threatId": "heimerdinger",
+      "category": "extreme"
+    },
+    {
+      "championId": "katarina",
+      "threatId": "ziggs",
+      "category": "extreme"
+    },
+    {
+      "championId": "katarina",
+      "threatId": "lux",
+      "category": "extreme"
+    },
+    {
+      "championId": "katarina",
+      "threatId": "akshan",
+      "category": "extreme"
+    },
+    {
+      "championId": "katarina",
+      "threatId": "vex",
+      "category": "extreme"
+    },
+    {
+      "championId": "katarina",
+      "threatId": "vladimir",
+      "category": "extreme"
+    },
+    {
+      "championId": "akali",
+      "threatId": "twisted-fate",
+      "category": "extreme"
+    },
+    {
+      "championId": "akali",
+      "threatId": "galio",
+      "category": "extreme"
+    },
+    {
+      "championId": "akali",
+      "threatId": "gragas",
+      "category": "extreme"
+    },
+    {
+      "championId": "akali",
+      "threatId": "akshan",
+      "category": "extreme"
+    },
+    {
+      "championId": "akali",
+      "threatId": "rumble",
+      "category": "extreme"
+    },
+    {
+      "championId": "vayne",
+      "threatId": "caitlyn",
+      "category": "extreme"
+    },
+    {
+      "championId": "vayne",
+      "threatId": "draven",
+      "category": "extreme"
+    },
+    {
+      "championId": "vayne",
+      "threatId": "nilah",
+      "category": "extreme"
+    },
+    {
+      "championId": "wukong",
+      "threatId": "gragas",
+      "category": "extreme"
+    },
+    {
+      "championId": "wukong",
+      "threatId": "poppy",
+      "category": "extreme"
+    },
+    {
+      "championId": "wukong",
+      "threatId": "shen",
+      "category": "extreme"
+    },
+    {
+      "championId": "wukong",
+      "threatId": "karma",
+      "category": "extreme"
+    },
+    {
+      "championId": "wukong",
+      "threatId": "rengar",
+      "category": "extreme"
+    },
+    {
+      "championId": "wukong",
+      "threatId": "gwen",
+      "category": "extreme"
+    },
+    {
+      "championId": "wukong",
+      "threatId": "sion",
+      "category": "extreme"
+    },
+    {
+      "championId": "wukong",
+      "threatId": "mordekaiser",
+      "category": "extreme"
+    },
+    {
+      "championId": "wukong",
+      "threatId": "tryndamere",
+      "category": "extreme"
+    },
+    {
+      "championId": "wukong",
+      "threatId": "sett",
+      "category": "extreme"
+    },
+    {
+      "championId": "wukong",
+      "threatId": "aatrox",
+      "category": "extreme"
+    },
+    {
+      "championId": "wukong",
+      "threatId": "singed",
+      "category": "extreme"
+    },
+    {
+      "championId": "wukong",
+      "threatId": "dr-mundo",
+      "category": "extreme"
+    },
+    {
+      "championId": "wukong",
+      "threatId": "ornn",
+      "category": "extreme"
+    },
+    {
+      "championId": "wukong",
+      "threatId": "malphite",
+      "category": "extreme"
+    },
+    {
+      "championId": "wukong",
+      "threatId": "yone",
+      "category": "extreme"
+    },
+    {
+      "championId": "wukong",
+      "threatId": "heimerdinger",
+      "category": "extreme"
+    },
+    {
+      "championId": "wukong",
+      "threatId": "leona",
+      "category": "extreme"
+    },
+    {
+      "championId": "renekton",
+      "threatId": "gnar",
+      "category": "extreme"
+    },
+    {
+      "championId": "renekton",
+      "threatId": "warwick",
+      "category": "extreme"
+    },
+    {
+      "championId": "renekton",
+      "threatId": "gragas",
+      "category": "extreme"
+    },
+    {
+      "championId": "renekton",
+      "threatId": "kayle",
+      "category": "extreme"
+    },
+    {
+      "championId": "renekton",
+      "threatId": "jayce",
+      "category": "extreme"
+    },
+    {
+      "championId": "renekton",
+      "threatId": "kennen",
+      "category": "extreme"
+    },
+    {
+      "championId": "renekton",
+      "threatId": "vayne",
+      "category": "extreme"
+    },
+    {
+      "championId": "renekton",
+      "threatId": "ornn",
+      "category": "extreme"
+    },
+    {
+      "championId": "garen",
+      "threatId": "vayne",
+      "category": "extreme"
+    },
+    {
+      "championId": "garen",
+      "threatId": "kayle",
+      "category": "extreme"
+    },
+    {
+      "championId": "garen",
+      "threatId": "teemo",
+      "category": "extreme"
+    },
+    {
+      "championId": "garen",
+      "threatId": "akshan",
+      "category": "extreme"
+    },
+    {
+      "championId": "rumble",
+      "threatId": "vex",
+      "category": "extreme"
+    },
+    {
+      "championId": "rumble",
+      "threatId": "galio",
+      "category": "extreme"
+    },
+    {
+      "championId": "rumble",
+      "threatId": "aurelion-sol",
+      "category": "extreme"
+    },
+    {
+      "championId": "rumble",
+      "threatId": "irelia",
+      "category": "extreme"
+    },
+    {
+      "championId": "rumble",
+      "threatId": "viktor",
+      "category": "extreme"
+    },
+    {
+      "championId": "rumble",
+      "threatId": "lux",
+      "category": "extreme"
+    },
+    {
+      "championId": "rumble",
+      "threatId": "gragas",
+      "category": "extreme"
+    },
+    {
+      "championId": "tryndamere",
+      "threatId": "malphite",
+      "category": "extreme"
+    },
+    {
+      "championId": "tryndamere",
+      "threatId": "vayne",
+      "category": "extreme"
+    },
+    {
+      "championId": "tryndamere",
+      "threatId": "poppy",
+      "category": "extreme"
+    },
+    {
+      "championId": "tryndamere",
+      "threatId": "rengar",
+      "category": "extreme"
+    },
+    {
+      "championId": "tryndamere",
+      "threatId": "singed",
+      "category": "extreme"
+    },
+    {
+      "championId": "tryndamere",
+      "threatId": "warwick",
+      "category": "extreme"
+    },
+    {
+      "championId": "tryndamere",
+      "threatId": "darius",
+      "category": "extreme"
+    },
+    {
+      "championId": "tryndamere",
+      "threatId": "gragas",
+      "category": "extreme"
+    },
+    {
+      "championId": "tryndamere",
+      "threatId": "camille",
+      "category": "extreme"
+    },
+    {
+      "championId": "tryndamere",
+      "threatId": "volibear",
+      "category": "extreme"
+    },
+    {
+      "championId": "tryndamere",
+      "threatId": "nasus",
+      "category": "extreme"
+    },
+    {
+      "championId": "ambessa",
+      "threatId": "renekton",
+      "category": "extreme"
+    },
+    {
+      "championId": "ambessa",
+      "threatId": "irelia",
+      "category": "extreme"
+    },
+    {
+      "championId": "ambessa",
+      "threatId": "tryndamere",
+      "category": "extreme"
+    },
+    {
+      "championId": "ambessa",
+      "threatId": "warwick",
+      "category": "extreme"
+    },
+    {
+      "championId": "ambessa",
+      "threatId": "darius",
+      "category": "extreme"
+    },
+    {
+      "championId": "ambessa",
+      "threatId": "wukong",
+      "category": "extreme"
+    },
+    {
+      "championId": "kalista",
+      "threatId": "nilah",
+      "category": "extreme"
+    },
+    {
+      "championId": "kalista",
+      "threatId": "senna",
+      "category": "extreme"
+    },
+    {
+      "championId": "kalista",
+      "threatId": "smolder",
+      "category": "extreme"
+    },
+    {
+      "championId": "kalista",
+      "threatId": "vayne",
+      "category": "extreme"
+    },
+    {
+      "championId": "kalista",
+      "threatId": "lulu",
+      "category": "extreme"
+    },
+    {
+      "championId": "kalista",
+      "threatId": "maokai",
+      "category": "extreme"
+    },
+    {
+      "championId": "kalista",
+      "threatId": "sona",
+      "category": "extreme"
+    },
+    {
+      "championId": "ornn",
+      "threatId": "darius",
+      "category": "extreme"
+    },
+    {
+      "championId": "ornn",
+      "threatId": "fiora",
+      "category": "extreme"
+    },
+    {
+      "championId": "ornn",
+      "threatId": "singed",
+      "category": "extreme"
+    },
+    {
+      "championId": "ornn",
+      "threatId": "camille",
+      "category": "extreme"
+    },
+    {
+      "championId": "ornn",
+      "threatId": "aatrox",
+      "category": "extreme"
+    },
+    {
+      "championId": "ornn",
+      "threatId": "gwen",
+      "category": "extreme"
+    },
+    {
+      "championId": "ornn",
+      "threatId": "irelia",
+      "category": "extreme"
+    },
+    {
+      "championId": "ornn",
+      "threatId": "warwick",
+      "category": "extreme"
+    },
+    {
+      "championId": "ornn",
+      "threatId": "vayne",
+      "category": "extreme"
+    },
+    {
+      "championId": "shen",
+      "threatId": "rumble",
+      "category": "extreme"
+    },
+    {
+      "championId": "shen",
+      "threatId": "vladimir",
+      "category": "extreme"
+    },
+    {
+      "championId": "shen",
+      "threatId": "pantheon",
+      "category": "extreme"
+    },
+    {
+      "championId": "shen",
+      "threatId": "aurora",
+      "category": "extreme"
+    },
+    {
+      "championId": "shen",
+      "threatId": "ryze",
+      "category": "extreme"
+    },
+    {
+      "championId": "shen",
+      "threatId": "aatrox",
+      "category": "extreme"
+    },
+    {
+      "championId": "shen",
+      "threatId": "darius",
+      "category": "extreme"
+    },
+    {
+      "championId": "shen",
+      "threatId": "fiora",
+      "category": "extreme"
+    },
+    {
+      "championId": "singed",
+      "threatId": "jayce",
+      "category": "extreme"
+    },
+    {
+      "championId": "singed",
+      "threatId": "vayne",
+      "category": "extreme"
+    },
+    {
+      "championId": "singed",
+      "threatId": "akshan",
+      "category": "extreme"
+    },
+    {
+      "championId": "singed",
+      "threatId": "heimerdinger",
+      "category": "extreme"
+    },
+    {
+      "championId": "singed",
+      "threatId": "ryze",
+      "category": "extreme"
+    },
+    {
+      "championId": "singed",
+      "threatId": "karma",
+      "category": "extreme"
+    },
+    {
+      "championId": "singed",
+      "threatId": "urgot",
+      "category": "extreme"
+    },
+    {
+      "championId": "nautilus",
+      "threatId": "sona",
+      "category": "extreme"
+    },
+    {
+      "championId": "nautilus",
+      "threatId": "alistar",
+      "category": "extreme"
+    },
+    {
+      "championId": "nautilus",
+      "threatId": "soraka",
+      "category": "extreme"
+    },
+    {
+      "championId": "nautilus",
+      "threatId": "bard",
+      "category": "extreme"
+    },
+    {
+      "championId": "nautilus",
+      "threatId": "twitch",
+      "category": "extreme"
+    },
+    {
+      "championId": "nautilus",
+      "threatId": "kalista",
+      "category": "extreme"
+    },
+    {
+      "championId": "sion",
+      "threatId": "vayne",
+      "category": "extreme"
+    },
+    {
+      "championId": "sion",
+      "threatId": "gwen",
+      "category": "extreme"
+    },
+    {
+      "championId": "sion",
+      "threatId": "fiora",
+      "category": "extreme"
+    },
+    {
+      "championId": "sion",
+      "threatId": "warwick",
+      "category": "extreme"
+    },
+    {
+      "championId": "sion",
+      "threatId": "darius",
+      "category": "extreme"
+    },
+    {
+      "championId": "sion",
+      "threatId": "akali",
+      "category": "extreme"
+    },
+    {
+      "championId": "sion",
+      "threatId": "singed",
+      "category": "extreme"
+    },
+    {
+      "championId": "urgot",
+      "threatId": "darius",
+      "category": "extreme"
+    },
+    {
+      "championId": "urgot",
+      "threatId": "yasuo",
+      "category": "extreme"
+    },
+    {
+      "championId": "urgot",
+      "threatId": "aatrox",
+      "category": "extreme"
+    },
+    {
+      "championId": "urgot",
+      "threatId": "heimerdinger",
+      "category": "extreme"
+    },
+    {
+      "championId": "urgot",
+      "threatId": "mordekaiser",
+      "category": "extreme"
+    },
+    {
+      "championId": "urgot",
+      "threatId": "olaf",
+      "category": "extreme"
+    },
+    {
+      "championId": "urgot",
+      "threatId": "tryndamere",
+      "category": "extreme"
+    },
+    {
+      "championId": "urgot",
+      "threatId": "kayle",
+      "category": "extreme"
+    },
+    {
+      "championId": "urgot",
+      "threatId": "rumble",
+      "category": "extreme"
+    },
+    {
+      "championId": "fiora",
+      "threatId": "renekton",
+      "category": "extreme"
+    },
+    {
+      "championId": "fiora",
+      "threatId": "poppy",
+      "category": "extreme"
+    },
+    {
+      "championId": "fiora",
+      "threatId": "kennen",
+      "category": "extreme"
+    },
+    {
+      "championId": "fiora",
+      "threatId": "gragas",
+      "category": "extreme"
+    },
+    {
+      "championId": "fiora",
+      "threatId": "ryze",
+      "category": "extreme"
+    },
+    {
+      "championId": "mordekaiser",
+      "threatId": "vayne",
+      "category": "extreme"
+    },
+    {
+      "championId": "mordekaiser",
+      "threatId": "fiora",
+      "category": "extreme"
+    },
+    {
+      "championId": "mordekaiser",
+      "threatId": "olaf",
+      "category": "extreme"
+    },
+    {
+      "championId": "mordekaiser",
+      "threatId": "jax",
+      "category": "extreme"
+    },
+    {
+      "championId": "mordekaiser",
+      "threatId": "garen",
+      "category": "extreme"
+    },
+    {
+      "championId": "sett",
+      "threatId": "vayne",
+      "category": "extreme"
+    },
+    {
+      "championId": "sett",
+      "threatId": "akshan",
+      "category": "extreme"
+    },
+    {
+      "championId": "sett",
+      "threatId": "maokai",
+      "category": "extreme"
+    },
+    {
+      "championId": "sett",
+      "threatId": "kayle",
+      "category": "extreme"
+    },
+    {
+      "championId": "sett",
+      "threatId": "renekton",
+      "category": "extreme"
+    },
+    {
+      "championId": "sett",
+      "threatId": "riven",
+      "category": "extreme"
+    },
+    {
+      "championId": "sett",
+      "threatId": "akali",
+      "category": "extreme"
+    },
+    {
+      "championId": "gnar",
+      "threatId": "vayne",
+      "category": "extreme"
+    },
+    {
+      "championId": "gnar",
+      "threatId": "karma",
+      "category": "extreme"
+    },
+    {
+      "championId": "gnar",
+      "threatId": "gwen",
+      "category": "extreme"
+    },
+    {
+      "championId": "gnar",
+      "threatId": "irelia",
+      "category": "extreme"
+    },
+    {
+      "championId": "gnar",
+      "threatId": "darius",
+      "category": "extreme"
+    },
+    {
+      "championId": "gnar",
+      "threatId": "teemo",
+      "category": "extreme"
+    },
+    {
+      "championId": "poppy",
+      "threatId": "olaf",
+      "category": "extreme"
+    },
+    {
+      "championId": "poppy",
+      "threatId": "warwick",
+      "category": "extreme"
+    },
+    {
+      "championId": "poppy",
+      "threatId": "karma",
+      "category": "extreme"
+    },
+    {
+      "championId": "poppy",
+      "threatId": "vayne",
+      "category": "extreme"
+    },
+    {
+      "championId": "poppy",
+      "threatId": "darius",
+      "category": "extreme"
+    },
+    {
+      "championId": "poppy",
+      "threatId": "vladimir",
+      "category": "extreme"
+    },
+    {
+      "championId": "poppy",
+      "threatId": "heimerdinger",
+      "category": "extreme"
+    },
+    {
+      "championId": "poppy",
+      "threatId": "kennen",
+      "category": "extreme"
+    },
+    {
+      "championId": "camille",
+      "threatId": "warwick",
+      "category": "extreme"
+    },
+    {
+      "championId": "camille",
+      "threatId": "rengar",
+      "category": "extreme"
+    },
+    {
+      "championId": "camille",
+      "threatId": "renekton",
+      "category": "extreme"
+    },
+    {
+      "championId": "volibear",
+      "threatId": "vayne",
+      "category": "extreme"
+    },
+    {
+      "championId": "volibear",
+      "threatId": "karma",
+      "category": "extreme"
+    },
+    {
+      "championId": "volibear",
+      "threatId": "pantheon",
+      "category": "extreme"
+    },
+    {
+      "championId": "volibear",
+      "threatId": "teemo",
+      "category": "extreme"
+    },
+    {
+      "championId": "volibear",
+      "threatId": "jax",
+      "category": "extreme"
+    },
+    {
+      "championId": "volibear",
+      "threatId": "akali",
+      "category": "extreme"
+    },
+    {
+      "championId": "volibear",
+      "threatId": "aurora",
+      "category": "extreme"
+    },
+    {
+      "championId": "aatrox",
+      "threatId": "vayne",
+      "category": "extreme"
+    },
+    {
+      "championId": "aatrox",
+      "threatId": "warwick",
+      "category": "extreme"
+    },
+    {
+      "championId": "aatrox",
+      "threatId": "singed",
+      "category": "extreme"
+    },
+    {
+      "championId": "aatrox",
+      "threatId": "camille",
+      "category": "extreme"
+    },
+    {
+      "championId": "aatrox",
+      "threatId": "jax",
+      "category": "extreme"
+    },
+    {
+      "championId": "darius",
+      "threatId": "vayne",
+      "category": "extreme"
+    },
+    {
+      "championId": "darius",
+      "threatId": "jax",
+      "category": "extreme"
+    },
+    {
+      "championId": "darius",
+      "threatId": "kennen",
+      "category": "extreme"
+    },
+    {
+      "championId": "darius",
+      "threatId": "jayce",
+      "category": "extreme"
+    },
+    {
+      "championId": "jax",
+      "threatId": "dr-mundo",
+      "category": "extreme"
+    },
+    {
+      "championId": "jax",
+      "threatId": "maokai",
+      "category": "extreme"
+    },
+    {
+      "championId": "jax",
+      "threatId": "poppy",
+      "category": "extreme"
+    },
+    {
+      "championId": "jax",
+      "threatId": "urgot",
+      "category": "extreme"
+    },
+    {
+      "championId": "jax",
+      "threatId": "malphite",
+      "category": "extreme"
+    },
+    {
+      "championId": "jax",
+      "threatId": "garen",
+      "category": "extreme"
+    },
+    {
+      "championId": "jax",
+      "threatId": "rengar",
+      "category": "extreme"
+    },
+    {
+      "championId": "jax",
+      "threatId": "fiora",
+      "category": "extreme"
+    },
+    {
+      "championId": "gwen",
+      "threatId": "vayne",
+      "category": "extreme"
+    },
+    {
+      "championId": "gwen",
+      "threatId": "riven",
+      "category": "extreme"
+    },
+    {
+      "championId": "gwen",
+      "threatId": "warwick",
+      "category": "extreme"
+    },
+    {
+      "championId": "gwen",
+      "threatId": "kayle",
+      "category": "extreme"
+    },
+    {
+      "championId": "gwen",
+      "threatId": "gragas",
+      "category": "extreme"
+    },
+    {
+      "championId": "gwen",
+      "threatId": "fiora",
+      "category": "extreme"
+    },
+    {
+      "championId": "riven",
+      "threatId": "vayne",
+      "category": "extreme"
+    },
+    {
+      "championId": "riven",
+      "threatId": "malphite",
+      "category": "extreme"
+    },
+    {
+      "championId": "riven",
+      "threatId": "kennen",
+      "category": "extreme"
+    },
+    {
+      "championId": "riven",
+      "threatId": "maokai",
+      "category": "extreme"
+    },
+    {
+      "championId": "riven",
+      "threatId": "teemo",
+      "category": "extreme"
+    },
+    {
+      "championId": "riven",
+      "threatId": "renekton",
+      "category": "extreme"
+    },
+    {
+      "championId": "rammus",
+      "threatId": "talon",
+      "category": "extreme"
+    },
+    {
+      "championId": "rammus",
+      "threatId": "amumu",
+      "category": "extreme"
+    },
+    {
+      "championId": "rammus",
+      "threatId": "olaf",
+      "category": "extreme"
+    },
+    {
+      "championId": "rammus",
+      "threatId": "lee-sin",
+      "category": "extreme"
+    },
+    {
+      "championId": "rammus",
+      "threatId": "evelynn",
+      "category": "extreme"
+    },
+    {
+      "championId": "amumu",
+      "threatId": "lillia",
+      "category": "extreme"
+    },
+    {
+      "championId": "amumu",
+      "threatId": "vayne",
+      "category": "extreme"
+    },
+    {
+      "championId": "amumu",
+      "threatId": "olaf",
+      "category": "extreme"
+    },
+    {
+      "championId": "amumu",
+      "threatId": "dr-mundo",
+      "category": "extreme"
+    },
+    {
+      "championId": "warwick",
+      "threatId": "amumu",
+      "category": "extreme"
+    },
+    {
+      "championId": "warwick",
+      "threatId": "xin-zhao",
+      "category": "extreme"
+    },
+    {
+      "championId": "warwick",
+      "threatId": "kindred",
+      "category": "extreme"
+    },
+    {
+      "championId": "warwick",
+      "threatId": "morgana",
+      "category": "extreme"
+    },
+    {
+      "championId": "warwick",
+      "threatId": "nocturne",
+      "category": "extreme"
+    },
+    {
+      "championId": "warwick",
+      "threatId": "volibear",
+      "category": "extreme"
+    },
+    {
+      "championId": "warwick",
+      "threatId": "kayn",
+      "category": "extreme"
+    },
+    {
+      "championId": "shyvana",
+      "threatId": "rammus",
+      "category": "extreme"
+    },
+    {
+      "championId": "shyvana",
+      "threatId": "poppy",
+      "category": "extreme"
+    },
+    {
+      "championId": "shyvana",
+      "threatId": "ekko",
+      "category": "extreme"
+    },
+    {
+      "championId": "shyvana",
+      "threatId": "jax",
+      "category": "extreme"
+    },
+    {
+      "championId": "shyvana",
+      "threatId": "rengar",
+      "category": "extreme"
+    },
+    {
+      "championId": "shyvana",
+      "threatId": "mordekaiser",
+      "category": "extreme"
+    },
+    {
+      "championId": "master-yi",
+      "threatId": "jax",
+      "category": "extreme"
+    },
+    {
+      "championId": "master-yi",
+      "threatId": "khazix",
+      "category": "extreme"
+    },
+    {
+      "championId": "master-yi",
+      "threatId": "evelynn",
+      "category": "extreme"
+    },
+    {
+      "championId": "nunu-and-willump",
+      "threatId": "jax",
+      "category": "extreme"
+    },
+    {
+      "championId": "nunu-and-willump",
+      "threatId": "kayn",
+      "category": "extreme"
+    },
+    {
+      "championId": "nunu-and-willump",
+      "threatId": "kindred",
+      "category": "extreme"
+    },
+    {
+      "championId": "nunu-and-willump",
+      "threatId": "lee-sin",
+      "category": "extreme"
+    },
+    {
+      "championId": "nunu-and-willump",
+      "threatId": "nidalee",
+      "category": "extreme"
+    },
+    {
+      "championId": "nunu-and-willump",
+      "threatId": "mordekaiser",
+      "category": "extreme"
+    },
+    {
+      "championId": "nunu-and-willump",
+      "threatId": "rumble",
+      "category": "extreme"
+    },
+    {
+      "championId": "lillia",
+      "threatId": "lee-sin",
+      "category": "extreme"
+    },
+    {
+      "championId": "lillia",
+      "threatId": "hecarim",
+      "category": "extreme"
+    },
+    {
+      "championId": "lillia",
+      "threatId": "fiddlesticks",
+      "category": "extreme"
+    },
+    {
+      "championId": "lillia",
+      "threatId": "graves",
+      "category": "extreme"
+    },
+    {
+      "championId": "lillia",
+      "threatId": "jarvan-iv",
+      "category": "extreme"
+    },
+    {
+      "championId": "lillia",
+      "threatId": "kayn",
+      "category": "extreme"
+    },
+    {
+      "championId": "lillia",
+      "threatId": "kindred",
+      "category": "extreme"
+    },
+    {
+      "championId": "lillia",
+      "threatId": "master-yi",
+      "category": "extreme"
+    },
+    {
+      "championId": "lillia",
+      "threatId": "rengar",
+      "category": "extreme"
+    },
+    {
+      "championId": "lillia",
+      "threatId": "talon",
+      "category": "extreme"
+    },
+    {
+      "championId": "pantheon",
+      "threatId": "lillia",
+      "category": "extreme"
+    },
+    {
+      "championId": "pantheon",
+      "threatId": "rammus",
+      "category": "extreme"
+    },
+    {
+      "championId": "pantheon",
+      "threatId": "gragas",
+      "category": "extreme"
+    },
+    {
+      "championId": "pantheon",
+      "threatId": "tryndamere",
+      "category": "extreme"
+    },
+    {
+      "championId": "pantheon",
+      "threatId": "amumu",
+      "category": "extreme"
+    },
+    {
+      "championId": "pantheon",
+      "threatId": "poppy",
+      "category": "extreme"
+    },
+    {
+      "championId": "graves",
+      "threatId": "hecarim",
+      "category": "extreme"
+    },
+    {
+      "championId": "graves",
+      "threatId": "rengar",
+      "category": "extreme"
+    },
+    {
+      "championId": "graves",
+      "threatId": "evelynn",
+      "category": "extreme"
+    },
+    {
+      "championId": "graves",
+      "threatId": "master-yi",
+      "category": "extreme"
+    },
+    {
+      "championId": "graves",
+      "threatId": "jax",
+      "category": "extreme"
+    },
+    {
+      "championId": "graves",
+      "threatId": "rumble",
+      "category": "extreme"
+    },
+    {
+      "championId": "xin-zhao",
+      "threatId": "jax",
+      "category": "extreme"
+    },
+    {
+      "championId": "xin-zhao",
+      "threatId": "volibear",
+      "category": "extreme"
+    },
+    {
+      "championId": "xin-zhao",
+      "threatId": "rammus",
+      "category": "extreme"
+    },
+    {
+      "championId": "xin-zhao",
+      "threatId": "wukong",
+      "category": "extreme"
+    },
+    {
+      "championId": "xin-zhao",
+      "threatId": "khazix",
+      "category": "extreme"
+    },
+    {
+      "championId": "nocturne",
+      "threatId": "rammus",
+      "category": "extreme"
+    },
+    {
+      "championId": "nocturne",
+      "threatId": "vi",
+      "category": "extreme"
+    },
+    {
+      "championId": "nocturne",
+      "threatId": "jax",
+      "category": "extreme"
+    },
+    {
+      "championId": "nocturne",
+      "threatId": "olaf",
+      "category": "extreme"
+    },
+    {
+      "championId": "nocturne",
+      "threatId": "dr-mundo",
+      "category": "extreme"
+    },
+    {
+      "championId": "nocturne",
+      "threatId": "viego",
+      "category": "extreme"
+    },
+    {
+      "championId": "gragas",
+      "threatId": "swain",
+      "category": "extreme"
+    },
+    {
+      "championId": "gragas",
+      "threatId": "zed",
+      "category": "extreme"
+    },
+    {
+      "championId": "gragas",
+      "threatId": "vladimir",
+      "category": "extreme"
+    },
+    {
+      "championId": "gragas",
+      "threatId": "heimerdinger",
+      "category": "extreme"
+    },
+    {
+      "championId": "gragas",
+      "threatId": "lucian",
+      "category": "extreme"
+    },
+    {
+      "championId": "gragas",
+      "threatId": "aurora",
+      "category": "extreme"
+    },
+    {
+      "championId": "jarvan-iv",
+      "threatId": "warwick",
+      "category": "extreme"
+    },
+    {
+      "championId": "jarvan-iv",
+      "threatId": "evelynn",
+      "category": "extreme"
+    },
+    {
+      "championId": "jarvan-iv",
+      "threatId": "viego",
+      "category": "extreme"
+    },
+    {
+      "championId": "jarvan-iv",
+      "threatId": "master-yi",
+      "category": "extreme"
+    },
+    {
+      "championId": "jarvan-iv",
+      "threatId": "hecarim",
+      "category": "extreme"
+    },
+    {
+      "championId": "jarvan-iv",
+      "threatId": "poppy",
+      "category": "extreme"
+    },
+    {
+      "championId": "jarvan-iv",
+      "threatId": "kindred",
+      "category": "extreme"
+    },
+    {
+      "championId": "vi",
+      "threatId": "wukong",
+      "category": "extreme"
+    },
+    {
+      "championId": "vi",
+      "threatId": "amumu",
+      "category": "extreme"
+    },
+    {
+      "championId": "vi",
+      "threatId": "fiddlesticks",
+      "category": "extreme"
+    },
+    {
+      "championId": "vi",
+      "threatId": "kindred",
+      "category": "extreme"
+    },
+    {
+      "championId": "vi",
+      "threatId": "talon",
+      "category": "extreme"
+    },
+    {
+      "championId": "kindred",
+      "threatId": "master-yi",
+      "category": "extreme"
+    },
+    {
+      "championId": "kindred",
+      "threatId": "diana",
+      "category": "extreme"
+    },
+    {
+      "championId": "kindred",
+      "threatId": "nunu-and-willump",
+      "category": "extreme"
+    },
+    {
+      "championId": "kindred",
+      "threatId": "kayn",
+      "category": "extreme"
+    },
+    {
+      "championId": "kindred",
+      "threatId": "jax",
+      "category": "extreme"
+    },
+    {
+      "championId": "evelynn",
+      "threatId": "volibear",
+      "category": "extreme"
+    },
+    {
+      "championId": "evelynn",
+      "threatId": "twisted-fate",
+      "category": "extreme"
+    },
+    {
+      "championId": "evelynn",
+      "threatId": "vladimir",
+      "category": "extreme"
+    },
+    {
+      "championId": "evelynn",
+      "threatId": "annie",
+      "category": "extreme"
+    },
+    {
+      "championId": "evelynn",
+      "threatId": "akali",
+      "category": "extreme"
+    },
+    {
+      "championId": "evelynn",
+      "threatId": "nidalee",
+      "category": "extreme"
+    },
+    {
+      "championId": "evelynn",
+      "threatId": "dr-mundo",
+      "category": "extreme"
+    },
+    {
+      "championId": "fiddlesticks",
+      "threatId": "maokai",
+      "category": "extreme"
+    },
+    {
+      "championId": "fiddlesticks",
+      "threatId": "olaf",
+      "category": "extreme"
+    },
+    {
+      "championId": "fiddlesticks",
+      "threatId": "hecarim",
+      "category": "extreme"
+    },
+    {
+      "championId": "fiddlesticks",
+      "threatId": "kindred",
+      "category": "extreme"
+    },
+    {
+      "championId": "fiddlesticks",
+      "threatId": "ekko",
+      "category": "extreme"
+    },
+    {
+      "championId": "fiddlesticks",
+      "threatId": "alistar",
+      "category": "extreme"
+    },
+    {
+      "championId": "fiddlesticks",
+      "threatId": "galio",
+      "category": "extreme"
+    },
+    {
+      "championId": "fiddlesticks",
+      "threatId": "blitzcrank",
+      "category": "extreme"
+    },
+    {
+      "championId": "fiddlesticks",
+      "threatId": "rumble",
+      "category": "extreme"
+    },
+    {
+      "championId": "viego",
+      "threatId": "rammus",
+      "category": "extreme"
+    },
+    {
+      "championId": "viego",
+      "threatId": "lillia",
+      "category": "extreme"
+    },
+    {
+      "championId": "viego",
+      "threatId": "jax",
+      "category": "extreme"
+    },
+    {
+      "championId": "viego",
+      "threatId": "olaf",
+      "category": "extreme"
+    },
+    {
+      "championId": "viego",
+      "threatId": "pantheon",
+      "category": "extreme"
+    },
+    {
+      "championId": "viego",
+      "threatId": "xin-zhao",
+      "category": "extreme"
+    },
+    {
+      "championId": "khazix",
+      "threatId": "rengar",
+      "category": "extreme"
+    },
+    {
+      "championId": "khazix",
+      "threatId": "graves",
+      "category": "extreme"
+    },
+    {
+      "championId": "khazix",
+      "threatId": "yuumi",
+      "category": "extreme"
+    },
+    {
+      "championId": "khazix",
+      "threatId": "maokai",
+      "category": "extreme"
+    },
+    {
+      "championId": "kayn",
+      "threatId": "maokai",
+      "category": "extreme"
+    },
+    {
+      "championId": "kayn",
+      "threatId": "volibear",
+      "category": "extreme"
+    },
+    {
+      "championId": "kayn",
+      "threatId": "evelynn",
+      "category": "extreme"
+    },
+    {
+      "championId": "kayn",
+      "threatId": "master-yi",
+      "category": "extreme"
+    },
+    {
+      "championId": "kayn",
+      "threatId": "hecarim",
+      "category": "extreme"
+    },
+    {
+      "championId": "lee-sin",
+      "threatId": "lillia",
+      "category": "extreme"
+    },
+    {
+      "championId": "lee-sin",
+      "threatId": "nunu-and-willump",
+      "category": "extreme"
+    },
+    {
+      "championId": "lee-sin",
+      "threatId": "olaf",
+      "category": "extreme"
+    },
+    {
+      "championId": "lee-sin",
+      "threatId": "xin-zhao",
+      "category": "extreme"
+    },
+    {
+      "championId": "lee-sin",
+      "threatId": "khazix",
+      "category": "extreme"
+    },
+    {
+      "championId": "rengar",
+      "threatId": "rammus",
+      "category": "extreme"
+    },
+    {
+      "championId": "rengar",
+      "threatId": "poppy",
+      "category": "extreme"
+    },
+    {
+      "championId": "rengar",
+      "threatId": "maokai",
+      "category": "extreme"
+    },
+    {
+      "championId": "rengar",
+      "threatId": "warwick",
+      "category": "extreme"
+    },
+    {
+      "championId": "rengar",
+      "threatId": "jax",
+      "category": "extreme"
+    },
+    {
+      "championId": "olaf",
+      "threatId": "kindred",
+      "category": "extreme"
+    },
+    {
+      "championId": "olaf",
+      "threatId": "lillia",
+      "category": "extreme"
+    },
+    {
+      "championId": "olaf",
+      "threatId": "ekko",
+      "category": "extreme"
+    },
+    {
+      "championId": "olaf",
+      "threatId": "kayn",
+      "category": "extreme"
+    },
+    {
+      "championId": "olaf",
+      "threatId": "camille",
+      "category": "extreme"
+    },
+    {
+      "championId": "talon",
+      "threatId": "orianna",
+      "category": "extreme"
+    },
+    {
+      "championId": "talon",
+      "threatId": "diana",
+      "category": "extreme"
+    },
+    {
+      "championId": "talon",
+      "threatId": "pyke",
+      "category": "extreme"
+    },
+    {
+      "championId": "talon",
+      "threatId": "heimerdinger",
+      "category": "extreme"
+    },
+    {
+      "championId": "talon",
+      "threatId": "akali",
+      "category": "extreme"
+    },
+    {
+      "championId": "talon",
+      "threatId": "vex",
+      "category": "extreme"
+    },
+    {
+      "championId": "talon",
+      "threatId": "aurora",
+      "category": "extreme"
+    },
+    {
+      "championId": "hecarim",
+      "threatId": "lillia",
+      "category": "extreme"
+    },
+    {
+      "championId": "hecarim",
+      "threatId": "master-yi",
+      "category": "extreme"
+    },
+    {
+      "championId": "hecarim",
+      "threatId": "xin-zhao",
+      "category": "extreme"
+    },
+    {
+      "championId": "hecarim",
+      "threatId": "alistar",
+      "category": "extreme"
+    },
+    {
+      "championId": "hecarim",
+      "threatId": "janna",
+      "category": "extreme"
+    },
+    {
+      "championId": "hecarim",
+      "threatId": "graves",
+      "category": "extreme"
+    },
+    {
+      "championId": "hecarim",
+      "threatId": "talon",
+      "category": "extreme"
+    },
+    {
+      "championId": "miss-fortune",
+      "threatId": "draven",
+      "category": "extreme"
+    },
+    {
+      "championId": "miss-fortune",
+      "threatId": "nilah",
+      "category": "extreme"
+    },
+    {
+      "championId": "miss-fortune",
+      "threatId": "samira",
+      "category": "extreme"
+    },
+    {
+      "championId": "miss-fortune",
+      "threatId": "senna",
+      "category": "extreme"
+    },
+    {
+      "championId": "miss-fortune",
+      "threatId": "braum",
+      "category": "extreme"
+    },
+    {
+      "championId": "miss-fortune",
+      "threatId": "maokai",
+      "category": "extreme"
+    },
+    {
+      "championId": "miss-fortune",
+      "threatId": "seraphine",
+      "category": "extreme"
+    },
+    {
+      "championId": "caitlyn",
+      "threatId": "kogmaw",
+      "category": "extreme"
+    },
+    {
+      "championId": "caitlyn",
+      "threatId": "leona",
+      "category": "extreme"
+    },
+    {
+      "championId": "caitlyn",
+      "threatId": "tristana",
+      "category": "extreme"
+    },
+    {
+      "championId": "caitlyn",
+      "threatId": "lucian",
+      "category": "extreme"
+    },
+    {
+      "championId": "caitlyn",
+      "threatId": "nautilus",
+      "category": "extreme"
+    },
+    {
+      "championId": "ashe",
+      "threatId": "caitlyn",
+      "category": "extreme"
+    },
+    {
+      "championId": "ashe",
+      "threatId": "draven",
+      "category": "extreme"
+    },
+    {
+      "championId": "ashe",
+      "threatId": "lucian",
+      "category": "extreme"
+    },
+    {
+      "championId": "ashe",
+      "threatId": "varus",
+      "category": "extreme"
+    },
+    {
+      "championId": "ashe",
+      "threatId": "kalista",
+      "category": "extreme"
+    },
+    {
+      "championId": "ashe",
+      "threatId": "nautilus",
+      "category": "extreme"
+    },
+    {
+      "championId": "ashe",
+      "threatId": "thresh",
+      "category": "extreme"
+    },
+    {
+      "championId": "ashe",
+      "threatId": "amumu",
+      "category": "extreme"
+    },
+    {
+      "championId": "jinx",
+      "threatId": "ashe",
+      "category": "extreme"
+    },
+    {
+      "championId": "jinx",
+      "threatId": "amumu",
+      "category": "extreme"
+    },
+    {
+      "championId": "jinx",
+      "threatId": "vayne",
+      "category": "extreme"
+    },
+    {
+      "championId": "jinx",
+      "threatId": "twitch",
+      "category": "extreme"
+    },
+    {
+      "championId": "jinx",
+      "threatId": "leona",
+      "category": "extreme"
+    },
+    {
+      "championId": "jinx",
+      "threatId": "rakan",
+      "category": "extreme"
+    },
+    {
+      "championId": "jhin",
+      "threatId": "kalista",
+      "category": "extreme"
+    },
+    {
+      "championId": "jhin",
+      "threatId": "draven",
+      "category": "extreme"
+    },
+    {
+      "championId": "jhin",
+      "threatId": "morgana",
+      "category": "extreme"
+    },
+    {
+      "championId": "jhin",
+      "threatId": "zilean",
+      "category": "extreme"
+    },
+    {
+      "championId": "jhin",
+      "threatId": "tristana",
+      "category": "extreme"
+    },
+    {
+      "championId": "jhin",
+      "threatId": "alistar",
+      "category": "extreme"
+    },
+    {
+      "championId": "xayah",
+      "threatId": "senna",
+      "category": "extreme"
+    },
+    {
+      "championId": "xayah",
+      "threatId": "kalista",
+      "category": "extreme"
+    },
+    {
+      "championId": "xayah",
+      "threatId": "miss-fortune",
+      "category": "extreme"
+    },
+    {
+      "championId": "xayah",
+      "threatId": "leona",
+      "category": "extreme"
+    },
+    {
+      "championId": "xayah",
+      "threatId": "kaisa",
+      "category": "extreme"
+    },
+    {
+      "championId": "xayah",
+      "threatId": "draven",
+      "category": "extreme"
+    },
+    {
+      "championId": "lucian",
+      "threatId": "senna",
+      "category": "extreme"
+    },
+    {
+      "championId": "lucian",
+      "threatId": "draven",
+      "category": "extreme"
+    },
+    {
+      "championId": "lucian",
+      "threatId": "caitlyn",
+      "category": "extreme"
+    },
+    {
+      "championId": "lucian",
+      "threatId": "seraphine",
+      "category": "extreme"
+    },
+    {
+      "championId": "lucian",
+      "threatId": "lulu",
+      "category": "extreme"
+    },
+    {
+      "championId": "lucian",
+      "threatId": "heimerdinger",
+      "category": "extreme"
+    },
+    {
+      "championId": "ezreal",
+      "threatId": "kaisa",
+      "category": "extreme"
+    },
+    {
+      "championId": "ezreal",
+      "threatId": "tristana",
+      "category": "extreme"
+    },
+    {
+      "championId": "ezreal",
+      "threatId": "pyke",
+      "category": "extreme"
+    },
+    {
+      "championId": "ezreal",
+      "threatId": "lux",
+      "category": "extreme"
+    },
+    {
+      "championId": "ezreal",
+      "threatId": "samira",
+      "category": "extreme"
+    },
+    {
+      "championId": "tristana",
+      "threatId": "nilah",
+      "category": "extreme"
+    },
+    {
+      "championId": "tristana",
+      "threatId": "vayne",
+      "category": "extreme"
+    },
+    {
+      "championId": "tristana",
+      "threatId": "draven",
+      "category": "extreme"
+    },
+    {
+      "championId": "tristana",
+      "threatId": "alistar",
+      "category": "extreme"
+    },
+    {
+      "championId": "tristana",
+      "threatId": "blitzcrank",
+      "category": "extreme"
+    },
+    {
+      "championId": "tristana",
+      "threatId": "galio",
+      "category": "extreme"
+    },
+    {
+      "championId": "tristana",
+      "threatId": "leona",
+      "category": "extreme"
+    },
+    {
+      "championId": "tristana",
+      "threatId": "malphite",
+      "category": "extreme"
+    },
+    {
+      "championId": "tristana",
+      "threatId": "nautilus",
+      "category": "extreme"
+    },
+    {
+      "championId": "samira",
+      "threatId": "nilah",
+      "category": "extreme"
+    },
+    {
+      "championId": "samira",
+      "threatId": "kalista",
+      "category": "extreme"
+    },
+    {
+      "championId": "samira",
+      "threatId": "alistar",
+      "category": "extreme"
+    },
+    {
+      "championId": "samira",
+      "threatId": "leona",
+      "category": "extreme"
+    },
+    {
+      "championId": "samira",
+      "threatId": "braum",
+      "category": "extreme"
+    },
+    {
+      "championId": "samira",
+      "threatId": "nautilus",
+      "category": "extreme"
+    },
+    {
+      "championId": "sivir",
+      "threatId": "senna",
+      "category": "extreme"
+    },
+    {
+      "championId": "sivir",
+      "threatId": "twitch",
+      "category": "extreme"
+    },
+    {
+      "championId": "sivir",
+      "threatId": "draven",
+      "category": "extreme"
+    },
+    {
+      "championId": "sivir",
+      "threatId": "kalista",
+      "category": "extreme"
+    },
+    {
+      "championId": "sivir",
+      "threatId": "samira",
+      "category": "extreme"
+    },
+    {
+      "championId": "sivir",
+      "threatId": "lucian",
+      "category": "extreme"
+    },
+    {
+      "championId": "sivir",
+      "threatId": "yuumi",
+      "category": "extreme"
+    },
+    {
+      "championId": "sivir",
+      "threatId": "seraphine",
+      "category": "extreme"
+    },
+    {
+      "championId": "sivir",
+      "threatId": "yasuo",
+      "category": "extreme"
+    },
+    {
+      "championId": "twitch",
+      "threatId": "nilah",
+      "category": "extreme"
+    },
+    {
+      "championId": "twitch",
+      "threatId": "draven",
+      "category": "extreme"
+    },
+    {
+      "championId": "twitch",
+      "threatId": "caitlyn",
+      "category": "extreme"
+    },
+    {
+      "championId": "twitch",
+      "threatId": "nautilus",
+      "category": "extreme"
+    },
+    {
+      "championId": "twitch",
+      "threatId": "thresh",
+      "category": "extreme"
+    },
+    {
+      "championId": "twitch",
+      "threatId": "leona",
+      "category": "extreme"
+    },
+    {
+      "championId": "twitch",
+      "threatId": "sona",
+      "category": "extreme"
+    },
+    {
+      "championId": "zeri",
+      "threatId": "draven",
+      "category": "extreme"
+    },
+    {
+      "championId": "zeri",
+      "threatId": "twitch",
+      "category": "extreme"
+    },
+    {
+      "championId": "zeri",
+      "threatId": "nilah",
+      "category": "extreme"
+    },
+    {
+      "championId": "zeri",
+      "threatId": "kogmaw",
+      "category": "extreme"
+    },
+    {
+      "championId": "zeri",
+      "threatId": "jinx",
+      "category": "extreme"
+    },
+    {
+      "championId": "varus",
+      "threatId": "yasuo",
+      "category": "extreme"
+    },
+    {
+      "championId": "varus",
+      "threatId": "leona",
+      "category": "extreme"
+    },
+    {
+      "championId": "varus",
+      "threatId": "draven",
+      "category": "extreme"
+    },
+    {
+      "championId": "varus",
+      "threatId": "kalista",
+      "category": "extreme"
+    },
+    {
+      "championId": "varus",
+      "threatId": "samira",
+      "category": "extreme"
+    },
+    {
+      "championId": "draven",
+      "threatId": "leona",
+      "category": "extreme"
+    },
+    {
+      "championId": "draven",
+      "threatId": "caitlyn",
+      "category": "extreme"
+    },
+    {
+      "championId": "draven",
+      "threatId": "lucian",
+      "category": "extreme"
+    },
+    {
+      "championId": "draven",
+      "threatId": "nautilus",
+      "category": "extreme"
+    },
+    {
+      "championId": "draven",
+      "threatId": "thresh",
+      "category": "extreme"
+    },
+    {
+      "championId": "draven",
+      "threatId": "seraphine",
+      "category": "extreme"
+    },
+    {
+      "championId": "kaisa",
+      "threatId": "senna",
+      "category": "extreme"
+    },
+    {
+      "championId": "kaisa",
+      "threatId": "miss-fortune",
+      "category": "extreme"
+    },
+    {
+      "championId": "kaisa",
+      "threatId": "draven",
+      "category": "extreme"
+    },
+    {
+      "championId": "kaisa",
+      "threatId": "twisted-fate",
+      "category": "extreme"
+    },
+    {
+      "championId": "kaisa",
+      "threatId": "lux",
+      "category": "extreme"
+    },
+    {
+      "championId": "kaisa",
+      "threatId": "leona",
+      "category": "extreme"
+    },
+    {
+      "championId": "kaisa",
+      "threatId": "ashe",
+      "category": "extreme"
+    },
+    {
+      "championId": "kaisa",
+      "threatId": "nautilus",
+      "category": "extreme"
+    },
+    {
+      "championId": "kaisa",
+      "threatId": "pyke",
+      "category": "extreme"
+    },
+    {
+      "championId": "kaisa",
+      "threatId": "amumu",
+      "category": "extreme"
+    },
+    {
+      "championId": "kaisa",
+      "threatId": "thresh",
+      "category": "extreme"
+    },
+    {
+      "championId": "corki",
+      "threatId": "senna",
+      "category": "extreme"
+    },
+    {
+      "championId": "corki",
+      "threatId": "twitch",
+      "category": "extreme"
+    },
+    {
+      "championId": "corki",
+      "threatId": "jhin",
+      "category": "extreme"
+    },
+    {
+      "championId": "corki",
+      "threatId": "miss-fortune",
+      "category": "extreme"
+    },
+    {
+      "championId": "corki",
+      "threatId": "nilah",
+      "category": "extreme"
+    },
+    {
+      "championId": "corki",
+      "threatId": "vayne",
+      "category": "extreme"
+    },
+    {
+      "championId": "corki",
+      "threatId": "ashe",
+      "category": "extreme"
+    },
+    {
+      "championId": "corki",
+      "threatId": "annie",
+      "category": "extreme"
+    },
+    {
+      "championId": "braum",
+      "threatId": "zilean",
+      "category": "extreme"
+    },
+    {
+      "championId": "braum",
+      "threatId": "velkoz",
+      "category": "extreme"
+    },
+    {
+      "championId": "braum",
+      "threatId": "jinx",
+      "category": "extreme"
+    },
+    {
+      "championId": "braum",
+      "threatId": "kogmaw",
+      "category": "extreme"
+    },
+    {
+      "championId": "braum",
+      "threatId": "jhin",
+      "category": "extreme"
+    },
+    {
+      "championId": "braum",
+      "threatId": "heimerdinger",
+      "category": "extreme"
+    },
+    {
+      "championId": "braum",
+      "threatId": "soraka",
+      "category": "extreme"
+    },
+    {
+      "championId": "zilean",
+      "threatId": "maokai",
+      "category": "extreme"
+    },
+    {
+      "championId": "zilean",
+      "threatId": "leona",
+      "category": "extreme"
+    },
+    {
+      "championId": "zilean",
+      "threatId": "blitzcrank",
+      "category": "extreme"
+    },
+    {
+      "championId": "zilean",
+      "threatId": "pyke",
+      "category": "extreme"
+    },
+    {
+      "championId": "zilean",
+      "threatId": "alistar",
+      "category": "extreme"
+    },
+    {
+      "championId": "zilean",
+      "threatId": "rakan",
+      "category": "extreme"
+    },
+    {
+      "championId": "zilean",
+      "threatId": "thresh",
+      "category": "extreme"
+    },
+    {
+      "championId": "zilean",
+      "threatId": "nautilus",
+      "category": "extreme"
+    },
+    {
+      "championId": "zilean",
+      "threatId": "draven",
+      "category": "extreme"
+    },
+    {
+      "championId": "zilean",
+      "threatId": "ashe",
+      "category": "extreme"
+    },
+    {
+      "championId": "nami",
+      "threatId": "maokai",
+      "category": "extreme"
+    },
+    {
+      "championId": "nami",
+      "threatId": "nautilus",
+      "category": "extreme"
+    },
+    {
+      "championId": "nami",
+      "threatId": "blitzcrank",
+      "category": "extreme"
+    },
+    {
+      "championId": "nami",
+      "threatId": "pyke",
+      "category": "extreme"
+    },
+    {
+      "championId": "nami",
+      "threatId": "thresh",
+      "category": "extreme"
+    },
+    {
+      "championId": "janna",
+      "threatId": "brand",
+      "category": "extreme"
+    },
+    {
+      "championId": "janna",
+      "threatId": "amumu",
+      "category": "extreme"
+    },
+    {
+      "championId": "janna",
+      "threatId": "velkoz",
+      "category": "extreme"
+    },
+    {
+      "championId": "janna",
+      "threatId": "pyke",
+      "category": "extreme"
+    },
+    {
+      "championId": "janna",
+      "threatId": "lux",
+      "category": "extreme"
+    },
+    {
+      "championId": "maokai",
+      "threatId": "fiddlesticks",
+      "category": "extreme"
+    },
+    {
+      "championId": "maokai",
+      "threatId": "hecarim",
+      "category": "extreme"
+    },
+    {
+      "championId": "maokai",
+      "threatId": "talon",
+      "category": "extreme"
+    },
+    {
+      "championId": "maokai",
+      "threatId": "amumu",
+      "category": "extreme"
+    },
+    {
+      "championId": "maokai",
+      "threatId": "kayn",
+      "category": "extreme"
+    },
+    {
+      "championId": "maokai",
+      "threatId": "ambessa",
+      "category": "extreme"
+    },
+    {
+      "championId": "soraka",
+      "threatId": "maokai",
+      "category": "extreme"
+    },
+    {
+      "championId": "soraka",
+      "threatId": "bard",
+      "category": "extreme"
+    },
+    {
+      "championId": "soraka",
+      "threatId": "blitzcrank",
+      "category": "extreme"
+    },
+    {
+      "championId": "soraka",
+      "threatId": "yasuo",
+      "category": "extreme"
+    },
+    {
+      "championId": "soraka",
+      "threatId": "varus",
+      "category": "extreme"
+    },
+    {
+      "championId": "soraka",
+      "threatId": "pyke",
+      "category": "extreme"
+    },
+    {
+      "championId": "soraka",
+      "threatId": "nautilus",
+      "category": "extreme"
+    },
+    {
+      "championId": "soraka",
+      "threatId": "caitlyn",
+      "category": "extreme"
+    },
+    {
+      "championId": "soraka",
+      "threatId": "draven",
+      "category": "extreme"
+    },
+    {
+      "championId": "leona",
+      "threatId": "brand",
+      "category": "extreme"
+    },
+    {
+      "championId": "leona",
+      "threatId": "alistar",
+      "category": "extreme"
+    },
+    {
+      "championId": "leona",
+      "threatId": "rakan",
+      "category": "extreme"
+    },
+    {
+      "championId": "leona",
+      "threatId": "galio",
+      "category": "extreme"
+    },
+    {
+      "championId": "leona",
+      "threatId": "morgana",
+      "category": "extreme"
+    },
+    {
+      "championId": "karma",
+      "threatId": "gragas",
+      "category": "extreme"
+    },
+    {
+      "championId": "karma",
+      "threatId": "akshan",
+      "category": "extreme"
+    },
+    {
+      "championId": "karma",
+      "threatId": "aurelion-sol",
+      "category": "extreme"
+    },
+    {
+      "championId": "karma",
+      "threatId": "tristana",
+      "category": "extreme"
+    },
+    {
+      "championId": "karma",
+      "threatId": "twisted-fate",
+      "category": "extreme"
+    },
+    {
+      "championId": "karma",
+      "threatId": "talon",
+      "category": "extreme"
+    },
+    {
+      "championId": "karma",
+      "threatId": "kassadin",
+      "category": "extreme"
+    },
+    {
+      "championId": "sona",
+      "threatId": "zilean",
+      "category": "extreme"
+    },
+    {
+      "championId": "sona",
+      "threatId": "miss-fortune",
+      "category": "extreme"
+    },
+    {
+      "championId": "sona",
+      "threatId": "nautilus",
+      "category": "extreme"
+    },
+    {
+      "championId": "sona",
+      "threatId": "blitzcrank",
+      "category": "extreme"
+    },
+    {
+      "championId": "sona",
+      "threatId": "pyke",
+      "category": "extreme"
+    },
+    {
+      "championId": "sona",
+      "threatId": "veigar",
+      "category": "extreme"
+    },
+    {
+      "championId": "sona",
+      "threatId": "maokai",
+      "category": "extreme"
+    },
+    {
+      "championId": "sona",
+      "threatId": "samira",
+      "category": "extreme"
+    },
+    {
+      "championId": "milio",
+      "threatId": "maokai",
+      "category": "extreme"
+    },
+    {
+      "championId": "milio",
+      "threatId": "blitzcrank",
+      "category": "extreme"
+    },
+    {
+      "championId": "milio",
+      "threatId": "leona",
+      "category": "extreme"
+    },
+    {
+      "championId": "milio",
+      "threatId": "pyke",
+      "category": "extreme"
+    },
+    {
+      "championId": "milio",
+      "threatId": "nautilus",
+      "category": "extreme"
+    },
+    {
+      "championId": "milio",
+      "threatId": "thresh",
+      "category": "extreme"
+    },
+    {
+      "championId": "senna",
+      "threatId": "nautilus",
+      "category": "extreme"
+    },
+    {
+      "championId": "senna",
+      "threatId": "blitzcrank",
+      "category": "extreme"
+    },
+    {
+      "championId": "senna",
+      "threatId": "leona",
+      "category": "extreme"
+    },
+    {
+      "championId": "senna",
+      "threatId": "pyke",
+      "category": "extreme"
+    },
+    {
+      "championId": "senna",
+      "threatId": "thresh",
+      "category": "extreme"
+    },
+    {
+      "championId": "blitzcrank",
+      "threatId": "maokai",
+      "category": "extreme"
+    },
+    {
+      "championId": "blitzcrank",
+      "threatId": "sivir",
+      "category": "extreme"
+    },
+    {
+      "championId": "blitzcrank",
+      "threatId": "ezreal",
+      "category": "extreme"
+    },
+    {
+      "championId": "blitzcrank",
+      "threatId": "morgana",
+      "category": "extreme"
+    },
+    {
+      "championId": "blitzcrank",
+      "threatId": "nautilus",
+      "category": "extreme"
+    },
+    {
+      "championId": "blitzcrank",
+      "threatId": "alistar",
+      "category": "extreme"
+    },
+    {
+      "championId": "blitzcrank",
+      "threatId": "vayne",
+      "category": "extreme"
+    },
+    {
+      "championId": "seraphine",
+      "threatId": "maokai",
+      "category": "extreme"
+    },
+    {
+      "championId": "seraphine",
+      "threatId": "pyke",
+      "category": "extreme"
+    },
+    {
+      "championId": "seraphine",
+      "threatId": "thresh",
+      "category": "extreme"
+    },
+    {
+      "championId": "seraphine",
+      "threatId": "blitzcrank",
+      "category": "extreme"
+    },
+    {
+      "championId": "seraphine",
+      "threatId": "samira",
+      "category": "extreme"
+    },
+    {
+      "championId": "seraphine",
+      "threatId": "yasuo",
+      "category": "extreme"
+    },
+    {
+      "championId": "seraphine",
+      "threatId": "zyra",
+      "category": "extreme"
+    },
+    {
+      "championId": "seraphine",
+      "threatId": "leona",
+      "category": "extreme"
+    },
+    {
+      "championId": "lulu",
+      "threatId": "rell",
+      "category": "extreme"
+    },
+    {
+      "championId": "lulu",
+      "threatId": "senna",
+      "category": "extreme"
+    },
+    {
+      "championId": "lulu",
+      "threatId": "janna",
+      "category": "extreme"
+    },
+    {
+      "championId": "lulu",
+      "threatId": "blitzcrank",
+      "category": "extreme"
+    },
+    {
+      "championId": "lulu",
+      "threatId": "brand",
+      "category": "extreme"
+    },
+    {
+      "championId": "lulu",
+      "threatId": "ezreal",
+      "category": "extreme"
+    },
+    {
+      "championId": "lulu",
+      "threatId": "ashe",
+      "category": "extreme"
+    },
+    {
+      "championId": "alistar",
+      "threatId": "maokai",
+      "category": "extreme"
+    },
+    {
+      "championId": "alistar",
+      "threatId": "janna",
+      "category": "extreme"
+    },
+    {
+      "championId": "alistar",
+      "threatId": "brand",
+      "category": "extreme"
+    },
+    {
+      "championId": "alistar",
+      "threatId": "heimerdinger",
+      "category": "extreme"
+    },
+    {
+      "championId": "rakan",
+      "threatId": "maokai",
+      "category": "extreme"
+    },
+    {
+      "championId": "rakan",
+      "threatId": "poppy",
+      "category": "extreme"
+    },
+    {
+      "championId": "rakan",
+      "threatId": "lucian",
+      "category": "extreme"
+    },
+    {
+      "championId": "rakan",
+      "threatId": "jinx",
+      "category": "extreme"
+    },
+    {
+      "championId": "rakan",
+      "threatId": "brand",
+      "category": "extreme"
+    },
+    {
+      "championId": "rakan",
+      "threatId": "morgana",
+      "category": "extreme"
+    },
+    {
+      "championId": "pyke",
+      "threatId": "poppy",
+      "category": "extreme"
+    },
+    {
+      "championId": "pyke",
+      "threatId": "blitzcrank",
+      "category": "extreme"
+    },
+    {
+      "championId": "pyke",
+      "threatId": "braum",
+      "category": "extreme"
+    },
+    {
+      "championId": "pyke",
+      "threatId": "caitlyn",
+      "category": "extreme"
+    },
+    {
+      "championId": "pyke",
+      "threatId": "morgana",
+      "category": "extreme"
+    },
+    {
+      "championId": "pyke",
+      "threatId": "samira",
+      "category": "extreme"
+    },
+    {
+      "championId": "pyke",
+      "threatId": "soraka",
+      "category": "extreme"
+    },
+    {
+      "championId": "pyke",
+      "threatId": "rell",
+      "category": "extreme"
+    },
+    {
+      "championId": "pyke",
+      "threatId": "sivir",
+      "category": "extreme"
+    },
+    {
+      "championId": "pyke",
+      "threatId": "vayne",
+      "category": "extreme"
+    },
+    {
+      "championId": "thresh",
+      "threatId": "maokai",
+      "category": "extreme"
+    },
+    {
+      "championId": "thresh",
+      "threatId": "brand",
+      "category": "extreme"
+    },
+    {
+      "championId": "thresh",
+      "threatId": "zyra",
+      "category": "extreme"
+    },
+    {
+      "championId": "thresh",
+      "threatId": "pyke",
+      "category": "extreme"
+    },
+    {
+      "championId": "thresh",
+      "threatId": "morgana",
+      "category": "extreme"
+    },
+    {
+      "championId": "thresh",
+      "threatId": "poppy",
+      "category": "extreme"
+    },
+    {
+      "championId": "thresh",
+      "threatId": "draven",
+      "category": "extreme"
+    },
+    {
+      "championId": "thresh",
+      "threatId": "sivir",
+      "category": "extreme"
+    },
+    {
+      "championId": "bard",
+      "threatId": "maokai",
+      "category": "extreme"
+    },
+    {
+      "championId": "bard",
+      "threatId": "velkoz",
+      "category": "extreme"
+    },
+    {
+      "championId": "bard",
+      "threatId": "nami",
+      "category": "extreme"
+    },
+    {
+      "championId": "bard",
+      "threatId": "karma",
+      "category": "extreme"
+    },
+    {
+      "championId": "bard",
+      "threatId": "senna",
+      "category": "extreme"
+    },
+    {
+      "championId": "yuumi",
+      "threatId": "maokai",
+      "category": "extreme"
+    },
+    {
+      "championId": "yuumi",
+      "threatId": "braum",
+      "category": "extreme"
+    },
+    {
+      "championId": "yuumi",
+      "threatId": "rell",
+      "category": "extreme"
+    },
+    {
+      "championId": "yuumi",
+      "threatId": "alistar",
+      "category": "extreme"
+    },
+    {
+      "championId": "yuumi",
+      "threatId": "rakan",
+      "category": "extreme"
+    },
+    {
+      "championId": "yuumi",
+      "threatId": "blitzcrank",
+      "category": "extreme"
+    },
+    {
+      "championId": "yuumi",
+      "threatId": "leona",
+      "category": "extreme"
+    },
+    {
+      "championId": "yuumi",
+      "threatId": "thresh",
+      "category": "extreme"
+    },
+    {
+      "championId": "yuumi",
+      "threatId": "nautilus",
+      "category": "extreme"
+    },
+    {
+      "championId": "yuumi",
+      "threatId": "pyke",
+      "category": "extreme"
+    },
+    {
+      "championId": "yuumi",
+      "threatId": "morgana",
+      "category": "extreme"
+    },
+    {
+      "championId": "yuumi",
+      "threatId": "amumu",
+      "category": "extreme"
+    },
+    {
+      "championId": "akshan",
+      "threatId": "malphite",
+      "category": "extreme"
+    },
+    {
+      "championId": "akshan",
+      "threatId": "jax",
+      "category": "extreme"
+    },
+    {
+      "championId": "akshan",
+      "threatId": "tryndamere",
+      "category": "extreme"
+    },
+    {
+      "championId": "akshan",
+      "threatId": "irelia",
+      "category": "extreme"
+    },
+    {
+      "championId": "nilah",
+      "threatId": "xayah",
+      "category": "extreme"
+    },
+    {
+      "championId": "nilah",
+      "threatId": "seraphine",
+      "category": "extreme"
+    },
+    {
+      "championId": "nilah",
+      "threatId": "brand",
+      "category": "extreme"
+    },
+    {
+      "championId": "nilah",
+      "threatId": "veigar",
+      "category": "extreme"
+    },
+    {
+      "championId": "nilah",
+      "threatId": "draven",
+      "category": "extreme"
+    },
+    {
+      "championId": "nilah",
+      "threatId": "kalista",
+      "category": "extreme"
+    },
+    {
+      "championId": "nilah",
+      "threatId": "zilean",
+      "category": "extreme"
+    }
+  ]
+}
