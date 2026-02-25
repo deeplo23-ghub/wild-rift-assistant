@@ -263,8 +263,8 @@ export default function DraftPage() {
               System Link Failure
             </h2>
             <p className="text-sm text-zinc-500 leading-relaxed font-bold">
-              Could not establish connection to the data layer. Ensure the local
-              SQLite database is populated and the tRPC server is active.
+              Could not establish connection to the cloud data layer. Ensure the
+              PostgreSQL database is online and the connection string is valid.
             </p>
             <Button
               variant="outline"
