@@ -1,29 +1,34 @@
-/**
- * Composition gap detection and scoring — STUB.
- *
- * Will evaluate which compositional elements the team is missing
- * and reward champions that fill those gaps.
- * See: .gsd/ARCHITECTURE.md §4.7
- *
- * TODO: Implement in Phase 3
- */
-
-import { Champion, ChampionTag } from "@/types/champion";
+import { Champion } from "@/types/champion";
 
 /**
- * Compute composition score based on team gap analysis.
- *
- * @param champion - The candidate champion
- * @param allies - Currently locked ally champions
- * @returns Score 0–100 (50 = neutral when no allies, 75 = no gaps)
+ * Context for composition scoring to avoid redundant team evaluation.
  */
-export function computeCompositionScore(
-  champion: Champion,
-  allies: readonly Champion[]
-): number {
-  if (allies.length === 0) return 50;
+export interface CompositionContext {
+  counts: {
+    ad: number;
+    ap: number;
+    frontline: number;
+    engage: number;
+    peel: number;
+    waveclear: number;
+    cc: number;
+  };
+  gaps: {
+    ad: boolean;
+    ap: boolean;
+    frontline: boolean;
+    engage: boolean;
+    peel: boolean;
+    waveclear: boolean;
+    cc: boolean;
+  };
+  totalGaps: number;
+}
 
-  // Evaluate current team
+/**
+ * Pre-calculate composition context once per draft state.
+ */
+export function prepareCompositionContext(allies: readonly Champion[]): CompositionContext {
   const counts = {
     ad: 0,
     ap: 0,
@@ -34,7 +39,7 @@ export function computeCompositionScore(
     cc: 0,
   };
 
-  const evaluateChamp = (c: Champion) => {
+  allies.forEach((c) => {
     if (c.damageProfile.ad > 0.5) counts.ad++;
     if (c.damageProfile.ap > 0.5) counts.ap++;
     if (c.durabilityScore >= 7) counts.frontline++;
@@ -42,14 +47,11 @@ export function computeCompositionScore(
     if (c.peelScore >= 5) counts.peel++;
     if (c.waveclearScore >= 5) counts.waveclear++;
     if (c.ccScore >= 4) counts.cc++;
-  };
+  });
 
-  allies.forEach(evaluateChamp);
-
-  // Detect gaps (what is missing to reach the ideal)
   const gaps = {
-    ad: counts.ad < 2,
-    ap: counts.ap < 1,
+    ad: counts.ad < 1, // At least one AD source
+    ap: counts.ap < 1, // At least one AP source
     frontline: counts.frontline < 1,
     engage: counts.engage < 1,
     peel: counts.peel < 1,
@@ -58,10 +60,30 @@ export function computeCompositionScore(
   };
 
   const totalGaps = Object.values(gaps).filter(Boolean).length;
-  
-  if (totalGaps === 0) return 75; // No gaps, healthy team
 
-  // Now, evaluate if candidate fills any of the missing gaps
+  return { counts, gaps, totalGaps };
+}
+
+/**
+ * Compute composition score based on team gap analysis.
+ *
+ * @param champion - The candidate champion
+ * @param allies - Currently locked ally champions
+ * @param context - Optional pre-calculated context
+ * @returns Score 0–100
+ */
+export function computeCompositionScore(
+  champion: Champion,
+  allies: readonly Champion[],
+  context?: CompositionContext
+): number {
+  if (allies.length === 0) return 50;
+
+  const ctx = context || prepareCompositionContext(allies);
+  
+  if (ctx.totalGaps === 0) return 75; // No gaps, healthy team
+
+  // Evaluate if candidate fills any of the missing gaps
   const cCounts = {
     ad: champion.damageProfile.ad > 0.5,
     ap: champion.damageProfile.ap > 0.5,
@@ -73,14 +95,14 @@ export function computeCompositionScore(
   };
 
   let gapsFilled = 0;
-  if (gaps.ad && cCounts.ad) gapsFilled++;
-  if (gaps.ap && cCounts.ap) gapsFilled++;
-  if (gaps.frontline && cCounts.frontline) gapsFilled++;
-  if (gaps.engage && cCounts.engage) gapsFilled++;
-  if (gaps.peel && cCounts.peel) gapsFilled++;
-  if (gaps.waveclear && cCounts.waveclear) gapsFilled++;
-  if (gaps.cc && cCounts.cc) gapsFilled++;
+  if (ctx.gaps.ad && cCounts.ad) gapsFilled++;
+  if (ctx.gaps.ap && cCounts.ap) gapsFilled++;
+  if (ctx.gaps.frontline && cCounts.frontline) gapsFilled++;
+  if (ctx.gaps.engage && cCounts.engage) gapsFilled++;
+  if (ctx.gaps.peel && cCounts.peel) gapsFilled++;
+  if (ctx.gaps.waveclear && cCounts.waveclear) gapsFilled++;
+  if (ctx.gaps.cc && cCounts.cc) gapsFilled++;
 
-  const rawScore = (gapsFilled / totalGaps) * 100;
+  const rawScore = (gapsFilled / ctx.totalGaps) * 100;
   return Math.max(0, Math.min(100, Math.round(rawScore * 100) / 100));
 }

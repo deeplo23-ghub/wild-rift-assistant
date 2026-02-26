@@ -6,13 +6,14 @@
 
 ## Backlog
 
-_No items yet._
+- [ ] Add more comprehensive unit tests for the optimized context-based scoring.
+- [ ] Implement a "Share Draft" feature (copy link/screenshot).
+- [ ] Add support for "Suggested Bans" based on common enemy carry picks.
 
 ---
 
 ## Future Considerations
 
-- [ ] Investigate wr-meta.com page structure for scraper design (Phase 2)
-- [ ] Define complete champion tag assignments for all ~100 champions (Phase 2)
-- [ ] Consider Web Worker for scoring engine if main thread budget is tight (Phase 5)
-- [ ] Evaluate if SQLite local dev mirror adds value (Phase 1)
+- [ ] Register for official Riot Games Developer API key (Phase 8+).
+- [ ] Evaluate React Native for a companion mobile app.
+- [ ] Real-time champion popularity trends from global data.

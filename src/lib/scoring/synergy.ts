@@ -1,14 +1,16 @@
-/**
- * Synergy score computation — STUB.
- *
- * Will compute pairwise tag-based synergy with locked allies.
- * See: .gsd/ARCHITECTURE.md §4.5
- *
- * TODO: Implement in Phase 3
- */
-
 import type { Champion } from "@/types/champion";
 import { SYNERGY_RULES } from "../data/tags";
+
+/**
+ * Pre-indexed synergy rules for O(1) lookup.
+ * key: "tagA,tagB" (alphabetically sorted)
+ */
+const SYNERGY_MAP = new Map<string, number>();
+
+SYNERGY_RULES.forEach(rule => {
+  const key = [rule.tagA, rule.tagB].sort().join(",");
+  SYNERGY_MAP.set(key, rule.score);
+});
 
 /**
  * Compute synergy score between a candidate and locked allies.
@@ -32,14 +34,9 @@ export function computeSynergyScore(
     
     for (const cTag of champion.tags) {
       for (const aTag of ally.tags) {
-        for (const rule of SYNERGY_RULES) {
-          if (
-            (rule.tagA === cTag && rule.tagB === aTag) ||
-            (rule.tagA === aTag && rule.tagB === cTag)
-          ) {
-            pairSynergy += rule.score;
-          }
-        }
+        // Optimized O(1) key lookup
+        const key = cTag < aTag ? `${cTag},${aTag}` : `${aTag},${cTag}`;
+        pairSynergy += SYNERGY_MAP.get(key) ?? 0;
       }
     }
     

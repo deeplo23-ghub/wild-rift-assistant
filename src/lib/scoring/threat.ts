@@ -1,28 +1,21 @@
-/**
- * Threat mitigation scoring — STUB.
- *
- * Will evaluate enemy team's threat profile and score candidate's
- * ability to mitigate those threats.
- * See: .gsd/ARCHITECTURE.md §4.8
- *
- * TODO: Implement in Phase 3
- */
-
 import { Champion, ChampionTag } from "@/types/champion";
 
 /**
- * Compute threat mitigation score against enemy team threats.
- *
- * @param champion - The candidate champion
- * @param enemies - Known enemy champions
- * @returns Score 0–100 (50 = neutral when no enemies known)
+ * Context for threat scoring to avoid redundant enemy evaluation.
  */
-export function computeThreatScore(
-  champion: Champion,
-  enemies: readonly Champion[]
-): number {
-  if (enemies.length === 0) return 50;
+export interface ThreatContext {
+  burstThreat: number;
+  pokeThreat: number;
+  diveThreat: number;
+  sustainThreat: number;
+  splitpushThreat: number;
+  totalThreat: number;
+}
 
+/**
+ * Pre-calculate threat context once per draft state.
+ */
+export function prepareThreatContext(enemies: readonly Champion[]): ThreatContext {
   let burstThreat = 0;
   let pokeThreat = 0;
   let diveThreat = 0;
@@ -38,7 +31,27 @@ export function computeThreatScore(
   });
 
   const totalThreat = burstThreat + pokeThreat + diveThreat + sustainThreat + splitpushThreat;
-  if (totalThreat === 0) return 50;
+
+  return { burstThreat, pokeThreat, diveThreat, sustainThreat, splitpushThreat, totalThreat };
+}
+
+/**
+ * Compute threat mitigation score against enemy team threats.
+ *
+ * @param champion - The candidate champion
+ * @param enemies - Known enemy champions
+ * @param context - Optional pre-calculated context
+ * @returns Score 0–100
+ */
+export function computeThreatScore(
+  champion: Champion,
+  enemies: readonly Champion[],
+  context?: ThreatContext
+): number {
+  if (enemies.length === 0) return 50;
+
+  const ctx = context || prepareThreatContext(enemies);
+  if (ctx.totalThreat === 0) return 50;
 
   const burstMitigation = Math.min(1.0, (champion.durabilityScore + champion.shieldScore + champion.peelScore) / 25);
   const pokeMitigation = Math.min(1.0, (champion.engageScore + champion.mobilityScore + champion.healingScore) / 25);
@@ -47,12 +60,12 @@ export function computeThreatScore(
   const splitpushMitigation = Math.min(1.0, (champion.waveclearScore + champion.mobilityScore + (champion.tags.includes(ChampionTag.Splitpush) ? 5 : 0)) / 25);
 
   const weightedMitigation = (
-    (burstThreat * burstMitigation) +
-    (pokeThreat * pokeMitigation) +
-    (diveThreat * diveMitigation) +
-    (sustainThreat * sustainMitigation) +
-    (splitpushThreat * splitpushMitigation)
-  ) / totalThreat;
+    (ctx.burstThreat * burstMitigation) +
+    (ctx.pokeThreat * pokeMitigation) +
+    (ctx.diveThreat * diveMitigation) +
+    (ctx.sustainThreat * sustainMitigation) +
+    (ctx.splitpushThreat * splitpushMitigation)
+  ) / ctx.totalThreat;
 
   const rawScore = weightedMitigation * 100;
   return Math.max(0, Math.min(100, Math.round(rawScore * 100) / 100));

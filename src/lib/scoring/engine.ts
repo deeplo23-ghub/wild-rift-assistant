@@ -4,6 +4,8 @@
  * This is the main entry point for champion scoring.
  * It calls all 7 scoring components, applies stage-adjusted weights,
  * and produces the final ScoredChampion output.
+ *
+ * Performance: Optimized to O(N) by pre-calculating team context once per recalculation.
  */
 
 import type { Champion, CounterMatrix } from "@/types/champion";
@@ -14,10 +16,10 @@ import type { ScoredChampion, ScoreBreakdown } from "./types";
 import { computeBaseScoreFast, prepareBaseScoreContext, BaseScoreContext } from "./base";
 import { computeSynergyScore } from "./synergy";
 import { computeCounterScore } from "./counter";
-import { computeCompositionScore } from "./composition";
-import { computeThreatScore } from "./threat";
+import { computeCompositionScore, prepareCompositionContext, CompositionContext } from "./composition";
+import { computeThreatScore, prepareThreatContext, ThreatContext } from "./threat";
 import { computeFlexibilityScore } from "./flexibility";
-import { computeRiskPenalty } from "./risk";
+import { computeRiskPenalty, prepareAllyRiskStats, AllyRiskStats } from "./risk";
 import { generateExplanations } from "./explain";
 import { getWeights } from "./weights";
 import { detectStage } from "./stage";
@@ -49,9 +51,6 @@ function clamp(min: number, max: number, value: number): number {
 /**
  * Score a single candidate champion in the context of the current draft.
  *
- * This is the core function called for every champion in the pool.
- * Optimized to avoid redundant team resolution.
- *
  * @param champion - Candidate champion to score
  * @param opposingTeamState - Structural TeamState object array for counter calculation
  * @param allies - Resolved ally champions
@@ -59,6 +58,9 @@ function clamp(min: number, max: number, value: number): number {
  * @param allChampionsCount - Total number of champions
  * @param counterMatrix - Precomputed counter matrix
  * @param baseContext - Precomputed base score context
+ * @param compContext - Precomputed composition context
+ * @param threatContext - Precomputed threat context
+ * @param riskStats - Precomputed risk stats
  * @param weights - Stage-adjusted weights
  * @returns ScoredChampion with final score, breakdown, and explanations
  */
@@ -70,6 +72,9 @@ export function scoreChampion(
   allChampionsCount: number,
   counterMatrix: CounterMatrix,
   baseContext: BaseScoreContext,
+  compContext: CompositionContext,
+  threatContext: ThreatContext,
+  riskStats: AllyRiskStats,
   weights: ReturnType<typeof getWeights>
 ): ScoredChampion {
   // Compute all 7 scoring components (0–100 each)
@@ -77,10 +82,10 @@ export function scoreChampion(
     base: computeBaseScoreFast(champion, allChampionsCount, baseContext),
     synergy: computeSynergyScore(champion, allies),
     counter: computeCounterScore(champion, counterMatrix, opposingTeamState),
-    composition: computeCompositionScore(champion, allies),
-    threat: computeThreatScore(champion, enemies),
+    composition: computeCompositionScore(champion, allies, compContext),
+    threat: computeThreatScore(champion, enemies, threatContext),
     flexibility: computeFlexibilityScore(champion),
-    risk: computeRiskPenalty(champion, allies),
+    risk: computeRiskPenalty(champion, allies, riskStats),
   };
 
   // Aggregate: weighted sum with risk as subtraction
@@ -109,7 +114,7 @@ export function scoreChampion(
 /**
  * Score all candidates in the champion pool.
  *
- * Optimized to O(N) complexity for ~100 champions.
+ * Optimized to O(N) complexity for ~150 champions.
  *
  * @param allChampions - All champion data
  * @param draftState - Current draft state
@@ -136,12 +141,16 @@ export function scoreAllChampions(
   const enemies = getTeamChampions(teamStateAgainst, championMap);
 
   // 3. Detect stage and weights ONCE
-  const totalPicks = focusedSide === TeamSide.Enemy ? enemies.length + allies.length : allies.length + enemies.length; // Actually identical logic, just clarity
+  const totalPicks = allies.length + enemies.length;
   const stage = detectStage(totalPicks);
   const weights = getWeights(stage);
 
-  // 4. Prepare base score context ONCE (O(N log N))
+  // 4. Prepare contexts ONCE (O(N log N) or O(N))
   const baseContext = prepareBaseScoreContext(allChampions);
+  const compContext = prepareCompositionContext(allies);
+  const threatContext = prepareThreatContext(enemies);
+  const riskStats = prepareAllyRiskStats(allies);
+  
   const allCount = allChampions.length;
 
   // 5. Score ALL champions (O(N))
@@ -153,7 +162,10 @@ export function scoreAllChampions(
       enemies, 
       allCount, 
       counterMatrix, 
-      baseContext, 
+      baseContext,
+      compContext,
+      threatContext,
+      riskStats,
       weights
     )
   );

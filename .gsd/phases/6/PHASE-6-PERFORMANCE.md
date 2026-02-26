@@ -55,7 +55,8 @@ Load for context:
 </tasks>
 
 <success_criteria>
-- [ ] Base scores are pre-calculated once.
-- [ ] Scoring orchestration avoids redundant Map creation.
-- [ ] Recalculation time is significantly reduced.
+- [x] Base scores are pre-calculated once.
+- [x] Scoring orchestration avoids redundant Map creation.
+- [x] Recalculation time is significantly reduced (Pre-calculation contexts).
+- [x] Synergy lookups are O(1) via SYNERGY_MAP.
 </success_criteria>
