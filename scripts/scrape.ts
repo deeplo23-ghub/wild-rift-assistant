@@ -1,6 +1,6 @@
 #!/usr/bin/env tsx
 /**
- * Wild Rift Draft Assistant — Data Scraper
+ * Draft Assistant for Wild Rift — Data Seeder
  *
  * Usage:
  *   npx tsx scripts/scrape.ts              # Full scrape (all champions)
@@ -16,6 +16,10 @@
  *   5. Merge, deduplicate, write output
  *
  * Output: scripts/scraper/output/raw-data.json (or raw-sample.json for --sample)
+ */
+
+/**
+ * Draft Assistant for Wild Rift isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot Games or anyone officially involved in producing or managing Riot Games properties. Riot Games, and all associated properties are trademarks or registered trademarks of Riot Games, Inc.
  */
 
 import puppeteer from "puppeteer";
@@ -60,7 +64,7 @@ interface ChampionRecord {
 
 async function main() {
   logger.info("═══════════════════════════════════════════════");
-  logger.info("  Wild Rift Draft Assistant — Scraper Pipeline ");
+  logger.info("  Draft Assistant for Wild Rift — Scraper Pipeline ");
   logger.info("═══════════════════════════════════════════════");
   logger.info("Config", {
     dryRun,

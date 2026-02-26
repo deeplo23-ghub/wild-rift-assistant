@@ -40,6 +40,7 @@
 **Status**: 🏗️ In Progress
 - [x] Update champion image URLs to jungler.gg pattern
 - [x] Implement high-quality icon fallback system
+
 - [ ] Comprehensive unit testing for scoring engine
 - [ ] Vercel deployment
 - [ ] Implement legal compliance boilerplates
@@ -52,11 +53,11 @@
 - [x] Verify sub-100ms calculation target
 
 ### Phase 7: Production Hardening & Compliance
-**Status**: 🏗️ In Progress
+**Status**: ✅ Complete
 - [x] Add statutory Riot Games disclaimers
 - [x] Disable background scraping on Vercel (Production Lock)
-- [ ] Migrate SQLite to Vercel/Neon PostgreSQL
-- [ ] Transition image assets to official Riot Data Dragon URLs
+- [x] Migrate SQLite to Vercel/Neon PostgreSQL
+- [x] Transition image assets to official Riot Data Dragon URLs
 - [ ] Register for official Riot Games Developer API key
 
 ---

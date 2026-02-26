@@ -8,9 +8,9 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "Wild Rift Draft Assistant",
+  title: "Draft Assistant for Wild Rift",
   description:
-    "A deterministic, explainable Wild Rift draft assistant with multi-factor scoring engine for competitive champion selection.",
+    "A deterministic, explainable Draft Assistant for Wild Rift with multi-factor scoring engine for competitive champion selection.",
 };
 
 import { TRPCProvider } from "@/lib/trpc/TRPCProvider";

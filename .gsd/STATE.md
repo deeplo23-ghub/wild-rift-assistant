@@ -12,11 +12,11 @@
 
 ## Last Session Summary
 
-- **Legal Risk Assessment**: Conducted deep research into Riot Games Fan Content Policy and Indonesian Cyber Law.
-- **Compliance Patch**: Added mandatory legal disclaimers to UI footer and disabled database synchronization in production mode to comply with Vercel TOS.
+- **Legal Compliance**: Full sweep of the 7-step compliance checklist from the Risk Assessment.
+- **Asset Migration**: Champion icons transitioned to official Riot Games Data Dragon CDN.
+- **Production Lock**: Scraping API and UI buttons are now strictly locked in production/Vercel environments to comply with TOS.
+- **Data Privacy**: Scraper audited for PII; zero-tolerance policy confirmed for anonymized statistical data only.
 - **Database Migration**: Successfully migrated from SQLite to **Neon (PostgreSQL)** in the Singapore region (ap-southeast-1).
-- **Codebase Mapping (/map)**: Generated updated `ARCHITECTURE.md` and `STACK.md` mapping the system structure post-migration.
-- **Workspace Cleanup**: Reorganized project files, moved internal logs/screenshots to `docs/internal`, and clean up `.gsd` phase hierarchy.
 
 ## In-Progress Work
 

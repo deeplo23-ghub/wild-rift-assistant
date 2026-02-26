@@ -644,7 +644,7 @@ export default function DraftPage() {
 
             <div className="space-y-2">
               <p className="text-[9px] leading-relaxed text-zinc-500 font-medium text-center max-w-3xl mx-auto italic">
-                Wild Rift Draft Assistant isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot Games or anyone officially involved in producing or managing Riot Games properties. Riot Games, and all associated properties are trademarks or registered trademarks of Riot Games, Inc.
+                Draft Assistant for Wild Rift isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot Games or anyone officially involved in producing or managing Riot Games properties. Riot Games, and all associated properties are trademarks or registered trademarks of Riot Games, Inc.
               </p>
               <div className="flex justify-center gap-4 text-[8px] font-bold text-zinc-600 uppercase tracking-tighter">
                 <span>Data Sources: WR-META.COM</span>

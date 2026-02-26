@@ -38,7 +38,7 @@ const logger = createLogger("info");
 
 async function main() {
   logger.info("═══════════════════════════════════════════════");
-  logger.info("  Wild Rift Draft Assistant — Database Seeder  ");
+  logger.info("  Draft Assistant for Wild Rift — Database Seeder  ");
   logger.info("═══════════════════════════════════════════════");
   logger.info("Config", { dryRun, inputPath });
 

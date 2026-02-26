@@ -1,7 +1,7 @@
 /**
  * tRPC router definition.
  *
- * Defines all API procedures for the Wild Rift Draft Assistant.
+ * Defines all API procedures for the Draft Assistant for Wild Rift.
  * Currently stub implementations — real queries will be added in Phase 2.
  */
 
@@ -72,6 +72,31 @@ export const appRouter = router({
         code: "FORBIDDEN",
         message: "Database synchronization is disabled in production to comply with Vercel's Acceptable Use Policy regarding automated scrapers. Please run synchronization locally or on a dedicated scraping server.",
       });
+    }
+
+    // ENFORCEMENT: Scraper throttling to avoid DoS claims (Compliance Step 3)
+    // Check if a successful sync has occurred in the last 3 days
+    try {
+      const meta: any[] = await ctx.prisma.$queryRawUnsafe(`
+        SELECT "lastScrapedAt" FROM "DataMeta" WHERE id = 'singleton' LIMIT 1
+      `);
+      
+      if (meta.length > 0 && meta[0].lastScrapedAt) {
+        const lastScraped = new Date(meta[0].lastScrapedAt);
+        const now = new Date();
+        const diffDays = (now.getTime() - lastScraped.getTime()) / (1000 * 3600 * 24);
+        
+        if (diffDays < 3) {
+          throw new TRPCError({
+            code: "PRECONDITION_FAILED",
+            message: `Scraper is throttled. Next synchronization available in ${Math.ceil(3 - diffDays)} days to ensure compliance and avoid server strain on data sources.`,
+          });
+        }
+      }
+    } catch (error) {
+      if (error instanceof TRPCError) throw error;
+      console.error("DEBUG [syncDatabase] Throttling check error:", error);
+      // Continue if meta table doesn't exist yet (first run)
     }
 
     try {
