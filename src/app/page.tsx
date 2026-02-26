@@ -584,33 +584,25 @@ export default function DraftPage() {
 
           <footer
             className={cn(
-              "border-t border-white/5 px-6 py-4 flex flex-col gap-4",
+              "border-t border-white/5 px-6 py-2 flex flex-col gap-2",
               settings.disableTransparency ? "bg-zinc-900" : "bg-black/20",
             )}
           >
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-4 text-[8px] font-bold text-zinc-600 capitalize tracking-widest">
-                <span>Next.js 16 + tRPC</span>
-                <span>PostgreSQL / SQLite Connection</span>
+            <div className="flex items-center justify-between text-[7px] md:text-[8px] font-bold text-zinc-600 uppercase tracking-widest leading-none">
+              <div className="flex items-center gap-3">
+                <span>Next.js 16 + tRPC + Neon</span>
+                <span className="opacity-20">|</span>
+                <span>Sources: Reports & Aggregators</span>
               </div>
-              <div className="flex items-center gap-2 text-[8px] font-bold text-zinc-600 capitalize flex-row-reverse">
-                <span>Developed for Competitive Analysis</span>
-                <Info className="w-2.5 h-2.5" />
+              <div className="flex items-center gap-2 flex-row-reverse">
+                <span>Analysis Tool v1.2</span>
+                <Info className="w-2.5 h-2.5 opacity-50" />
               </div>
             </div>
 
-            <div className="space-y-2">
-              <p className="text-[9px] leading-relaxed text-zinc-500 font-medium text-center max-w-3xl mx-auto italic">
-                Draft Assistant for Wild Rift isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot Games or anyone officially involved in producing or managing Riot Games properties. Riot Games, and all associated properties are trademarks or registered trademarks of Riot Games, Inc.
-              </p>
-              <div className="flex justify-center gap-4 text-[8px] font-bold text-zinc-600 uppercase tracking-tighter">
-                <span>Data Sources: Community Meta Reports</span>
-                <span className="opacity-30">|</span>
-                <span>Pro Analysis Aggregators</span>
-                <span className="opacity-30">|</span>
-                <span>RIOT GAMES DATA ASSETS</span>
-              </div>
-            </div>
+            <p className="text-[7px] leading-tight text-zinc-500/60 font-medium text-center max-w-5xl mx-auto">
+              Draft Assistant for Wild Rift isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot Games or anyone officially involved in producing or managing Riot Games properties. Riot Games, and all associated properties are trademarks or registered trademarks of Riot Games, Inc.
+            </p>
           </footer>
 
           {/* Sync Progress Notification */}
