@@ -19,14 +19,16 @@ export const SyncProgressNotification: React.FC<SyncProgressNotificationProps> =
   onComplete,
 }) => {
   const settings = useDraftStore((state) => state.settings);
-  const { data: syncJob } = trpc.getSyncStatus.useQuery(jobId, {
+  const { data: syncJobData } = trpc.getSyncStatus.useQuery(jobId, {
     enabled: !!jobId,
     refetchInterval: (query) => {
-      const status = query.state.data?.status;
+      const status = (query.state.data as any)?.status;
       if (status === "COMPLETED" || status === "FAILED") return false;
       return 1000;
     },
   });
+
+  const syncJob = syncJobData as any;
 
   useEffect(() => {
     if (syncJob?.status === "COMPLETED") {
