@@ -71,6 +71,22 @@ The engine shifts its priorities as the draft progresses:
 
 ---
 
+## 🌌 Fun Fact: The Infinite Draft State
+
+Calculating the "perfect" pick is a challenge of astronomical proportions. With 135 champions (as of early 2026), the total unique theoretical draft combinations (Bans + Picks + Roles) are:
+
+$$ \binom{135}{10} \times P(125, 5) \times P(120, 5) \approx \mathbf{3.9 \times 10^{35}} $$
+
+**How big is $3.9 \times 10^{35}$?**
+- **Stars in the Universe:** $\approx 10^{24}$. There are more draft combinations than stars in the observable universe by a factor of **100 billion**.
+- **Atoms in the Human Body:** $\approx 10^{27}$. There are more draft paths than atoms in **100 million people**.
+- **Dr. Strange's "Endgame" View:** He saw 14,000,605 futures. He would need trillions of years to view every possible Wild Rift draft.
+
+This is why our engine uses **O(1) synergy mapping** and **contextual pre-calculation**—it's the only way to navigate an effectively infinite search space in under 50ms.
+
+---
+
+
 ## 🚀 Local Development Setup
 
 To run **Draft Assistant For Wild Rift** natively:
