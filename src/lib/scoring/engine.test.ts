@@ -75,13 +75,13 @@ describe("Scoring Engine Core", () => {
 
   it("handles a complex populated draft correctly (boosts component coverage)", () => {
     const draft = createEmptyDraftState();
-    // @ts-ignore
+    // @ts-expect-error - Setup mock draft state for testing
     draft.ally[Role.Support] = { ...draft.ally[Role.Support], championId: "nami" };
-    // @ts-ignore
+    // @ts-expect-error - Setup mock draft state for testing
     draft.ally[Role.Dragon] = { ...draft.ally[Role.Dragon], championId: "lucian" };
-    // @ts-ignore
+    // @ts-expect-error - Setup mock draft state for testing
     draft.enemy[Role.Dragon] = { ...draft.enemy[Role.Dragon], championId: "caitlyn" };
-    // @ts-ignore
+    // @ts-expect-error - Setup mock draft state for testing
     draft.enemy[Role.Support] = { ...draft.enemy[Role.Support], championId: "lux" };
 
     const nami: Champion = { ...dummyChamp, id: "nami", roles: [Role.Support], tags: [ChampionTag.Sustain] };
@@ -105,9 +105,9 @@ describe("Scoring Engine Core", () => {
     const adChamp: Champion = { ...dummyChamp, id: "zed", damageProfile: { ad: 1.0, ap: 0, true: 0 } };
     const ally2: Champion = { ...adChamp, id: "yasuo" };
     
-    // @ts-ignore
+    // @ts-expect-error - Setup mock draft state for testing
     draft.ally[Role.Mid] = { ...draft.ally[Role.Mid], championId: "zed" };
-    // @ts-ignore
+    // @ts-expect-error - Setup mock draft state for testing
     draft.ally[Role.Baron] = { ...draft.ally[Role.Baron], championId: "yasuo" };
     
     const candidate: Champion = { ...adChamp, id: "talon" };

@@ -1,5 +1,6 @@
 import { NormalizedChampion, RawChampion, RoleSchema } from "./validation";
 import { getJunglerIcon } from "../utils";
+import { Role } from "@/types/champion";
 
 const DAMAGE_MAP: Record<string, { ad: number; ap: number; true_: number }> = {
   assassin: { ad: 0.8, ap: 0.2, true_: 0.0 },
@@ -24,7 +25,7 @@ const TRUE_DAMAGE_OVERRIDES: Record<string, { ad: number; ap: number; true_: num
   "olaf": { ad: 0.7, ap: 0.05, true_: 0.25 },
 };
 
-const ATTR_MAP: Record<string, any> = {
+const ATTR_MAP: Record<string, Record<string, number>> = {
   assassin: { mobilityScore: 8, burstScore: 9, durabilityScore: 3, objectiveScore: 4, teamfightScore: 4 },
   fighter: { durabilityScore: 6, sustainScore: 7, ccScore: 4, objectiveScore: 8, teamfightScore: 6 },
   mage: { ccScore: 6, waveclearScore: 8, rangeScore: 7, burstScore: 8, teamfightScore: 7 },
@@ -33,7 +34,7 @@ const ATTR_MAP: Record<string, any> = {
   support: { peelScore: 8, ccScore: 6, healingScore: 5, teamfightScore: 9, rangeScore: 6 },
 };
 
-function deriveTags(raw: RawChampion, attrs: any): string[] {
+function deriveTags(raw: RawChampion, attrs: Record<string, number>): string[] {
   const tags = new Set<string>();
   raw.roleTags.forEach(rt => {
     if (rt === "assassin") tags.add("assassin").add("burst").add("dive");
@@ -56,12 +57,12 @@ export function normalizeChampion(raw: RawChampion): NormalizedChampion {
   const roles = raw.roles.map(r => {
     const res = RoleSchema.safeParse(r);
     return res.success ? res.data : null;
-  }).filter(Boolean) as any;
+  }).filter(Boolean) as Role[];
 
-  if (roles.length === 0) roles.push("mid"); // Default fallback
+  if (roles.length === 0) roles.push("mid" as Role); // Default fallback
 
   const dmgProfile = { ad: 0, ap: 0, true_: 0 };
-  const attrs: any = {
+  const attrs: Record<string, number> = {
     durabilityScore: 4, engageScore: 4, peelScore: 4, ccScore: 4,
     scalingScore: 5, earlyGameScore: 5, mobilityScore: 4,
     healingScore: 1, shieldScore: 1, waveclearScore: 4,
@@ -102,15 +103,6 @@ export function normalizeChampion(raw: RawChampion): NormalizedChampion {
     dmgProfile.true_ = 0.2;
   }
 
-  const finalAttrs: any = {};
-  [
-    "durabilityScore", "engageScore", "peelScore", "ccScore",
-    "scalingScore", "earlyGameScore", "mobilityScore",
-    "healingScore", "shieldScore", "waveclearScore",
-    "burstScore", "rangeScore", "sustainScore",
-    "teamfightScore", "objectiveScore"
-  ].forEach(k => finalAttrs[k] = attrs[k] || 0);
-
   return {
     id: raw.id,
     name: raw.name,
@@ -122,7 +114,21 @@ export function normalizeChampion(raw: RawChampion): NormalizedChampion {
     damageProfileAd: dmgProfile.ad,
     damageProfileAp: dmgProfile.ap,
     damageProfileTrue: dmgProfile.true_,
-    ...finalAttrs,
+    durabilityScore: attrs.durabilityScore || 0,
+    engageScore: attrs.engageScore || 0,
+    peelScore: attrs.peelScore || 0,
+    ccScore: attrs.ccScore || 0,
+    scalingScore: attrs.scalingScore || 0,
+    earlyGameScore: attrs.earlyGameScore || 0,
+    mobilityScore: attrs.mobilityScore || 0,
+    healingScore: attrs.healingScore || 0,
+    shieldScore: attrs.shieldScore || 0,
+    waveclearScore: attrs.waveclearScore || 0,
+    burstScore: attrs.burstScore || 0,
+    rangeScore: attrs.rangeScore || 0,
+    sustainScore: attrs.sustainScore || 0,
+    teamfightScore: attrs.teamfightScore || 0,
+    objectiveScore: attrs.objectiveScore || 0,
     tags: deriveTags(raw, attrs),
     iconUrl: raw.iconUrl.includes("wr-meta") ? getJunglerIcon(raw.name) : raw.iconUrl,
   };

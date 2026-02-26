@@ -2,11 +2,11 @@
 
 import { useDraftStore } from "@/store/draftStore";
 import { TeamSide, DraftPhase } from "@/types/draft";
-import { Champion } from "@/types/champion";
+import { Champion, Role } from "@/types/champion";
 import { Button } from "@/components/ui/button";
 import { X, ShieldAlert, CheckCircle2 } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 interface BanPhaseProps {
   champions: Champion[];
@@ -18,7 +18,7 @@ export function BanPhase({ champions }: BanPhaseProps) {
   if (phase !== DraftPhase.Ban) return null;
 
   const totalBans = bans.ally.length + bans.enemy.length;
-  const canProceed = totalBans >= 0; // In WR it's usually 10, but let user proceed anytime
+  // In WR it's usually 10, but let user proceed anytime
 
   const getChampion = (id: string) => champions.find((c) => c.id === id);
 
@@ -48,7 +48,7 @@ export function BanPhase({ champions }: BanPhaseProps) {
             variant="default" 
             onClick={() => {
               setPhase(DraftPhase.Pick);
-              setFocusedSlot(TeamSide.Ally, "baron" as any);
+              setFocusedSlot(TeamSide.Ally, Role.Baron);
             }}
             className="bg-blue-600 hover:bg-blue-500 text-white gap-2 px-6"
           >

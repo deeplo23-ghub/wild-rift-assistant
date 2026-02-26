@@ -149,7 +149,9 @@ export function Background() {
       flashOrb(allyOrbRef.current, 1.3, "rgba(59, 130, 246, 0.4)");
       burstParticles("left", "bg-blue-400/80");
     }
-    setLastAllyPicks(allyPicks);
+    setTimeout(() => {
+      setLastAllyPicks(allyPicks);
+    }, 0);
   }, [allyPicks, lastAllyPicks]);
 
   useEffect(() => {
@@ -157,7 +159,9 @@ export function Background() {
       flashOrb(enemyOrbRef.current, 1.3, "rgba(239, 68, 68, 0.4)");
       burstParticles("right", "bg-red-400/80");
     }
-    setLastEnemyPicks(enemyPicks);
+    setTimeout(() => {
+      setLastEnemyPicks(enemyPicks);
+    }, 0);
   }, [enemyPicks, lastEnemyPicks]);
 
   useEffect(() => {
@@ -165,7 +169,9 @@ export function Background() {
       flashOrb(allyOrbRef.current, 0.8, "rgba(239, 68, 68, 0.3)");
       flashOrb(centerOrbRef.current, 1.2, "rgba(239, 68, 68, 0.15)");
     }
-    setLastAllyBans(allyBans);
+    setTimeout(() => {
+      setLastAllyBans(allyBans);
+    }, 0);
   }, [allyBans, lastAllyBans]);
 
   useEffect(() => {
@@ -173,7 +179,9 @@ export function Background() {
       flashOrb(enemyOrbRef.current, 0.8, "rgba(239, 68, 68, 0.3)");
       flashOrb(centerOrbRef.current, 1.2, "rgba(239, 68, 68, 0.15)");
     }
-    setLastEnemyBans(enemyBans);
+    setTimeout(() => {
+      setLastEnemyBans(enemyBans);
+    }, 0);
   }, [enemyBans, lastEnemyBans]);
 
   return (

@@ -1,40 +1,125 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<p align="center">
+  <img src="public/draft-assistant-for-wild-rift-logo.svg" alt="Draft Assistant For Wild Rift Logo" width="300" />
+</p>
 
-## Getting Started
+# Draft Assistant For Wild Rift
 
-First, run the development server:
+[![Version](https://img.shields.io/badge/version-1.2.0-blue.svg?style=flat-square)](https://github.com/deeplo23-ghub/wild-rift-assistant)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT)
+[![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg?style=flat-square)](https://github.com/deeplo23-ghub/wild-rift-assistant)
+[![Dependencies](https://img.shields.io/badge/dependencies-up--to--date-brightgreen.svg?style=flat-square)](package.json)
 
+**Draft Assistant For Wild Rift** is a premium tactical companion engineered to eliminate guesswork during the drafting phase of *League of Legends: Wild Rift*. Using high-fidelity meta-tracing and advanced heuristic modeling, it identifies mathematically optimal picks for any team configuration in real-time.
+
+---
+
+## 🛠️ Deep Tech Stack
+
+The application is architected for maximum performance and a high-end "glassmorphic" feel.
+
+| Layer | Technology | Purpose |
+| :--- | :--- | :--- |
+| **Framework** | Next.js 16 (App Router) | High-performance React framework with server-side rendering. |
+| **Data Fetching** | tRPC + React Query | Type-safe API communication with proactive caching. |
+| **State Management** | Zustand | Ultra-fast, reactive client-side store for real-time draft updates. |
+| **Logic Layer** | TypeScript | Strict type-safety across the entire scoring lifecycle. |
+| **Database** | Prisma + PostgreSQL | Relational modeling for Meta values, Counters, and Synergies. |
+| **Styling** | Tailwind CSS v4 | Cutting-edge utility-first styling with high architectural flexibility. |
+| **Motion** | Framer Motion + GSAP | Premium glassmorphism effects and physics-based micro-animations. |
+| **Infrastructure** | Puppeteer + Cheerio | Automated web-scraping pipelines for meta-data ingestion. |
+| **Quality Control** | Vitest + ESLint | Validation for algorithm integrity and code quality. |
+
+---
+
+## 📊 The Calculation Engine: Minute Algorithm Lifecycle
+
+The assistant runs a deterministic 6-phase evaluation for every available champion whenever the draft state changes.
+
+### 1. Contextual State Normalization
+The engine captures the immutable `DraftState`:
+- **Ally Matrix:** `[slot: Role | null, championId: string | null]`
+- **Enemy Matrix:** `[slot: Role | null, championId: string | null]`
+- **Ban Registry:** `Set<String>` of global bans.
+- **Focus Context:** The specific Role (e.g., *Jungle*) and Side (e.g., *Ally*) currently being drafted.
+
+### 2. The Final Score Equation
+Each candidate champion $C$ is assigned a total score $S$ based on weighted heuristic components:
+
+$$ S = \sum_{i=1}^{n} (V_i \cdot W_i) - P $$
+
+*Where:*
+- $V_i$: Variable component value (normalized 0-100 scale).
+- $W_i$: Dynamic weight assigned to the component based on draft stage.
+- $P$: Flat execution risk penalty based on composition fragility.
+
+### 3. Step-by-Step Mathematical Attribution
+
+| Phase | Component | Calculation Logic |
+| :--- | :--- | :--- |
+| **Phase 1: Meta Base** | **Meta Intensity** | $TierValue \times (WinRate \times 1.4) \times (PickRate \times 0.6)$. Baseline strength in current patch. |
+| **Phase 2: Synergy** | **Synergy Score** | Evaluates $C$ against all locked Allies $A$. $Tags(C) \cap Tags(A)$ triggers multipliers (e.g. *Knockup* ⇄ *Yasuo Ult*). |
+| **Phase 3: Tactical** | **Comp Balance** | Simulates resulting team stats for *CC*, *Durability*, *Initiation*, and *Range*. Fills missing critical gaps. |
+| **Phase 4: Counter** | **Counter Score** | Queries direct matchup matrix for focused Role ($2.0 \times$) and soft global counters ($1.0 \times$) for other enemies. |
+| **Phase 5: Damage** | **Profile Match** | Checks $AD / AP / True$ spread. If team overlaps $>70\%$ of one type, the opposite receives a scaling bonus. |
+| **Phase 6: Risk** | **Risk Penalty** | Subtracts points for "High Execution" champions if the team already lacks peel or durability. |
+
+### 4. Stage-Sensitive Weighting Logic
+The engine shifts its priorities as the draft progresses:
+- **Early Stage (Picks 1-2):** High weight on **Flexibility** ($W_{Flex}$) to prevent immediate counter-picking.
+- **Mid Stage (Picks 3-4):** High weight on **Synergy** and **Comp Balance**.
+- **Late Stage (Pick 5):** Extreme weight on **Countering** ($W_{Counter}$) since the opponent can no longer react.
+
+---
+
+## 🚀 Local Development Setup
+
+To run **Draft Assistant For Wild Rift** natively:
+
+### 1. Prerequisites
+- **Node.js**: v20 or newer
+- **PostgreSQL**: Local instance or Docker container
+- **Git**: For repository cloning
+
+### 2. Installation
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Clone the repository
+git clone https://github.com/deeplo23-ghub/wild-rift-assistant.git
+cd wild-rift-assistant
+
+# Install project dependencies
+npm install
+
+# Setup Environment
+cp .env.example .env
+# Configure DATABASE_URL inside .env with your PostgreSQL string
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 3. Data Pipeline & Initialization
+The assistant requires a fresh dataset to run calculations. Initialize the database schema and ingest meta-data:
+```bash
+# Push schema and generate Prisma client
+npx prisma db push
+npx prisma generate
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+# Run the scraping/seeding pipeline
+npm run pipeline:full
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 4. Launch the Development Server
+```bash
+npm run dev
+```
+Navigate to `http://localhost:3000`.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 🗺️ Future Roadmap
+- [ ] **Adaptive Rune Suggestions:** Dynamic rune page recommendations based on the draft.
+- [ ] **Win Probability Prediction:** Live percentage estimation of winning based on the composition.
+- [ ] **Multi-League Meta:** Switchable meta sources (Standard vs Legendary Queue).
+- [ ] **Teamfight Simulator:** Visual representation of how the team should engage.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Legal & Disclaimer
-
-Draft Assistant for Wild Rift isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot Games or anyone officially involved in producing or managing Riot Games properties. Riot Games, and all associated properties are trademarks or registered trademarks of Riot Games, Inc.
-
-This project is a non-commercial fan-made tool intended for competitive analysis and community use.
-
-### Data Sources
-*   **Stats & Tier Lists**: Aggregated from leading community meta-analysis platforms and high-level competitive datasets.
-*   **Image Assets**: Champion icons are property of Riot Games and are used under the Fan Content Policy.
+## ⚖️ Legal Disclaimer
+*Draft Assistant For Wild Rift isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot Games or anyone officially involved in producing or managing League of Legends: Wild Rift. League of Legends: Wild Rift and Riot Games are trademarks or registered trademarks of Riot Games, Inc. League of Legends: Wild Rift © Riot Games, Inc.*

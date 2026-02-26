@@ -23,7 +23,7 @@ export function TeamTacticalAnalysis({ side }: TeamTacticalAnalysisProps) {
 
   const calculateAverage = (champs: Champion[], key: string) => {
     if (champs.length === 0) return 0;
-    const sum = champs.reduce((acc, c) => ((c as any)[key] || 0) + acc, 0);
+    const sum = champs.reduce((acc, c) => (Number(c[key as keyof Champion]) || 0) + acc, 0);
     return sum / champs.length;
   };
 

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useMemo, useState } from "react";
+import React, { useMemo, useState, useRef, useCallback, useEffect } from "react";
 import { useDraftStore } from "@/store/draftStore";
 import { Role, Champion } from "@/types/champion";
 import { cn, formatTag } from "@/lib/utils";
@@ -16,22 +16,18 @@ import {
   Move,
   Heart,
   Flame,
-  Swords,
-  Brain,
-  Tags,
   Activity,
   Dna,
-  GitCompareArrows,
   Skull,
   Target,
   Users,
   Maximize2,
   RefreshCcw,
-  AlertTriangle,
   ChevronDown,
   ChevronUp
 } from "lucide-react";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
+import { motion, AnimatePresence } from "framer-motion";
 
 const IMPORTANT_METRICS = [
   "durabilityScore",
@@ -69,11 +65,41 @@ const ENGINE_METRICS = [
   { key: "base", label: "Meta Power", icon: TrendingUp, desc: "Current meta tier and raw champion strength" },
 ];
 
-const ROLES = [Role.Baron, Role.Jungle, Role.Mid, Role.Dragon, Role.Support];
+
 
 export function MatchupAnalysis() {
-  const { ally, enemy, allChampions, settings, counterMatrix, scoredChampions, setHoveredStatMetric } = useDraftStore();
+  const ally = useDraftStore((state) => state.ally);
+  const enemy = useDraftStore((state) => state.enemy);
+  const allChampions = useDraftStore((state) => state.allChampions);
+  const settings = useDraftStore((state) => state.settings);
+  const counterMatrix = useDraftStore((state) => state.counterMatrix);
+  const scoredChampions = useDraftStore((state) => state.scoredChampions);
+  const setHoveredStatMetric = useDraftStore((state) => state.setHoveredStatMetric);
   const [isStatsExpanded, setIsStatsExpanded] = useState(false);
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [showTopHint, setShowTopHint] = useState(false);
+  const [showBottomHint, setShowBottomHint] = useState(false);
+
+  const checkScroll = useCallback(() => {
+    if (!scrollRef.current) return;
+    const { scrollTop, scrollHeight, clientHeight } = scrollRef.current;
+    setShowTopHint(scrollTop > 10);
+    setShowBottomHint(scrollTop + clientHeight < scrollHeight - 10);
+  }, []);
+
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (el) {
+      checkScroll();
+      el.addEventListener("scroll", checkScroll);
+      const observer = new ResizeObserver(checkScroll);
+      observer.observe(el);
+      return () => {
+        el.removeEventListener("scroll", checkScroll);
+        observer.disconnect();
+      };
+    }
+  }, [checkScroll, isStatsExpanded, ally, enemy]);
 
   const getTeamChampions = (team: Record<Role, { championId: string | null }>) => {
     return Object.values(team)
@@ -90,7 +116,7 @@ export function MatchupAnalysis() {
         if (key === "utilityScore") {
             return acc + (c.healingScore + c.shieldScore) / 2;
         }
-        return acc + ((c as any)[key] || 0);
+        return acc + ((c as unknown as Record<string, unknown>)[key] as number || 0);
     }, 0);
     return sum / champs.length;
   };
@@ -157,7 +183,7 @@ export function MatchupAnalysis() {
       ).filter(Boolean);
       
       const factor = breakdowns.length || 1;
-      const getAvg = (k: string) => breakdowns.reduce((acc, b) => acc + ((b as any)?.[k] || 0), 0) / factor;
+      const getAvg = (k: string) => breakdowns.reduce((acc, b) => acc + ((b as unknown as Record<string, unknown>)?.[k] as number || 0), 0) / factor;
 
       return {
           composition: getAvg("composition"),
@@ -260,19 +286,19 @@ export function MatchupAnalysis() {
   return (
     <div className={cn(
       "h-full flex flex-col border border-white/5 rounded-xl overflow-hidden shadow-2xl relative",
-      settings.disableTransparency ? "bg-zinc-950" : "bg-black/40 backdrop-blur-3xl"
+      settings.disableTransparency ? "bg-zinc-950" : "bg-black/30 backdrop-blur-md"
     )}>
         <div className="h-full flex flex-col p-4 overflow-hidden">
         
             {/* Win Probability Bar */}
             {settings.showWinProbability && (
-            <div className="flex flex-col gap-2 mb-4 bg-black/20 p-3 rounded-xl border border-white/5 shadow-inner">
+            <div className="flex flex-col gap-2 mb-4 bg-transparent p-3 rounded-xl border border-white/5">
                 <div className="flex justify-between items-end px-1">
                     <div className="flex items-center gap-2">
                         <span className="text-xs font-black text-blue-400/80 tracking-wider">ALLY</span>
                         <span className="text-lg font-black text-white/90 leading-none">{allyWinProb.toFixed(1)}%</span>
                     </div>
-                    <span className="text-[10px] font-black text-white/30 tracking-widest mb-0.5">EST. WIN PROBABILITY</span>
+                    <span className="text-[10px] font-black text-white/30 tracking-widest mb-0.5">WIN PROBABILITY</span>
                     <div className="flex items-center gap-2">
                         <span className="text-lg font-black text-white/90 leading-none">{enemyWinProb.toFixed(1)}%</span>
                         <span className="text-xs font-black text-red-500/80 tracking-wider">ENEMY</span>
@@ -306,17 +332,20 @@ export function MatchupAnalysis() {
 
             {/* Scrollable Section */}
             <div className="flex-1 min-h-0 relative group/scroll overflow-hidden">
-                <div className="h-full overflow-y-auto pr-1 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] flex flex-col gap-2 pb-8">
+                <div 
+                    ref={scrollRef}
+                    className="h-full overflow-y-auto pr-1 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] flex flex-col gap-2 pb-8"
+                >
                     
                     {/* Efficiency Grading - engine components 0-100 */}
                     {settings.showMatchupBars && (
-                    <div className="flex flex-col gap-1.5 bg-black/20 p-2.5 rounded-lg border border-white/5">
+                    <div className="flex flex-col gap-1.5 bg-transparent p-2.5 rounded-lg border border-white/5">
                         <div className="flex items-center justify-center text-[10px] font-black text-white/40 tracking-widest border-b border-white/5 pb-1.5 mb-1.5">
                             EFFICIENCY GRADING
                         </div>
                         {ENGINE_METRICS.map(m => {
-                            const aVal = (allyGrading as any)[m.key];
-                            const eVal = (enemyGrading as any)[m.key];
+                            const aVal = (allyGrading as Record<string, number>)[m.key] || 0;
+                            const eVal = (enemyGrading as Record<string, number>)[m.key] || 0;
                             const aWin = aVal >= eVal;
                             const eWin = eVal >= aVal;
                             
@@ -338,7 +367,7 @@ export function MatchupAnalysis() {
                                                  <div className={cn("h-full transition-all duration-500", aBarColor)} style={{ width: `${aVal}%` }} />
                                              </div>
                                              <div className="w-24 flex flex-col items-center justify-center relative h-8 shrink-0">
-                                                 <div className="flex items-center gap-1.5 text-[9px] font-black tracking-wider uppercase transition-colors duration-300 justify-center text-zinc-500 group-hover:text-zinc-200">
+                                                 <div className="flex items-center gap-1.5 text-[10px] font-black tracking-wider uppercase transition-colors duration-300 justify-center text-zinc-400 group-hover:text-zinc-200">
                                                      <m.icon className="w-3.5 h-3.5 opacity-80" /> {m.label}
                                                  </div>
                                              </div>
@@ -364,7 +393,7 @@ export function MatchupAnalysis() {
                     )}
 
                     {/* Tactical Parameters - 0-10 stats */}
-                    <div className="flex flex-col gap-1 bg-black/20 p-2.5 rounded-lg border border-white/5">
+                    <div className="flex flex-col gap-1 bg-transparent p-2.5 rounded-lg border border-white/5">
                         <div className="flex items-center justify-center text-[10px] font-black text-white/40 tracking-widest border-b border-white/5 pb-1.5 mb-1.5">
                             TACTICAL PARAMETERS
                         </div>
@@ -394,7 +423,7 @@ export function MatchupAnalysis() {
                                              </div>
                                              
                                              <div className="w-24 flex flex-col items-center justify-center relative h-8">
-                                                 <div className="flex items-center gap-1.5 text-[9px] font-black tracking-wider uppercase transition-colors duration-300 justify-center text-zinc-500 group-hover:text-zinc-200">
+                                                 <div className="flex items-center gap-1.5 text-[10px] font-black tracking-wider uppercase transition-colors duration-300 justify-center text-zinc-400 group-hover:text-zinc-200">
                                                      <m.icon className="w-3.5 h-3.5 opacity-80" /> {m.label}
                                                  </div>
                                              </div>
@@ -432,12 +461,31 @@ export function MatchupAnalysis() {
                         </div>
                     </div>
                 </div>
-                {/* Scroll Fade Overlay */}
-                <div className="absolute bottom-0 left-0 right-0 h-10 bg-gradient-to-t from-black/80 to-transparent pointer-events-none z-10" />
+                {/* Visual Scroll Hints */}
+                <AnimatePresence>
+                    {showTopHint && (
+                        <motion.div 
+                            key="tactical-top-hint"
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            className="absolute top-0 left-0 right-0 h-12 bg-gradient-to-b from-zinc-950 via-zinc-950/40 to-transparent pointer-events-none z-20" 
+                        />
+                    )}
+                    {showBottomHint && (
+                        <motion.div 
+                            key="tactical-bottom-hint"
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-zinc-950 via-zinc-950/40 to-transparent pointer-events-none z-20" 
+                        />
+                    )}
+                </AnimatePresence>
             </div>
 
             <div className="mt-1.5">
-              <div className="border border-white/5 rounded-lg bg-black/20 p-4 relative overflow-hidden flex flex-col gap-3 shadow-xl">
+              <div className="border border-white/5 rounded-lg bg-transparent p-4 relative overflow-hidden flex flex-col gap-3">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/5 blur-[60px] rounded-full -mr-16 -mt-16 pointer-events-none" />
                   <TacticalReport 
                     insights={generateMatchupAnalysis()} 
@@ -457,7 +505,16 @@ const eWinCheck = (a: number, e: number) => e >= a;
 // Reusable Sub-Components
 // ------------------------------------------------------------------------------------------------ //
 
-function TeamOverview({ grade, damage, grading, color, isEnemy, isSuperior }: any) {
+interface TeamOverviewProps {
+  grade: { total: number; avg: number; grade: string };
+  damage: { ad: number; ap: number; truePct: number };
+  grading: Record<string, number>;
+  color: "blue" | "red";
+  isEnemy?: boolean;
+  isSuperior: boolean;
+}
+
+function TeamOverview({ grade, damage, color, isEnemy, isSuperior }: TeamOverviewProps) {
     const { settings } = useDraftStore();
     const isBlue = color === "blue";
     
@@ -480,7 +537,7 @@ function TeamOverview({ grade, damage, grading, color, isEnemy, isSuperior }: an
     return (
         <div className={cn(
             "relative rounded-xl border overflow-hidden flex flex-col",
-            settings.disableTransparency ? "bg-zinc-900/80" : "bg-black/30 backdrop-blur-sm",
+            settings.disableTransparency ? "bg-zinc-900/80" : "bg-black/20",
             isBlue ? "border-blue-500/15" : "border-red-500/15"
         )}>
             {/* Side accent stripe */}
@@ -497,20 +554,22 @@ function TeamOverview({ grade, damage, grading, color, isEnemy, isSuperior }: an
                 isEnemy ? "-right-8 -top-8" : "-left-8 -top-8"
             )} />
 
-            <div className="relative pt-[19px] p-3.5 flex flex-col gap-3">
+            <div className="relative pt-3 p-5 flex flex-col gap-4">
                 {/* Row 1: Grade Badge + Score + Avg */}
-                <div className={cn("flex items-center gap-3", isEnemy && "flex-row-reverse")}>
-                    {/* Grade Badge */}
-                    <Tooltip open={settings.showTooltips ? undefined : false} delayDuration={0}>
-                        <TooltipTrigger asChild>
-                            <div className={cn(
-                                "w-11 h-11 rounded-xl flex items-center justify-center border transition-all shrink-0",
+                <div className={cn("flex items-center gap-6", isEnemy && "flex-row-reverse")}>
+                    {/* Grade Badge Area */}
+                    <div className="flex flex-col gap-1.5 items-center">
+                        <span className="text-[9px] font-black text-zinc-600 uppercase tracking-[0.3em] leading-none ml-0.5">Grade</span>
+                        <Tooltip open={settings.showTooltips ? undefined : false} delayDuration={0}>
+                            <TooltipTrigger asChild>
+                                <div className={cn(
+                                    "w-12 h-12 rounded-xl flex items-center justify-center border transition-all shrink-0",
                                 settings.showTooltips ? "cursor-help" : "cursor-default",
                                 gradeBorder, gradeGlow,
-                                settings.disableTransparency ? "bg-zinc-800" : "bg-black/50"
+                                settings.disableTransparency ? "bg-zinc-800" : "bg-black/10"
                             )}>
                                 <span className={cn(
-                                    "text-2xl font-black bg-gradient-to-br bg-clip-text text-transparent leading-none",
+                                    "text-3xl font-black bg-gradient-to-br bg-clip-text text-transparent leading-none",
                                     gradeGradient
                                 )}>{grade.grade}</span>
                             </div>
@@ -524,15 +583,23 @@ function TeamOverview({ grade, damage, grading, color, isEnemy, isSuperior }: an
                             <div className="absolute top-full left-1/2 -translate-x-1/2 -mt-1 w-2 h-2 bg-zinc-950/95 border-r border-b border-white/10 rotate-45" />
                         </TooltipContent>
                     </Tooltip>
+                    </div>
 
                     {/* Score Stack */}
-                    <div className={cn("flex flex-col flex-1 min-w-0 gap-0.5", isEnemy && "items-end")}>
-                        <div className={cn("flex items-baseline gap-2.5", isEnemy && "flex-row-reverse")}>
+                    <div className={cn("flex flex-col flex-1 min-w-0", isEnemy ? "items-start" : "items-end")}>
+                        <div className={cn("flex items-center gap-4", !isEnemy && "flex-row-reverse")}>
+                            {/* Total Score */}
                             <Tooltip open={settings.showTooltips ? undefined : false} delayDuration={0}>
                                 <TooltipTrigger asChild>
                                     <span className={cn(
+                                        "text-6xl font-black tracking-tighter leading-none shrink-0 px-1",
                                         settings.showTooltips ? "cursor-help" : "cursor-default",
-                                        isSuperior ? (isBlue ? "text-blue-300" : "text-red-300") : "text-white/90"
+                                        isSuperior 
+                                            ? cn(
+                                                "bg-gradient-to-t bg-clip-text text-transparent",
+                                                isBlue ? "from-blue-600 via-blue-400 to-white" : "from-red-600 via-red-500 to-white"
+                                            )
+                                            : "text-white"
                                     )}>
                                         {grade.total.toFixed(0)}
                                     </span>
@@ -547,28 +614,31 @@ function TeamOverview({ grade, damage, grading, color, isEnemy, isSuperior }: an
                                 </TooltipContent>
                             </Tooltip>
 
-                            <div className="flex flex-col">
-                                <Tooltip open={settings.showTooltips ? undefined : false} delayDuration={0}>
-                                    <TooltipTrigger asChild>
+                            {/* Average Score Boxed */}
+                            <Tooltip open={settings.showTooltips ? undefined : false} delayDuration={0}>
+                                <TooltipTrigger asChild>
+                                    <div className={cn(
+                                        "flex flex-col items-center bg-white/[0.03] backdrop-blur-md border border-white/10 rounded px-3 py-2 min-w-[48px] shrink-0 shadow-xl",
+                                        settings.showTooltips ? "cursor-help" : "cursor-default"
+                                    )}>
+                                        <span className="text-[7px] font-black text-zinc-500 uppercase tracking-wider leading-none mb-1">AVG</span>
                                         <span className={cn(
-                                            "text-base font-bold tabular-nums leading-none",
-                                            settings.showTooltips ? "cursor-help" : "cursor-default",
-                                            avgWinRate >= 60 ? "text-emerald-400" : avgWinRate >= 50 ? "text-sky-400" : "text-zinc-400"
+                                            "text-lg font-bold tabular-nums leading-none tracking-tight",
+                                            avgWinRate >= 60 ? "text-emerald-400/80" : avgWinRate >= 50 ? "text-sky-400/80" : "text-zinc-500"
                                         )}>
                                             {avgWinRate.toFixed(1)}
                                         </span>
-                                    </TooltipTrigger>
-                                    <TooltipContent 
-                                        side="top" 
-                                        hideArrow={true}
-                                        className="px-2.5 py-1.5 bg-zinc-950/95 border border-white/10 rounded-lg text-[9.5px] font-bold text-zinc-100 whitespace-nowrap shadow-2xl backdrop-blur-md animate-in fade-in-0 zoom-in-95 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 translate-y-[-4px]"
-                                    >
-                                        AVERAGE POWER
-                                        <div className="absolute top-full left-1/2 -translate-x-1/2 -mt-1 w-2 h-2 bg-zinc-950/95 border-r border-b border-white/10 rotate-45" />
-                                    </TooltipContent>
-                                </Tooltip>
-                                <span className="text-[9px] font-bold text-zinc-600 uppercase tracking-widest">avg</span>
-                            </div>
+                                    </div>
+                                </TooltipTrigger>
+                                <TooltipContent 
+                                    side="top" 
+                                    hideArrow={true}
+                                    className="px-2.5 py-1.5 bg-zinc-950/95 border border-white/10 rounded-lg text-[9.5px] font-bold text-zinc-100 whitespace-nowrap shadow-2xl backdrop-blur-md animate-in fade-in-0 zoom-in-95 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 translate-y-[-4px]"
+                                >
+                                    AVERAGE POWER
+                                    <div className="absolute top-full left-1/2 -translate-x-1/2 -mt-1 w-2 h-2 bg-zinc-950/95 border-r border-b border-white/10 rotate-45" />
+                                </TooltipContent>
+                            </Tooltip>
                         </div>
                     </div>
                 </div>
@@ -577,27 +647,27 @@ function TeamOverview({ grade, damage, grading, color, isEnemy, isSuperior }: an
                 {settings.showDamageDistribution && (
                 <div className="space-y-1.5">
                     <div className="flex items-center w-full min-h-[14px]">
-                        <div style={{ width: `${damage.ad}%` }} className="flex justify-end pr-1.5">
+                        <div style={{ width: `${damage.ad}%` }} className="flex justify-end pr-2">
                             {damage.ad >= 5 && (
                                 <div className="flex items-center gap-1 leading-none whitespace-nowrap">
-                                    <span className="text-[11px] font-black text-orange-400/90 tracking-wider">AD</span>
-                                    <span className="text-[11px] font-black text-white/70 tabular-nums">{damage.ad.toFixed(0)}%</span>
+                                    <span className="text-[10px] font-black text-orange-400/90 tracking-wider">AD</span>
+                                    <span className="text-[10px] font-black text-white/70 tabular-nums">{damage.ad.toFixed(0)}%</span>
                                 </div>
                             )}
                         </div>
-                        <div style={{ width: `${damage.truePct}%` }} className="flex justify-center">
+                        <div style={{ width: `${damage.truePct}%` }} className="flex justify-center px-1">
                             {damage.truePct >= 5 && (
                                 <div className="flex items-center gap-1 leading-none whitespace-nowrap">
-                                    <span className="text-[11px] font-black text-zinc-300/60 tracking-wider">TRUE</span>
-                                    <span className="text-[11px] font-black text-white/50 tabular-nums">{damage.truePct.toFixed(0)}%</span>
+                                    <span className="text-[10px] font-black text-zinc-400/90 tracking-wider">TRU</span>
+                                    <span className="text-[10px] font-black text-white/70 tabular-nums">{damage.truePct.toFixed(0)}%</span>
                                 </div>
                             )}
                         </div>
-                        <div style={{ width: `${damage.ap}%` }} className="flex justify-start pl-1.5">
+                        <div style={{ width: `${damage.ap}%` }} className="flex justify-start pl-2">
                             {damage.ap >= 5 && (
                                 <div className="flex items-center gap-1 leading-none whitespace-nowrap">
-                                    <span className="text-[11px] font-black text-sky-400/90 tracking-wider">AP</span>
-                                    <span className="text-[11px] font-black text-white/70 tabular-nums">{damage.ap.toFixed(0)}%</span>
+                                    <span className="text-[10px] font-black text-sky-400/90 tracking-wider">AP</span>
+                                    <span className="text-[10px] font-black text-white/70 tabular-nums">{damage.ap.toFixed(0)}%</span>
                                 </div>
                             )}
                         </div>
@@ -631,7 +701,14 @@ function TeamOverview({ grade, damage, grading, color, isEnemy, isSuperior }: an
     )
 }
 
-function EngineRow({ label, value, color, isEnemy }: any) {
+interface EngineRowProps {
+  label: string;
+  value: number;
+  color: string;
+  isEnemy?: boolean;
+}
+
+function EngineRow({ label, value, color, isEnemy }: EngineRowProps) {
     return (
         <div className={cn("flex flex-col gap-0.5", isEnemy && "items-end")}>
             <div className="flex items-center gap-1 opacity-50">

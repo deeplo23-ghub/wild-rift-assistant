@@ -2,18 +2,13 @@
 
 import React, { useMemo, memo } from "react";
 import { useDraftStore, SortMetric } from "@/store/draftStore";
-import { Role, Champion, CounterMatrix } from "@/types/champion";
+import { Role, Champion } from "@/types/champion";
 import { TeamSide } from "@/types/draft";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { motion } from "framer-motion";
-import { 
-  Search, 
-  X,
-  Sparkles,
-  Target
-} from "lucide-react";
+import { Search, X } from "lucide-react";
 import { 
   Tooltip,
   TooltipContent,
@@ -23,8 +18,8 @@ import { cn, getRoleIcon, getWinrateColor, formatTag } from "@/lib/utils";
 import { SYNERGY_RULES } from "@/lib/data/tags";
 import { ChampionIcon } from "./ChampionIcon";
 import { getWeights } from "@/lib/scoring/weights";
+import type { WeightConfig } from "@/lib/scoring/types";
 import { detectStage } from "@/lib/scoring/stage";
-import { DraftState } from "@/types/draft";
 import { ScoredChampion } from "@/types/scoring";
 
 // ─── Constants & Utils ──────────────────────────────────────────────────────
@@ -69,7 +64,7 @@ interface RecommendationCardProps {
   topCounters: { id: string; val: number }[];
   topSynergies: { id: string; score: number }[];
   topWeaknesses: { id: string; val: number }[];
-  currentWeights: any;
+  currentWeights: WeightConfig;
   settings: DraftSettings;
   allChampions: Champion[];
   onHover: (id: string | null) => void;
@@ -77,12 +72,12 @@ interface RecommendationCardProps {
 }
 
 export const TIER_COLORS: Record<string, string> = {
-  "S+": "text-yellow-400 border-yellow-400/50 bg-yellow-400/10",
-  "S": "text-orange-400 border-orange-400/50 bg-orange-400/10",
-  "A": "text-emerald-400 border-emerald-400/50 bg-emerald-400/10",
-  "B": "text-blue-400 border-blue-400/50 bg-blue-400/10",
-  "C": "text-zinc-400 border-zinc-400/50 bg-zinc-400/10",
-  "D": "text-zinc-500 border-zinc-500/50 bg-zinc-500/10",
+  "S+": "text-yellow-400 border-yellow-400/30 bg-yellow-400/5",
+  "S": "text-orange-400 border-orange-400/30 bg-orange-400/5",
+  "A": "text-emerald-400 border-emerald-400/30 bg-emerald-400/5",
+  "B": "text-blue-400 border-blue-400/30 bg-blue-400/5",
+  "C": "text-zinc-400 border-zinc-400/30 bg-zinc-400/5",
+  "D": "text-zinc-500 border-zinc-500/30 bg-zinc-500/5",
 };
 
 const TIER_WEIGHTS: Record<string, number> = {
@@ -146,14 +141,14 @@ const ChampionGridItem = memo(({
   onClick
 }: {
   champion: Champion;
-  score: any;
+  score: ScoredChampion | undefined;
   isUnavailable: boolean;
   isPicked: boolean;
   isPickedByAlly: boolean;
   isAnyBanned: boolean;
   sortBy: SortMetric;
   isBanMode: boolean;
-  settings: any;
+  settings: DraftSettings;
   onHover: (id: string | null) => void;
   onClick: (id: string) => void;
 }) => {
@@ -221,14 +216,18 @@ const ChampionGridItem = memo(({
             </div>
             
             <div className={cn(
-              "absolute top-0 left-0 px-1.5 py-0.5 bg-black/90 rounded-br-md rounded-tl-sm border-r border-b border-white/10 shadow-sm z-10",
+              "absolute top-0 left-0 px-1.5 py-0.5 rounded-br-lg rounded-tl-sm border-r border-b border-white/10 shadow-lg z-10",
+              settings.disableTransparency ? "bg-black" : "bg-black/60 backdrop-blur-md",
               tierColor
             )}>
-              <span className="text-[9px] font-extrabold block leading-none pt-0.5">{champion.tier}</span>
+              <span className="text-[10px] font-black block leading-none pt-0.5">{champion.tier}</span>
             </div>
 
-            <div className="absolute bottom-0 right-0 px-1.5 py-0.5 bg-black/90 rounded-tl-md rounded-br-sm border-l border-t border-white/10 shadow-sm z-10">
-              <span className={cn("text-[9px] font-bold block leading-none pb-0.5", 
+            <div className={cn(
+              "absolute bottom-0 right-0 px-1.5 py-0.5 rounded-tl-lg rounded-br-sm border-l border-t border-white/10 shadow-lg z-10",
+              settings.disableTransparency ? "bg-black" : "bg-black/60 backdrop-blur-md"
+            )}>
+              <span className={cn("text-[10px] font-black block leading-none pb-0.5", 
                  isBanMode ? (champion.banRate >= 20 ? "text-red-400" : champion.banRate >= 10 ? "text-orange-400" : "text-zinc-400") : metricColor
               )}>
                 {isBanMode ? `${champion.banRate.toFixed(1)}%` : (typeof displayMetric === 'number' ? displayMetric.toFixed(1) : displayMetric)}
@@ -297,9 +296,9 @@ const RecommendationCard = memo(({
       className={cn(
         "relative border transition-all cursor-pointer group overflow-hidden p-0 gap-0",
         !settings.disableAnimations && "duration-300",
-        settings.disableTransparency ? "bg-zinc-900" : "bg-black/15 backdrop-blur-md",
-        isUnavailable && !isPicked ? "opacity-40 grayscale pointer-events-none" : "hover:border-blue-500/50 hover:shadow-blue-500/10",
-        idx === 0 ? "border-gold-shimmer z-10 shadow-[0_0_20px_rgba(234,179,8,0.2)]" : "border-white/5"
+        settings.disableTransparency ? "bg-zinc-950" : "bg-white/[0.02] backdrop-blur-xl",
+        isUnavailable && !isPicked ? "opacity-40 grayscale pointer-events-none" : "hover:border-blue-500/50 hover:shadow-[0_0_20px_rgba(59,130,246,0.1)]",
+        idx === 0 ? "border-gold-shimmer z-10 shadow-[0_0_40px_rgba(234,179,8,0.15)]" : "border-white/10 shadow-2xl"
       )}
     >
       <CardContent className="p-[15px] flex flex-col gap-2">
@@ -415,8 +414,8 @@ const RecommendationCard = memo(({
 
         {settings.showBreakdown && (
         <div className={cn(
-          "grid grid-cols-3 gap-1 rounded border border-white/5 py-1 px-0.5 mt-[2px]",
-          settings.disableTransparency ? "bg-zinc-800" : "bg-black/10"
+          "grid grid-cols-3 gap-1 rounded-lg border border-white/5 py-1.5 px-0.5 mt-[2px]",
+          settings.disableTransparency ? "bg-zinc-800" : "bg-black/20"
         )}>
           <div className="flex flex-col items-center justify-center">
             <span className="text-[7px] text-zinc-500 capitalize font-black tracking-widest leading-none mb-[3px]">Win Rate</span>
@@ -445,13 +444,13 @@ const RecommendationCard = memo(({
                   </span>
                 ))}
               </div>
-              <div className="absolute top-0 right-0 bottom-0 w-6 bg-gradient-to-l from-black/80 to-transparent pointer-events-none" />
+              <div className="absolute top-0 right-0 bottom-0 w-8 bg-gradient-to-l from-zinc-950 via-zinc-950/40 to-transparent pointer-events-none" />
             </div>
           )}
           {/* Syn / Ctr / Weak Icons with separators */}
           <div className="flex gap-1 items-center overflow-x-auto scrollbar-none">
-            {settings.showSynergyIcons && topSynergies.map((s: any) => {
-              const target = allChampions.find((hc: any) => hc.id === s.id);
+            {settings.showSynergyIcons && topSynergies.map((s: { id: string; score: number }) => {
+              const target = allChampions.find((hc: Champion) => hc.id === s.id);
               return (
                 <div key={s.id} title={settings.showTooltips ? `Synergy: ${target?.name}` : undefined} className="w-5 h-5 shrink-0 rounded border border-emerald-500/50 shadow-[0_0_5px_rgba(16,185,129,0.2)] overflow-hidden">
                   <ChampionIcon name={target?.name || ""} url={target?.iconUrl || ""} className="w-full h-full" />
@@ -461,8 +460,8 @@ const RecommendationCard = memo(({
             {settings.showSynergyIcons && topSynergies.length > 0 && ((settings.showCounterIcons && topCounters.length > 0) || (settings.showWeaknessIcons && topWeaknesses.length > 0)) && (
               <div className="w-px h-2.5 bg-white/10 mx-0.5" />
             )}
-            {settings.showCounterIcons && topCounters.map((c: any) => {
-              const target = allChampions.find((hc: any) => hc.id === c.id);
+            {settings.showCounterIcons && topCounters.map((c: { id: string; val: number }) => {
+              const target = allChampions.find((hc: Champion) => hc.id === c.id);
               return (
                  <div key={c.id} title={settings.showTooltips ? `Counter: ${target?.name}` : undefined} className="w-5 h-5 shrink-0 rounded border border-red-500/50 shadow-[0_0_5px_rgba(239,68,68,0.2)] overflow-hidden">
                   <ChampionIcon name={target?.name || ""} url={target?.iconUrl || ""} className="w-full h-full" />
@@ -472,8 +471,8 @@ const RecommendationCard = memo(({
             {settings.showCounterIcons && topCounters.length > 0 && settings.showWeaknessIcons && topWeaknesses.length > 0 && (
               <div className="w-px h-2.5 bg-white/10 mx-0.5" />
             )}
-            {settings.showWeaknessIcons && topWeaknesses.map((w: any) => {
-              const target = allChampions.find((hc: any) => hc.id === w.id);
+            {settings.showWeaknessIcons && topWeaknesses.map((w: { id: string; val: number }) => {
+              const target = allChampions.find((hc: Champion) => hc.id === w.id);
               return (
                  <div key={w.id} title={settings.showTooltips ? `Weakness: ${target?.name}` : undefined} className="w-5 h-5 shrink-0 rounded border border-yellow-500/50 shadow-[0_0_5px_rgba(234,179,8,0.2)] overflow-hidden">
                   <ChampionIcon name={target?.name || ""} url={target?.iconUrl || ""} className="w-full h-full" />
@@ -517,7 +516,7 @@ export function ChampionPool({ champions }: ChampionPoolProps) {
 
   // Memoized derived data
   const scoredMap = useMemo(() => {
-    const map = new Map<string, any>();
+    const map = new Map<string, ScoredChampion>();
     scoredChampions.forEach(s => map.set(s.championId, s));
     return map;
   }, [scoredChampions]);
@@ -551,9 +550,10 @@ export function ChampionPool({ champions }: ChampionPoolProps) {
   }, [combinedBans, pickedIds]);
 
   const sortedChampions = useMemo(() => {
+    const searchLower = activeSearch.trim().toLowerCase();
     return champions
       .filter((c) => {
-        const matchesSearch = c.name.toLowerCase().includes(activeSearch.toLowerCase());
+        const matchesSearch = searchLower === "" || c.name.toLowerCase().includes(searchLower);
         const matchesRole = activeRoleFilter === "all" || c.roles.includes(activeRoleFilter as Role);
         const matchesTier = activeTierFilter === "all" || c.tier === activeTierFilter;
         return matchesSearch && matchesRole && matchesTier;
@@ -579,13 +579,23 @@ export function ChampionPool({ champions }: ChampionPoolProps) {
 
   const isTop3Visible = !activeSearch && !isBanMode && focusedRole !== null;
   const availableSorted = useMemo(() => sortedChampions.filter(c => !unavailableIds.has(c.id)), [sortedChampions, unavailableIds]);
-  const top3 = isTop3Visible ? availableSorted.slice(0, 3) : [];
+  const top3 = useMemo(() => isTop3Visible ? availableSorted.slice(0, 3) : [], [isTop3Visible, availableSorted]);
   const others = useMemo(() => sortedChampions.filter(c => !top3.some(t => t.id === c.id)), [sortedChampions, top3]);
 
   // Helper functions for Top 3
   const getTopCounters = (championId: string) => {
     if (!counterMatrix) return [];
-    const matrix = (counterMatrix as any).get ? (counterMatrix as any).get(championId) : (counterMatrix as any)[championId];
+    
+    // Type guard for Map vs Record
+    const isMap = (m: unknown): m is Map<string, unknown> => m instanceof Map;
+    let matrix: Map<string, number> | Record<string, number> | undefined;
+
+    if (isMap(counterMatrix)) {
+        matrix = counterMatrix.get(championId) as Map<string, number> | undefined;
+    } else {
+        matrix = (counterMatrix as unknown as Record<string, Record<string, number>>)[championId];
+    }
+    
     if (!matrix) return [];
     
     const targetTeam = focusedSide === TeamSide.Ally ? enemy : ally;
@@ -595,11 +605,11 @@ export function ChampionPool({ champions }: ChampionPoolProps) {
 
     if (draftedOpponents.length === 0) return [];
     
-    const entries = matrix.entries ? Array.from(matrix.entries()) : Object.entries(matrix);
+    const entries = isMap(matrix) ? Array.from(matrix.entries()) : Object.entries(matrix);
     return entries
-      .map(([id, val]: any) => ({ id, val }))
-      .filter((e: any) => draftedOpponents.includes(e.id) && e.val > 0)
-      .sort((a: any, b: any) => b.val - a.val);
+      .map(([id, val]) => ({ id, val: val as number }))
+      .filter(e => draftedOpponents.includes(e.id) && e.val > 0)
+      .sort((a, b) => b.val - a.val);
   };
 
   const getTopSynergies = (champion: Champion) => {
@@ -628,6 +638,8 @@ export function ChampionPool({ champions }: ChampionPoolProps) {
 
   const getTopWeaknesses = (championId: string): { id: string; val: number }[] => {
     if (!counterMatrix) return [];
+    const isMap = (m: unknown): m is Map<string, unknown> => m instanceof Map;
+    
     const targetTeam = focusedSide === TeamSide.Ally ? enemy : ally;
     const draftedOpponents = Object.values(targetTeam)
       .map(s => s.championId)
@@ -636,11 +648,13 @@ export function ChampionPool({ champions }: ChampionPoolProps) {
     if (draftedOpponents.length === 0) return [];
 
     return draftedOpponents.map(oppId => {
-       const matrix = (counterMatrix as any).get ? (counterMatrix as any).get(oppId) : (counterMatrix as any)[oppId];
        let val = 0;
-       if (matrix) {
-          if (matrix.get) val = matrix.get(championId) || 0;
-          else val = matrix[championId] || 0;
+       if (isMap(counterMatrix)) {
+           const matrix = counterMatrix.get(oppId) as Map<string, number> | undefined;
+           if (matrix) val = matrix.get(championId) || 0;
+       } else {
+           const matrix = (counterMatrix as unknown as Record<string, Record<string, number>>)[oppId];
+           if (matrix) val = matrix[championId] || 0;
        }
        return { id: oppId, val };
     }).filter(e => e.val > 0)
@@ -651,8 +665,8 @@ export function ChampionPool({ champions }: ChampionPoolProps) {
     <div className="flex flex-col h-full min-h-0 gap-4 text-white font-sans selection:bg-blue-500/30">
       {/* Search & Filters */}
       <div className={cn(
-        "flex flex-col gap-4 p-4 border border-white/5 rounded-xl",
-        settings.disableTransparency ? "bg-zinc-900" : "bg-black/15 backdrop-blur-md"
+        "flex flex-col gap-4 p-4 border border-white/10 rounded-xl shadow-2xl",
+        settings.disableTransparency ? "bg-zinc-900" : "bg-white/[0.02] backdrop-blur-xl"
       )}>
         <div className="flex items-center justify-between gap-4">
           <div className="flex items-center gap-2 flex-1">
@@ -664,16 +678,16 @@ export function ChampionPool({ champions }: ChampionPoolProps) {
                 onChange={(e) => setSearch(e.target.value)}
                 onClick={(e) => e.stopPropagation()}
                 className={cn(
-                  "pl-8 h-[38.5px] py-0 leading-[38.5px] border-white/10 text-[10px] focus:ring-1 focus:ring-blue-500/50",
-                  settings.disableTransparency ? "bg-zinc-800" : "bg-black/40"
+                  "pl-8 h-[38.5px] py-0 leading-[38.5px] border-white/5 text-[10px] focus:ring-1 focus:ring-blue-500/30 transition-all",
+                  settings.disableTransparency ? "bg-zinc-800" : "bg-black/40 hover:bg-black/50 focus:bg-black/60"
                 )}
               />
             </div>
           </div>
 
           <div className="flex items-center gap-2">
-            <span className="text-[11px] font-bold text-zinc-500">Sort By</span>
-            <div className="flex p-1 bg-black/20 rounded-lg border border-white/5 relative">
+            <span className="text-[10px] font-black text-white/30 tracking-widest uppercase mb-0.5">Sort By</span>
+            <div className="flex p-1 bg-black/40 rounded-lg border border-white/5 relative">
               {(["score", "winrate", "pickrate", "banrate", "tier"] as SortMetric[]).map((m) => {
                 let display = m as string;
                 if (m === "winrate") display = "Win";
@@ -685,14 +699,14 @@ export function ChampionPool({ champions }: ChampionPoolProps) {
                    key={m}
                    onClick={(e) => { e.stopPropagation(); setSortBy(m); }}
                    className={cn(
-                     "relative px-4 py-1.5 rounded-md text-[11px] font-bold capitalize transition-colors z-0",
+                     "relative px-4 py-1.5 rounded-lg text-[11px] font-black tracking-tight capitalize transition-all z-0",
                      sortBy === m ? "text-white" : "text-zinc-500 hover:text-zinc-300"
                    )}
                  >
                    {sortBy === m && (
                      <motion.div
                        layoutId="sort-indicator"
-                       className="absolute inset-0 bg-white/10 rounded-md -z-10"
+                       className="absolute inset-0 bg-white/10 shadow-[0_0_15px_rgba(255,255,255,0.05)] rounded-lg -z-10"
                        transition={{ type: "spring", bounce: 0.2, duration: settings.disableAnimations ? 0 : 0.6 }}
                      />
                    )}
@@ -706,27 +720,27 @@ export function ChampionPool({ champions }: ChampionPoolProps) {
 
         <div className="flex flex-col xl:flex-row xl:items-center justify-between gap-4">
             <div className="flex items-center gap-2">
-              <span className="text-[11px] font-bold text-zinc-500 min-w-max">Role Filter</span>
-              <div className="flex p-1 bg-black/20 rounded-lg border border-white/5 flex-wrap">
+              <span className="text-[10px] font-black text-white/30 tracking-widest uppercase mb-0.5">Role Filter</span>
+              <div className="flex p-1 bg-black/40 rounded-lg border border-white/5 flex-wrap">
                 {(["all", Role.Baron, Role.Jungle, Role.Mid, Role.Dragon, Role.Support] as const).map((r) => (
                   <button
                     key={r}
                     onClick={(e) => { e.stopPropagation(); setRoleFilter(r); }}
                     title={settings.showTooltips ? (r === "all" ? "All Roles" : r) : undefined}
                     className={cn(
-                      "relative px-4 py-1.5 rounded-md text-[11px] font-bold capitalize transition-colors flex items-center justify-center min-w-[36px] z-0",
+                      "relative px-4 py-1.5 rounded-lg text-[11px] font-black tracking-tight capitalize transition-all flex items-center justify-center min-w-[36px] z-0",
                       activeRoleFilter === r ? "text-white" : "text-zinc-500 hover:text-zinc-300"
                     )}
                   >
                     {activeRoleFilter === r && (
                       <motion.div
                         layoutId="role-indicator"
-                        className="absolute inset-0 bg-blue-500/20 rounded-md -z-10"
+                        className="absolute inset-0 bg-white/10 shadow-[0_0_15px_rgba(255,255,255,0.05)] rounded-md -z-10"
                         transition={{ type: "spring", bounce: 0.2, duration: settings.disableAnimations ? 0 : 0.6 }}
                       />
                     )}
                     {r !== "all" ? (
-                      <img src={getRoleIcon(r)} alt={r} className="w-4 h-4 object-contain brightness-200" />
+                      <img src={getRoleIcon(r)} alt={r} className={cn("w-4 h-4 object-contain transition-all", activeRoleFilter === r ? "brightness-200" : "brightness-100 opacity-60 group-hover:opacity-100")} />
                     ) : (
                       <span>All</span>
                     )}
@@ -736,8 +750,8 @@ export function ChampionPool({ champions }: ChampionPoolProps) {
             </div>
 
             <div className="flex items-center gap-2">
-              <span className="text-[11px] font-bold text-zinc-500 min-w-max">Tier Filter</span>
-              <div className="flex p-1 bg-black/20 rounded-lg border border-white/5">
+              <span className="text-[10px] font-black text-white/30 tracking-widest uppercase mb-0.5">Tier Filter</span>
+              <div className="flex p-1 bg-black/40 rounded-lg border border-white/5">
                 {(["all", "S+", "S", "A", "B", "C", "D"] as const).map((t) => {
                   const hasTier = t === "all" || champions.some(c => c.tier === t);
                   if ((t === "C" || t === "D") && !hasTier) return null;
@@ -747,14 +761,14 @@ export function ChampionPool({ champions }: ChampionPoolProps) {
                       disabled={!hasTier}
                       onClick={(e) => { e.stopPropagation(); setTierFilter(t); }}
                       className={cn(
-                        "relative px-4 py-1.5 rounded-md text-[11px] font-bold capitalize transition-colors z-0",
+                        "relative px-4 py-1.5 rounded-lg text-[11px] font-black tracking-tight capitalize transition-all z-0",
                         !hasTier ? "opacity-30 cursor-not-allowed" : activeTierFilter === t ? "text-white" : "text-zinc-500 hover:text-zinc-300"
                       )}
                     >
                       {activeTierFilter === t && (
                         <motion.div
                           layoutId="tier-indicator"
-                          className="absolute inset-0 bg-white/10 rounded-md -z-10"
+                          className="absolute inset-0 bg-white/10 shadow-[0_0_15px_rgba(255,255,255,0.05)] rounded-md -z-10"
                           transition={{ type: "spring", bounce: 0.2, duration: settings.disableAnimations ? 0 : 0.6 }}
                         />
                       )}
@@ -797,7 +811,7 @@ export function ChampionPool({ champions }: ChampionPoolProps) {
       {/* Main Grid */}
       <ScrollArea className={cn(
         "flex-1 h-full min-h-0 rounded-xl border border-white/5 p-5 shadow-inner",
-        settings.disableTransparency ? "bg-zinc-900" : "bg-black/5"
+        settings.disableTransparency ? "bg-zinc-900" : "bg-black/20 backdrop-blur-md"
       )}>
         <div className={cn("grid gap-2 justify-center items-start", settings.gridDensity ? "grid-cols-12" : "grid-cols-10")}>
           {others.map((champion) => (
@@ -808,7 +822,7 @@ export function ChampionPool({ champions }: ChampionPoolProps) {
               isUnavailable={
                 pickedIds.has(champion.id) || 
                 (isBanMode 
-                  ? (bans[focusedSide] as any).includes(champion.id) 
+                  ? bans[focusedSide as keyof typeof bans].includes(champion.id) 
                   : combinedBans.has(champion.id))
               }
               isPicked={pickedIds.has(champion.id)}

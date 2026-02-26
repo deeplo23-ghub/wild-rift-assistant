@@ -3,7 +3,7 @@
 import React, { memo, useMemo } from "react";
 import { useDraftStore } from "@/store/draftStore";
 import { Role, Champion } from "@/types/champion";
-import { TeamSide, DraftState } from "@/types/draft";
+import { TeamSide } from "@/types/draft";
 import { motion } from "framer-motion";
 import { 
   Trash2, 
@@ -15,11 +15,6 @@ import { cn, formatTag, getRoleIcon, getWinrateColor } from "@/lib/utils";
 import { SYNERGY_RULES } from "@/lib/data/tags";
 import { ChampionIcon } from "./ChampionIcon";
 import { TeamTacticalAnalysis } from "./TeamTacticalAnalysis";
-import { 
-  Tooltip, 
-  TooltipContent, 
-  TooltipTrigger 
-} from "@/components/ui/tooltip";
 import { TIER_COLORS, SCORE_COLORS } from "./ChampionPool";
 
 const ROLE_LABELS = {
@@ -30,23 +25,7 @@ const ROLE_LABELS = {
   [Role.Support]: "Support",
 };
 
-const METRIC_TAG_MAP: Record<string, string[]> = {
-  durabilityScore: ["frontline", "tank"],
-  burstScore: ["burst", "assassin", "dive"],
-  engageScore: ["engage", "dive"],
-  rangeScore: ["range", "poke"],
-  ccScore: ["cc", "utility"],
-  peelScore: ["peel", "utility"],
-  scalingScore: ["scaling", "hypercarry"],
-  earlyGameScore: ["early", "skirmisher"],
-  mobilityScore: ["dive", "assassin"],
-  sustainScore: ["skirmisher"],
-  healingScore: ["utility"],
-  shieldScore: ["utility"],
-  teamfightScore: ["aoe", "utility", "cc"],
-  objectiveScore: ["hypercarry"],
-  waveclearScore: ["waveclear", "aoe"],
-};
+
 
 const getDamageType = (profile: { ad: number; ap: number; true: number }) => {
   const { ad, ap, true: t } = profile;
@@ -140,17 +119,19 @@ interface PickSlotProps {
   side: TeamSide;
   champion: Champion | undefined;
   isFocused: boolean;
-  bd: any; // ScoredChampion | null
+  bd: Record<string, unknown> | null;
   highlightType: "synergy" | "counter" | "weak" | null;
-  isStatHighlight: any;
+  isStatHighlight: boolean;
   settings: DraftSettings;
   onSlotClick: () => void;
   onHoverChamp: (id: string | null, side?: TeamSide) => void;
   allChampions: Champion[];
-  syns: { id: string; score: number }[];
-  ctrs: { id: string; val: number }[];
-  weaks: { id: string; val: number }[];
+  teamChampions: Champion[];
+  opposingTeamChampions: Champion[];
+  counterMatrix: unknown;
 }
+
+const EMPTY_ARRAY: Array<{ id: string; score?: number; val?: number }> = [];
 
 const PickSlot = memo(({ 
   role, 
@@ -164,11 +145,83 @@ const PickSlot = memo(({
   onSlotClick,
   onHoverChamp,
   allChampions,
-  syns,
-  ctrs,
-  weaks
+  teamChampions,
+  opposingTeamChampions,
+  counterMatrix
 }: PickSlotProps) => {
   const isAlly = side === TeamSide.Ally;
+
+  // Memoize these arrays to avoid re-renders on hover
+  const syns = useMemo(() => {
+    if (!champion) return EMPTY_ARRAY;
+    const draftedTeammateIdSet = new Set(teamChampions.map(c => c.id).filter(id => id !== champion.id));
+    if (draftedTeammateIdSet.size === 0) return EMPTY_ARRAY;
+
+    return teamChampions
+      .filter(c => draftedTeammateIdSet.has(c.id))
+      .map(c => {
+        let score = 0;
+        for (const t1 of champion.tags) {
+          for (const t2 of c.tags) {
+            const rule = SYNERGY_RULES.find(r => (r.tagA === t1 && r.tagB === t2) || (r.tagA === t2 && r.tagB === t1));
+            if (rule) score += rule.score;
+          }
+        }
+        return { id: c.id, score };
+      })
+      .filter(r => r.score > 0)
+      .sort((a, b) => b.score - a.score);
+  }, [champion, teamChampions]);
+
+  const ctrs = useMemo(() => {
+    if (!champion || !counterMatrix) return EMPTY_ARRAY;
+    
+    // Type guard for Map vs Object
+    const isMap = (obj: unknown): obj is Map<string, unknown> => obj instanceof Map;
+    let matrix: Map<string, number> | Record<string, number> | null = null;
+    
+    if (isMap(counterMatrix)) {
+      matrix = counterMatrix.get(champion.id) as Map<string, number> | undefined || null;
+    } else {
+      matrix = (counterMatrix as Record<string, Record<string, number>>)[champion.id] || null;
+    }
+    
+    if (!matrix) return EMPTY_ARRAY;
+    
+    const draftedOppIdSet = new Set(opposingTeamChampions.map(c => c.id));
+    if (draftedOppIdSet.size === 0) return EMPTY_ARRAY;
+    
+    const entries = isMap(matrix) ? Array.from(matrix.entries()) : Object.entries(matrix);
+    return entries
+      .map(([id, val]) => ({ id, val: val as number }))
+      .filter(e => draftedOppIdSet.has(e.id) && e.val > 0)
+      .sort((a, b) => b.val - a.val);
+  }, [champion, counterMatrix, opposingTeamChampions]);
+
+  const weaks = useMemo(() => {
+    if (!champion || !counterMatrix) return EMPTY_ARRAY;
+    const draftedOppIdSet = new Set(opposingTeamChampions.map(c => c.id));
+    if (draftedOppIdSet.size === 0) return EMPTY_ARRAY;
+
+    const isMap = (obj: unknown): obj is Map<string, unknown> => obj instanceof Map;
+
+    return Array.from(draftedOppIdSet).map(oppId => {
+       let matrix: Map<string, number> | Record<string, number> | null = null;
+       
+       if (isMap(counterMatrix)) {
+         matrix = counterMatrix.get(oppId) as Map<string, number> | undefined || null;
+       } else {
+         matrix = (counterMatrix as Record<string, Record<string, number>>)[oppId] || null;
+       }
+       
+       let val = 0;
+       if (matrix) {
+         val = isMap(matrix) ? (matrix.get(champion.id) || 0) : (matrix[champion.id] || 0);
+       }
+       return { id: oppId, val };
+    }).filter(e => e.val > 0)
+      .sort((a, b) => b.val - a.val);
+  }, [champion, counterMatrix, opposingTeamChampions]);
 
   return (
     <div className="flex flex-col gap-1">
@@ -263,7 +316,7 @@ const PickSlot = memo(({
                    <span className="text-sm font-bold text-zinc-100 truncate leading-none capitalize">{champion.name.toLowerCase()}</span>
                    {bd && (
                      <>
-                       <span className={cn("font-bold text-xs leading-none", SCORE_COLORS(bd.finalScore))}>{bd.finalScore.toFixed(1)}</span>
+                       <span className={cn("font-bold text-xs leading-none", SCORE_COLORS((bd.finalScore as number) || 0))}>{((bd.finalScore as number) || 0).toFixed(1)}</span>
                         {settings.showWinRates && (
                           <span className={cn(
                             "font-bold text-xs leading-none",
@@ -276,8 +329,8 @@ const PickSlot = memo(({
                 </div>
                 
                 <div className={cn("flex items-center gap-1", !isAlly && "flex-row-reverse")}>
-                   {settings.showSynergyIcons && syns.map((s: any) => {
-                     const c = allChampions.find((champ: any) => champ.id === s.id);
+                   {settings.showSynergyIcons && syns.map(s => {
+                     const c = allChampions.find(champ => champ.id === s.id);
                      return c ? (
                        <div key={c.id} className="w-5 h-5 rounded border border-emerald-500/50 overflow-hidden">
                          <ChampionIcon name={c.name} url={c.iconUrl} className="w-full h-full" />
@@ -285,8 +338,8 @@ const PickSlot = memo(({
                      ) : null;
                    })}
                    {settings.showSynergyIcons && syns.length > 0 && ((settings.showCounterIcons && ctrs.length > 0) || (settings.showWeaknessIcons && weaks.length > 0)) && <div className="w-px h-2.5 bg-white/10 mx-0.5" />}
-                   {settings.showCounterIcons && ctrs.map((c: any) => {
-                     const champ = allChampions.find((ch: any) => ch.id === c.id);
+                   {settings.showCounterIcons && ctrs.map(c => {
+                     const champ = allChampions.find(ch => ch.id === c.id);
                      return champ ? (
                        <div key={champ.id} className="w-5 h-5 rounded border border-red-500/50 overflow-hidden">
                          <ChampionIcon name={champ.name} url={champ.iconUrl} className="w-full h-full" />
@@ -294,8 +347,8 @@ const PickSlot = memo(({
                      ) : null;
                    })}
                    {settings.showCounterIcons && ctrs.length > 0 && settings.showWeaknessIcons && weaks.length > 0 && <div className="w-px h-2.5 bg-white/10 mx-0.5" />}
-                   {settings.showWeaknessIcons && weaks.map((c: any) => {
-                     const champ = allChampions.find((ch: any) => ch.id === c.id);
+                   {settings.showWeaknessIcons && weaks.map(c => {
+                     const champ = allChampions.find(ch => ch.id === c.id);
                      return champ ? (
                        <div key={champ.id} className="w-5 h-5 rounded border border-yellow-500/50 overflow-hidden">
                          <ChampionIcon name={champ.name} url={champ.iconUrl} className="w-full h-full" />
@@ -317,11 +370,11 @@ const PickSlot = memo(({
                 )}
               </>
             ) : isFocused ? (
-               <span className={cn("text-sm font-bold truncate text-white", !settings.disableAnimations && "animate-pulse")}>
-                 Selecting {ROLE_LABELS[role]}...
+               <span className={cn("text-lg font-black tracking-tight text-white/40", !settings.disableAnimations && "animate-pulse")}>
+                 Selecting {ROLE_LABELS[role]}
                </span>
             ) : (
-               <span className="text-sm font-bold truncate text-zinc-500/50">
+               <span className="text-xl font-black tracking-tighter text-zinc-500/20">
                  {ROLE_LABELS[role]}
                </span>
             )}
@@ -382,13 +435,42 @@ export const TeamPanel: React.FC<TeamPanelProps> = ({ side }) => {
   // Scoring Grade
   const totalScore = useMemo(() => 
     teamChampions.reduce((acc, c) => {
-      const bd = scoredChampions.find(s => s.championId === c.id);
-      return acc + (bd?.finalScore || 0);
+      const bd = scoredChampions.find(s => s.championId === c.id) as Record<string, unknown> | undefined;
+      return acc + ((bd?.finalScore as number) || 0);
     }, 0)
   , [teamChampions, scoredChampions]);
 
   const avgScore = teamChampions.length > 0 ? (totalScore / teamChampions.length) : 0;
   
+  const compAdvice = useMemo(() => {
+    if (teamChampions.length === 0) return { label: "Build Comp", color: "from-zinc-400 to-zinc-600", detail: "Start picking to see analysis." };
+    
+    const stats = {
+      cc: teamChampions.reduce((acc, c) => acc + c.ccScore, 0) / teamChampions.length,
+      durability: teamChampions.reduce((acc, c) => acc + c.durabilityScore, 0) / teamChampions.length,
+      waveclear: teamChampions.reduce((acc, c) => acc + c.waveclearScore, 0) / teamChampions.length,
+    };
+
+    const ad = teamChampions.reduce((acc, c) => acc + c.damageProfile.ad, 0);
+    const ap = teamChampions.reduce((acc, c) => acc + c.damageProfile.ap, 0);
+    const totalDmg = ad + ap || 1;
+
+    if (teamChampions.length >= 2) {
+      if (stats.durability < 3.8) return { label: "Needs Frontline", color: "from-orange-400 to-red-500", detail: "Composition is too fragile. Consider a tank." };
+      if (stats.cc < 4.5) return { label: "Needs CC", color: "from-indigo-400 to-blue-500", detail: "Lacking lockdown. Consider champions with stuns." };
+      if (ad / totalDmg > 0.85) return { label: "Needs AP", color: "from-blue-400 to-cyan-500", detail: "Too much Physical damage. Armor-stacking will counter you." };
+      if (ap / totalDmg > 0.85) return { label: "Needs AD", color: "from-orange-400 to-amber-600", detail: "Too much Magic damage. MR-stacking will counter you." };
+      if (stats.waveclear < 4.5) return { label: "Needs Waveclear", color: "from-purple-400 to-pink-500", detail: "Poor wave management. Defending will be difficult." };
+    }
+
+    if (teamChampions.length === 5) return { label: "Comp Complete", color: "from-emerald-400 to-teal-500", detail: "Final composition analysis active." };
+    return { label: "Balanced", color: "from-emerald-400 to-teal-500", detail: "Composition metrics are within healthy ranges." };
+  }, [teamChampions]);
+
+  // Use compAdvice to avoid unused variable warning or remove it if not used in the JSX
+  // If it's indeed unused, we can just comment it out.
+  // Actually let's keep it and render it if needed, or simply not define it if it's unused.
+
   const grade = useMemo(() => {
     if (avgScore >= 75) return "S+";
     if (avgScore >= 68) return "S";
@@ -400,7 +482,7 @@ export const TeamPanel: React.FC<TeamPanelProps> = ({ side }) => {
 
   // Helpers
   const getHighlightType = (champion: Champion): "synergy" | "counter" | "weak" | null => {
-    if (!hoveredChamp || !hoveredChampionSide) return null;
+    if (!hoveredChamp || !hoveredChampionSide || !hoveredChampionId) return null;
     // Don't highlight the hovered champion itself
     if (champion.id === hoveredChampionId) return null;
     
@@ -418,104 +500,71 @@ export const TeamPanel: React.FC<TeamPanelProps> = ({ side }) => {
     } else {
       // Opposite team from hovered: check counter and weak
       if (!counterMatrix) return null;
+      const isMap = (obj: unknown): obj is Map<string, unknown> => obj instanceof Map;
+
       // Does the hovered champ counter this champion?
-      const hoveredMatrix = (counterMatrix as any).get ? (counterMatrix as any).get(hoveredChampionId) : (counterMatrix as any)[hoveredChampionId as any];
+      let hoveredMatrix: Map<string, number> | Record<string, number> | null = null;
+      if (isMap(counterMatrix)) hoveredMatrix = counterMatrix.get(hoveredChampionId) as Map<string, number> | undefined || null;
+      else hoveredMatrix = (counterMatrix as unknown as Record<string, Record<string, number>>)[hoveredChampionId] || null;
+
       if (hoveredMatrix) {
-        const counterVal = hoveredMatrix.get ? hoveredMatrix.get(champion.id) : hoveredMatrix[champion.id];
-        if (counterVal > 2) return "counter";
+        const counterVal = isMap(hoveredMatrix) ? hoveredMatrix.get(champion.id) : hoveredMatrix[champion.id];
+        if (counterVal && counterVal > 2) return "counter";
       }
+
       // Does this champion counter the hovered champ? (weakness of hovered)
-      const champMatrix = (counterMatrix as any).get ? (counterMatrix as any).get(champion.id) : (counterMatrix as any)[champion.id];
+      let champMatrix: Map<string, number> | Record<string, number> | null = null;
+      if (isMap(counterMatrix)) champMatrix = counterMatrix.get(champion.id) as Map<string, number> | undefined || null;
+      else champMatrix = (counterMatrix as unknown as Record<string, Record<string, number>>)[champion.id] || null;
+
       if (champMatrix) {
-        const weakVal = champMatrix.get ? champMatrix.get(hoveredChampionId) : champMatrix[hoveredChampionId as any];
-        if (weakVal > 2) return "weak";
+        const weakVal = isMap(champMatrix) ? champMatrix.get(hoveredChampionId) : champMatrix[hoveredChampionId];
+        if (weakVal && weakVal > 2) return "weak";
       }
     }
     return null;
   };
 
-  const getTopCounters = (championId: string) => {
-    if (!counterMatrix) return [];
-    const matrix = (counterMatrix as any).get ? (counterMatrix as any).get(championId) : (counterMatrix as any)[championId];
-    if (!matrix) return [];
-    const draftedOppIdSet = new Set(opposingTeamChampions.map(c => c.id));
-    
-    if (draftedOppIdSet.size === 0) return [];
-    const entries = matrix.entries ? Array.from(matrix.entries()) : Object.entries(matrix);
-    return entries
-      .map(([id, val]: any) => ({ id, val }))
-      .filter((e: any) => draftedOppIdSet.has(e.id) && e.val > 0)
-      .sort((a: any, b: any) => b.val - a.val);
-  };
-
-  const getTopSynergies = (champion: Champion) => {
-    const draftedTeammateIdSet = new Set(teamChampions.map(c => c.id).filter(id => id !== champion.id));
-    if (draftedTeammateIdSet.size === 0) return [];
-
-    return teamChampions
-      .filter(c => draftedTeammateIdSet.has(c.id))
-      .map(c => {
-        let score = 0;
-        for (const t1 of champion.tags) {
-          for (const t2 of c.tags) {
-            const rule = SYNERGY_RULES.find(r => (r.tagA === t1 && r.tagB === t2) || (r.tagA === t2 && r.tagB === t1));
-            if (rule) score += rule.score;
-          }
-        }
-        return { id: c.id, score };
-      })
-      .filter(r => r.score > 0)
-      .sort((a, b) => b.score - a.score);
-  };
-
-  const getTopWeaknesses = (championId: string) => {
-    if (!counterMatrix) return [];
-    const draftedOppIdSet = new Set(opposingTeamChampions.map(c => c.id));
-    if (draftedOppIdSet.size === 0) return [];
-
-    return Array.from(draftedOppIdSet).map(oppId => {
-       const matrix = (counterMatrix as any).get ? (counterMatrix as any).get(oppId) : (counterMatrix as any)[oppId];
-       let val = 0;
-       if (matrix) {
-         val = matrix.get ? (matrix.get(championId) || 0) : (matrix[championId] || 0);
-       }
-       return { id: oppId, val };
-    }).filter(e => e.val > 0)
-      .sort((a, b) => b.val - a.val);
-  };
 
   return (
     <div className="flex flex-col gap-4 h-full min-h-0">
       <div className="space-y-3">
-        <div className={cn("flex items-center gap-2", !isAlly && "flex-row-reverse")}>
-            <div className={cn("h-6 w-1 rounded-full", isAlly ? "bg-blue-500" : "bg-red-500")} />
+        <div className={cn("flex items-center justify-between gap-2", !isAlly && "flex-row-reverse")}>
             <div className={cn("flex items-center gap-2", !isAlly && "flex-row-reverse")}>
+                <div className={cn("h-6 w-1 rounded-full", isAlly ? "bg-blue-500" : "bg-red-500")} />
                 <h2 className="text-xl font-bold tracking-tight text-white">{isAlly ? "Ally Team" : "Enemy Team"}</h2>
             </div>
-            <div className={cn(
-               "flex items-center gap-2 border border-white/10 rounded px-2 py-0.5 shadow-inner scale-90 origin-left", 
-               isAlly ? "ml-auto" : "mr-auto origin-right",
-               settings.disableTransparency ? "bg-zinc-900" : "bg-black/15"
-            )}>
-               <span className={cn(
-                 "text-lg font-black text-transparent bg-clip-text bg-gradient-to-r",
-                 grade === "S+" || grade === "S" ? "from-yellow-400 to-orange-400" :
-                 grade === "A" ? "from-emerald-400 to-emerald-600" :
-                 grade === "B" ? "from-blue-400 to-blue-600" :
-                 "from-zinc-400 to-zinc-600"
-               )}>{grade}</span>
-               <div className="w-px h-4 bg-white/10"></div>
-                <Tooltip open={settings.showTooltips ? undefined : false} delayDuration={0}>
-                    <TooltipTrigger asChild>
-                        <div className={cn("flex items-baseline gap-1", settings.showTooltips ? "cursor-help" : "cursor-default")}>
-                            <span className="text-sm font-bold tracking-tight text-white">{totalScore.toFixed(1)}</span>
-                        </div>
-                    </TooltipTrigger>
-                    <TooltipContent side="top" hideArrow className="px-2.5 py-1.5 bg-zinc-950/95 border border-white/10 rounded-lg text-[9.5px] font-bold text-zinc-100 shadow-2xl backdrop-blur-md">
-                        TOTAL COMPOSITION POWER
-                    </TooltipContent>
-                </Tooltip>
-            </div>
+
+            <motion.div 
+              initial={{ opacity: 0, y: -4 }}
+              animate={{ opacity: 1, y: 0 }}
+              className={cn(
+                "flex items-center gap-3 px-3 py-1 rounded-lg border border-white/5 transition-all",
+                settings.disableTransparency ? "bg-zinc-900" : "bg-black/10 backdrop-blur-md",
+                !isAlly && "flex-row-reverse",
+                teamChampions.length === 0 ? "opacity-40 grayscale" : "opacity-100 shadow-[0_0_20px_rgba(255,255,255,0.02)]"
+              )}
+            >
+              <div className="flex flex-col items-center min-w-[32px]">
+                <span className="text-[7px] font-black text-zinc-500 uppercase tracking-[0.2em] leading-none mb-1">Power</span>
+                <span className={cn(
+                  "text-xs font-black tabular-nums transition-colors",
+                  teamChampions.length > 0 ? SCORE_COLORS(avgScore) : "text-zinc-500/40"
+                )}>
+                  {teamChampions.length > 0 ? avgScore.toFixed(0) : "00"}
+                </span>
+              </div>
+              <div className="w-px h-5 bg-white/5" />
+              <div className="flex flex-col items-center min-w-[32px]">
+                <span className="text-[7px] font-black text-zinc-500 uppercase tracking-[0.2em] leading-none mb-1">Grade</span>
+                <span className={cn(
+                  "text-[13px] font-black italic select-none transition-colors tracking-tighter",
+                  teamChampions.length > 0 ? (TIER_COLORS[grade]?.split(" ")[0] || "text-zinc-300") : "text-zinc-500/20"
+                )}>
+                  {teamChampions.length > 0 ? grade : "—"}
+                </span>
+              </div>
+            </motion.div>
         </div>
         
         <div className="flex gap-2 h-14">
@@ -539,9 +588,9 @@ export const TeamPanel: React.FC<TeamPanelProps> = ({ side }) => {
           const slot = teamData[role];
           const champion = allChampions.find(c => c.id === slot.championId);
           const isFocused = focusedSide === side && focusedRole === role;
-          const bd = champion ? scoredChampions.find(s => s.championId === champion.id) : null;
+          const bd = (champion ? scoredChampions.find(s => s.championId === champion.id) : null) as Record<string, unknown> | null;
           const highlightType = champion ? getHighlightType(champion) : null;
-          const isStatHighlight = hoveredStatMetric && champion && (champion as any)[hoveredStatMetric] >= 7.0;
+          const isStatHighlight = hoveredStatMetric && champion && ((champion as unknown as Record<string, unknown>)[hoveredStatMetric] as number) >= 7.0 ? true : false;
 
           return (
             <PickSlot 
@@ -557,9 +606,9 @@ export const TeamPanel: React.FC<TeamPanelProps> = ({ side }) => {
               onSlotClick={() => champion ? removePick(side, role) : setFocusedSlot(side, role)}
               onHoverChamp={setHoveredChampion}
               allChampions={allChampions}
-              syns={champion ? getTopSynergies(champion) : []}
-              ctrs={champion ? getTopCounters(champion.id) : []}
-              weaks={champion ? getTopWeaknesses(champion.id) : []}
+              teamChampions={teamChampions}
+              opposingTeamChampions={opposingTeamChampions}
+              counterMatrix={counterMatrix}
             />
           );
         })}

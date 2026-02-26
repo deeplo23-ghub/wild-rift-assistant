@@ -5,17 +5,13 @@ import { useDraftStore } from "@/store/draftStore";
 import { Role, Champion } from "@/types/champion";
 import { TeamSide } from "@/types/draft";
 import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { 
-  Crosshair, 
   Trash2, 
-  Flame, 
   Target, 
   Zap, 
   Waves, 
   Skull, 
   Eye, 
-  Activity,
   ShieldAlert
 } from "lucide-react";
 import { cn, getRoleIcon } from "@/lib/utils";
@@ -45,10 +41,22 @@ export const EnemyPanel: React.FC = () => {
 
   const isCountered = (champId: string) => {
     if (!hoveredChampionId || !counterMatrix) return false;
-    const matrix = (counterMatrix as any).get ? (counterMatrix as any).get(hoveredChampionId) : null;
+    
+    // Type guard for Map vs Object
+    const isMap = (obj: unknown): obj is Map<string, unknown> => obj instanceof Map;
+    
+    let matrix: Map<string, number> | Record<string, number> | null = null;
+    
+    if (isMap(counterMatrix)) {
+      matrix = counterMatrix.get(hoveredChampionId) as Map<string, number> | undefined || null;
+    } else {
+      matrix = (counterMatrix as unknown as Record<string, Record<string, number>>)[hoveredChampionId] || null;
+    }
+    
     if (!matrix) return false;
-    const val = matrix.get ? matrix.get(champId) : matrix[champId];
-    return val > 2;
+    
+    const val = isMap(matrix) ? matrix.get(champId) : matrix[champId];
+    return typeof val === 'number' && val > 2;
   };
 
   const teamChampions = Object.values(enemy)

@@ -5,16 +5,11 @@ import { useDraftStore } from "@/store/draftStore";
 import { Role, Champion } from "@/types/champion";
 import { TeamSide } from "@/types/draft";
 import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { 
-  Users, 
   Trash2, 
   Brain, 
   Sword, 
-  Shield, 
-  Zap, 
   Wind, 
-  Crosshair, 
   Scale, 
   AlertTriangle,
   Sparkles

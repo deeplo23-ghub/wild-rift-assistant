@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 interface ChampionIconProps {
@@ -18,11 +19,11 @@ export const ChampionIcon: React.FC<ChampionIconProps> = ({
 }) => {
   const [error, setError] = useState(false);
 
-  if (error) {
+  if (error || !url) {
     // High-quality fallback: Styled initial or generic icon with premium look
     return (
       <div className={cn(
-        "flex items-center justify-center bg-zinc-800 border border-white/10 text-white font-black overflow-hidden",
+        "flex items-center justify-center bg-zinc-800 border border-white/10 text-white font-black overflow-hidden relative",
         className
       )}>
         <span className="text-xs capitalize tracking-tighter opacity-50">
@@ -34,9 +35,11 @@ export const ChampionIcon: React.FC<ChampionIconProps> = ({
   }
 
   return (
-    <img
+    <Image
       src={url}
       alt={name}
+      width={120}
+      height={120}
       onError={() => setError(true)}
       className={cn(
         "object-cover transition-all duration-300",
@@ -44,6 +47,7 @@ export const ChampionIcon: React.FC<ChampionIconProps> = ({
         !grayscale && "group-hover:scale-110",
         className
       )}
+      loading="lazy"
     />
   );
 };

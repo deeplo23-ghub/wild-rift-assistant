@@ -10,10 +10,8 @@ import superjson from "superjson";
 import { type Context } from "./context";
 import { Champion, CounterMatrix, Role, Tier } from "@/types/champion";
 import { getJunglerIcon } from "../utils";
+import * as fs from "fs";
 import { exec, ChildProcess } from "child_process";
-import { promisify } from "util";
-
-const execAsync = promisify(exec);
 
 // Global map to track active background processes for cancellation
 // Note: This works in a single-process environment (like dev mode).
@@ -30,6 +28,7 @@ export const publicProcedure = t.procedure;
 /**
  * Mappers to convert Prisma models to Domain types
  */
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const mapPrismaChampion = (pc: any): Champion => ({
   id: pc.id,
   name: pc.name,
@@ -77,7 +76,7 @@ export const appRouter = router({
     // ENFORCEMENT: Scraper throttling to avoid DoS claims (Compliance Step 3)
     // Check if a successful sync has occurred in the last 3 days
     try {
-      const meta: any[] = await ctx.prisma.$queryRawUnsafe(`
+      const meta: { lastScrapedAt: Date }[] = await ctx.prisma.$queryRawUnsafe(`
         SELECT "lastScrapedAt" FROM "DataMeta" WHERE id = 'singleton' LIMIT 1
       `);
       
@@ -123,9 +122,9 @@ export const appRouter = router({
         success: true,
         jobId: jobId,
       };
-    } catch (error: any) {
-      const fs = require('fs');
-      fs.appendFileSync('sync-error.log', `[${new Date().toISOString()}] SYNC ERROR: ${error.message}\n${error.stack}\n`);
+    } catch (error: unknown) {
+      const err = error as Error;
+      fs.appendFileSync('sync-error.log', `[${new Date().toISOString()}] SYNC ERROR: ${err.message}\n${err.stack}\n`);
       throw error;
     }
   }),
@@ -135,7 +134,7 @@ export const appRouter = router({
     .input(String)
     .query(async ({ ctx, input }) => {
       try {
-        const results: any[] = await ctx.prisma.$queryRawUnsafe(`
+        const results: Record<string, unknown>[] = await ctx.prisma.$queryRawUnsafe(`
           SELECT * FROM "SyncJob" WHERE id = '${input}' LIMIT 1
         `);
         return results[0] || null;
