@@ -56,7 +56,7 @@ model Champion {
 }
 
 /// Pairwise counter matchup values between champions.
-/// Populated from wr-meta.com categorical matchup data.
+/// Populated from global community categorical matchup data.
 /// See ARCHITECTURE.md §4.6 and §5.4 for normalization.
 model CounterMatchup {
   id          String  @id @default(cuid())

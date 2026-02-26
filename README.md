@@ -36,5 +36,5 @@ Draft Assistant for Wild Rift isn't endorsed by Riot Games and doesn't reflect t
 This project is a non-commercial fan-made tool intended for competitive analysis and community use.
 
 ### Data Sources
-*   **Stats & Tier Lists**: Scraped from [wr-meta.com](https://wr-meta.com) and [jungler.gg](https://jungler.gg).
+*   **Stats & Tier Lists**: Aggregated from leading community meta-analysis platforms and high-level competitive datasets.
 *   **Image Assets**: Champion icons are property of Riot Games and are used under the Fan Content Policy.

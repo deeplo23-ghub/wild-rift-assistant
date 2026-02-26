@@ -1,295 +1,148 @@
 "use client";
 
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import { motion } from 'framer-motion';
 import { cn } from "@/lib/utils";
 
 interface LogoTextProps {
   className?: string;
   delay?: number;
   active?: boolean;
-  loop?: boolean;
 }
 
-export const LogoText: React.FC<LogoTextProps> = ({ className, delay = 0, active: forceActive, loop = false }) => {
-  const [internalActive, setInternalActive] = useState(false);
-
-  useEffect(() => {
-    if (forceActive !== undefined) return;
-    
-    let timer: NodeJS.Timeout;
-    let loopTimer: NodeJS.Timeout;
-
-    // Initial trigger
-    timer = setTimeout(() => {
-      setInternalActive(true);
-      
-      if (loop) {
-        // Start loop cycle after initial animation
-        // Animation takes ~2.5s total (max delay 2.04s + 0.5s duration)
-        // Let's hold for 5s then reset
-        loopTimer = setInterval(() => {
-          setInternalActive(false);
-          // Wait for un-draw then re-draw
-          setTimeout(() => setInternalActive(true), 2500); // Wait 2.5s to un-draw
-        }, 10000); // 10s total cycle
-      }
-    }, (delay * 1000) + 100);
-
-    return () => {
-      clearTimeout(timer);
-      if (loopTimer) clearInterval(loopTimer);
-    };
-  }, [delay, forceActive, loop]);
-
-  const active = forceActive !== undefined ? forceActive : internalActive;
-
+export const LogoText: React.FC<LogoTextProps> = ({ className, delay = 0, active = true }) => {
   return (
-    <div className={cn("relative flex items-center justify-center overflow-visible", className)}>
-      <style dangerouslySetInnerHTML={{ __html: `
-        .text-svg .svg-elem-1 {
-          stroke-dashoffset: 193.52313232421875px;
-          stroke-dasharray: 193.52313232421875px;
-          fill: transparent;
-          transition: stroke-dashoffset 0.5s cubic-bezier(0.47, 0, 0.745, 0.715) 0s,
-                      fill 0.3s cubic-bezier(0.47, 0, 0.745, 0.715) 0.3s;
-        }
-        .text-svg.active .svg-elem-1 {
-          stroke-dashoffset: 0;
-          fill: rgb(200, 155, 60);
-        }
-
-        .text-svg .svg-elem-2 {
-          stroke-dashoffset: 82.35094451904297px;
-          stroke-dasharray: 82.35094451904297px;
-          fill: transparent;
-          transition: stroke-dashoffset 0.5s cubic-bezier(0.47, 0, 0.745, 0.715) 0.12s,
-                      fill 0.3s cubic-bezier(0.47, 0, 0.745, 0.715) 0.4s;
-        }
-        .text-svg.active .svg-elem-2 {
-          stroke-dashoffset: 0;
-          fill: rgb(200, 155, 60);
-        }
-
-        .text-svg .svg-elem-3 {
-          stroke-dashoffset: 157.12673950195312px;
-          stroke-dasharray: 157.12673950195312px;
-          fill: transparent;
-          transition: stroke-dashoffset 0.5s cubic-bezier(0.47, 0, 0.745, 0.715) 0.24s,
-                      fill 0.3s cubic-bezier(0.47, 0, 0.745, 0.715) 0.5s;
-        }
-        .text-svg.active .svg-elem-3 {
-          stroke-dashoffset: 0;
-          fill: rgb(200, 155, 60);
-        }
-
-        .text-svg .svg-elem-4 {
-          stroke-dashoffset: 119.33912658691406px;
-          stroke-dasharray: 119.33912658691406px;
-          fill: transparent;
-          transition: stroke-dashoffset 0.5s cubic-bezier(0.47, 0, 0.745, 0.715) 0.36s,
-                      fill 0.3s cubic-bezier(0.47, 0, 0.745, 0.715) 0.6s;
-        }
-        .text-svg.active .svg-elem-4 {
-          stroke-dashoffset: 0;
-          fill: rgb(200, 155, 60);
-        }
-
-        .text-svg .svg-elem-5 {
-          stroke-dashoffset: 115.94078063964844px;
-          stroke-dasharray: 115.94078063964844px;
-          fill: transparent;
-          transition: stroke-dashoffset 0.5s cubic-bezier(0.47, 0, 0.745, 0.715) 0.48s,
-                      fill 0.3s cubic-bezier(0.47, 0, 0.745, 0.715) 0.7s;
-        }
-        .text-svg.active .svg-elem-5 {
-          stroke-dashoffset: 0;
-          fill: rgb(200, 155, 60);
-        }
-
-        .text-svg .svg-elem-6 {
-          stroke-dashoffset: 157.87989807128906px;
-          stroke-dasharray: 157.87989807128906px;
-          fill: transparent;
-          transition: stroke-dashoffset 0.5s cubic-bezier(0.47, 0, 0.745, 0.715) 0.6s,
-                      fill 0.3s cubic-bezier(0.47, 0, 0.745, 0.715) 0.8s;
-        }
-        .text-svg.active .svg-elem-6 {
-          stroke-dashoffset: 0;
-          fill: rgb(200, 155, 60);
-        }
-
-        .text-svg .svg-elem-7 {
-          stroke-dashoffset: 86.85757446289062px;
-          stroke-dasharray: 86.85757446289062px;
-          fill: transparent;
-          transition: stroke-dashoffset 0.5s cubic-bezier(0.47, 0, 0.745, 0.715) 0.72s,
-                      fill 0.3s cubic-bezier(0.47, 0, 0.745, 0.715) 0.9s;
-        }
-        .text-svg.active .svg-elem-7 {
-          stroke-dashoffset: 0;
-          fill: rgb(200, 155, 60);
-        }
-
-        .text-svg .svg-elem-8 {
-          stroke-dashoffset: 131.77293395996094px;
-          stroke-dasharray: 131.77293395996094px;
-          fill: transparent;
-          transition: stroke-dashoffset 0.5s cubic-bezier(0.47, 0, 0.745, 0.715) 0.84s,
-                      fill 0.3s cubic-bezier(0.47, 0, 0.745, 0.715) 1s;
-        }
-        .text-svg.active .svg-elem-8 {
-          stroke-dashoffset: 0;
-          fill: rgb(200, 155, 60);
-        }
-
-        .text-svg .svg-elem-9 {
-          stroke-dashoffset: 156.22000122070312px;
-          stroke-dasharray: 156.22000122070312px;
-          fill: transparent;
-          transition: stroke-dashoffset 0.5s cubic-bezier(0.47, 0, 0.745, 0.715) 0.96s,
-                      fill 0.3s cubic-bezier(0.47, 0, 0.745, 0.715) 1.1s;
-        }
-        .text-svg.active .svg-elem-9 {
-          stroke-dashoffset: 0;
-          fill: rgb(200, 155, 60);
-        }
-
-        .text-svg .svg-elem-10 {
-          stroke-dashoffset: 174.8508758544922px;
-          stroke-dasharray: 174.8508758544922px;
-          fill: transparent;
-          transition: stroke-dashoffset 0.5s cubic-bezier(0.47, 0, 0.745, 0.715) 1.08s,
-                      fill 0.3s cubic-bezier(0.47, 0, 0.745, 0.715) 1.2s;
-        }
-        .text-svg.active .svg-elem-10 {
-          stroke-dashoffset: 0;
-          fill: rgb(200, 155, 60);
-        }
-
-        .text-svg .svg-elem-11 {
-          stroke-dashoffset: 140.0468292236328px;
-          stroke-dasharray: 140.0468292236328px;
-          fill: transparent;
-          transition: stroke-dashoffset 0.5s cubic-bezier(0.47, 0, 0.745, 0.715) 1.2s,
-                      fill 0.3s cubic-bezier(0.47, 0, 0.745, 0.715) 1.3s;
-        }
-        .text-svg.active .svg-elem-11 {
-          stroke-dashoffset: 0;
-          fill: rgb(200, 155, 60);
-        }
-
-        .text-svg .svg-elem-12 {
-          stroke-dashoffset: 140.04685974121094px;
-          stroke-dasharray: 140.04685974121094px;
-          fill: transparent;
-          transition: stroke-dashoffset 0.5s cubic-bezier(0.47, 0, 0.745, 0.715) 1.32s,
-                      fill 0.3s cubic-bezier(0.47, 0, 0.745, 0.715) 1.4s;
-        }
-        .text-svg.active .svg-elem-12 {
-          stroke-dashoffset: 0;
-          fill: rgb(200, 155, 60);
-        }
-
-        .text-svg .svg-elem-13 {
-          stroke-dashoffset: 86.8575210571289px;
-          stroke-dasharray: 86.8575210571289px;
-          fill: transparent;
-          transition: stroke-dashoffset 0.5s cubic-bezier(0.47, 0, 0.745, 0.715) 1.44s,
-                      fill 0.3s cubic-bezier(0.47, 0, 0.745, 0.715) 1.5s;
-        }
-        .text-svg.active .svg-elem-13 {
-          stroke-dashoffset: 0;
-          fill: rgb(200, 155, 60);
-        }
-
-        .text-svg .svg-elem-14 {
-          stroke-dashoffset: 140.04684448242188px;
-          stroke-dasharray: 140.04684448242188px;
-          fill: transparent;
-          transition: stroke-dashoffset 0.5s cubic-bezier(0.47, 0, 0.745, 0.715) 1.56s,
-                      fill 0.3s cubic-bezier(0.47, 0, 0.745, 0.715) 1.6s;
-        }
-        .text-svg.active .svg-elem-14 {
-          stroke-dashoffset: 0;
-          fill: rgb(200, 155, 60);
-        }
-
-        .text-svg .svg-elem-15 {
-          stroke-dashoffset: 115.94088745117188px;
-          stroke-dasharray: 115.94088745117188px;
-          fill: transparent;
-          transition: stroke-dashoffset 0.5s cubic-bezier(0.47, 0, 0.745, 0.715) 1.68s,
-                      fill 0.3s cubic-bezier(0.47, 0, 0.745, 0.715) 1.7s;
-        }
-        .text-svg.active .svg-elem-15 {
-          stroke-dashoffset: 0;
-          fill: rgb(200, 155, 60);
-        }
-
-        .text-svg .svg-elem-16 {
-          stroke-dashoffset: 157.12710571289062px;
-          stroke-dasharray: 157.12710571289062px;
-          fill: transparent;
-          transition: stroke-dashoffset 0.5s cubic-bezier(0.47, 0, 0.745, 0.715) 1.8s,
-                      fill 0.3s cubic-bezier(0.47, 0, 0.745, 0.715) 1.8s;
-        }
-        .text-svg.active .svg-elem-16 {
-          stroke-dashoffset: 0;
-          fill: rgb(200, 155, 60);
-        }
-
-        .text-svg .svg-elem-17 {
-          stroke-dashoffset: 135.65370178222656px;
-          stroke-dasharray: 135.65370178222656px;
-          fill: transparent;
-          transition: stroke-dashoffset 0.5s cubic-bezier(0.47, 0, 0.745, 0.715) 1.92s,
-                      fill 0.3s cubic-bezier(0.47, 0, 0.745, 0.715) 1.9s;
-        }
-        .text-svg.active .svg-elem-17 {
-          stroke-dashoffset: 0;
-          fill: rgb(200, 155, 60);
-        }
-
-        .text-svg .svg-elem-18 {
-          stroke-dashoffset: 115.94076538085938px;
-          stroke-dasharray: 115.94076538085938px;
-          fill: transparent;
-          transition: stroke-dashoffset 0.5s cubic-bezier(0.47, 0, 0.745, 0.715) 2.04s,
-                      fill 0.3s cubic-bezier(0.47, 0, 0.745, 0.715) 2s;
-        }
-        .text-svg.active .svg-elem-18 {
-          stroke-dashoffset: 0;
-          fill: rgb(200, 155, 60);
-        }
-      ` }} />
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 13.85 466.8 36.05"
-        className={cn("text-svg transition-all", active && "active")}
-        width="100%"
-        height="100%"
+    <div className={cn("relative flex items-center justify-center overflow-visible select-none", className)}>
+      <style>
+        {`
+          .logo-svg .svg-elem-1 { stroke-dashoffset: 11350.25390625px; stroke-dasharray: 11350.25390625px; fill: transparent; transition: stroke-dashoffset 1s cubic-bezier(0.47, 0, 0.745, 0.715) ${delay + 0}s, fill 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) ${delay + 0.8}s; }
+          .logo-svg.active .svg-elem-1 { stroke-dashoffset: 0; fill: rgb(255, 255, 255); }
+          .logo-svg .svg-elem-2 { stroke-dashoffset: 5329.35302734375px; stroke-dasharray: 5329.35302734375px; fill: transparent; transition: stroke-dashoffset 1s cubic-bezier(0.47, 0, 0.745, 0.715) ${delay + 0.05}s, fill 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) ${delay + 0.85}s; }
+          .logo-svg.active .svg-elem-2 { stroke-dashoffset: 0; fill: rgb(255, 255, 255); }
+          .logo-svg .svg-elem-3 { stroke-dashoffset: 8739.712890625px; stroke-dasharray: 8739.712890625px; fill: transparent; transition: stroke-dashoffset 1s cubic-bezier(0.47, 0, 0.745, 0.715) ${delay + 0.1}s, fill 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) ${delay + 0.9}s; }
+          .logo-svg.active .svg-elem-3 { stroke-dashoffset: 0; fill: rgb(255, 255, 255); }
+          .logo-svg .svg-elem-4 { stroke-dashoffset: 6714.6015625px; stroke-dasharray: 6714.6015625px; fill: transparent; transition: stroke-dashoffset 1s cubic-bezier(0.47, 0, 0.745, 0.715) ${delay + 0.15}s, fill 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) ${delay + 0.95}s; }
+          .logo-svg.active .svg-elem-4 { stroke-dashoffset: 0; fill: rgb(255, 255, 255); }
+          .logo-svg .svg-elem-5 { stroke-dashoffset: 6026.978515625px; stroke-dasharray: 6026.978515625px; fill: transparent; transition: stroke-dashoffset 1s cubic-bezier(0.47, 0, 0.745, 0.715) ${delay + 0.2}s, fill 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) ${delay + 1}s; }
+          .logo-svg.active .svg-elem-5 { stroke-dashoffset: 0; fill: rgb(255, 255, 255); }
+          .logo-svg .svg-elem-6 { stroke-dashoffset: 10381.4833984375px; stroke-dasharray: 10381.4833984375px; fill: transparent; transition: stroke-dashoffset 1s cubic-bezier(0.47, 0, 0.745, 0.715) ${delay + 0.25}s, fill 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) ${delay + 1.05}s; }
+          .logo-svg.active .svg-elem-6 { stroke-dashoffset: 0; fill: rgb(255, 255, 255); }
+          .logo-svg .svg-elem-7 { stroke-dashoffset: 8488.7412109375px; stroke-dasharray: 8488.7412109375px; fill: transparent; transition: stroke-dashoffset 1s cubic-bezier(0.47, 0, 0.745, 0.715) ${delay + 0.3}s, fill 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) ${delay + 1.1}s; }
+          .logo-svg.active .svg-elem-7 { stroke-dashoffset: 0; fill: rgb(255, 255, 255); }
+          .logo-svg .svg-elem-8 { stroke-dashoffset: 8499.580078125px; stroke-dasharray: 8499.580078125px; fill: transparent; transition: stroke-dashoffset 1s cubic-bezier(0.47, 0, 0.745, 0.715) ${delay + 0.35}s, fill 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) ${delay + 1.15}s; }
+          .logo-svg.active .svg-elem-8 { stroke-dashoffset: 0; fill: rgb(255, 255, 255); }
+          .logo-svg .svg-elem-9 { stroke-dashoffset: 3722px; stroke-dasharray: 3722px; fill: transparent; transition: stroke-dashoffset 1s cubic-bezier(0.47, 0, 0.745, 0.715) ${delay + 0.4}s, fill 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) ${delay + 1.2}s; }
+          .logo-svg.active .svg-elem-9 { stroke-dashoffset: 0; fill: rgb(255, 255, 255); }
+          .logo-svg .svg-elem-10 { stroke-dashoffset: 1301.3704833984375px; stroke-dasharray: 1301.3704833984375px; fill: transparent; transition: stroke-dashoffset 1s cubic-bezier(0.47, 0, 0.745, 0.715) ${delay + 0.45}s, fill 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) ${delay + 1.25}s; }
+          .logo-svg.active .svg-elem-10 { stroke-dashoffset: 0; fill: rgb(255, 255, 255); }
+          .logo-svg .svg-elem-11 { stroke-dashoffset: 8510.4580078125px; stroke-dasharray: 8510.4580078125px; fill: transparent; transition: stroke-dashoffset 1s cubic-bezier(0.47, 0, 0.745, 0.715) ${delay + 0.5}s, fill 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) ${delay + 1.3}s; }
+          .logo-svg.active .svg-elem-11 { stroke-dashoffset: 0; fill: rgb(255, 255, 255); }
+          .logo-svg .svg-elem-12 { stroke-dashoffset: 6021.01708984375px; stroke-dasharray: 6021.01708984375px; fill: transparent; transition: stroke-dashoffset 1s cubic-bezier(0.47, 0, 0.745, 0.715) ${delay + 0.55}s, fill 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) ${delay + 1.35}s; }
+          .logo-svg.active .svg-elem-12 { stroke-dashoffset: 0; fill: rgb(255, 255, 255); }
+          .logo-svg .svg-elem-13 { stroke-dashoffset: 8702.4404296875px; stroke-dasharray: 8702.4404296875px; fill: transparent; transition: stroke-dashoffset 1s cubic-bezier(0.47, 0, 0.745, 0.715) ${delay + 0.6}s, fill 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) ${delay + 1.4}s; }
+          .logo-svg.active .svg-elem-13 { stroke-dashoffset: 0; fill: rgb(255, 255, 255); }
+          .logo-svg .svg-elem-14 { stroke-dashoffset: 8005.88134765625px; stroke-dasharray: 8005.88134765625px; fill: transparent; transition: stroke-dashoffset 1s cubic-bezier(0.47, 0, 0.745, 0.715) ${delay + 0.65}s, fill 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) ${delay + 1.45}s; }
+          .logo-svg.active .svg-elem-14 { stroke-dashoffset: 0; fill: rgb(255, 255, 255); }
+          .logo-svg .svg-elem-15 { stroke-dashoffset: 6018.02197265625px; stroke-dasharray: 6018.02197265625px; fill: transparent; transition: stroke-dashoffset 1s cubic-bezier(0.47, 0, 0.745, 0.715) ${delay + 0.7}s, fill 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) ${delay + 1.5}s; }
+          .logo-svg.active .svg-elem-15 { stroke-dashoffset: 0; fill: rgb(255, 255, 255); }
+          .logo-svg .svg-elem-16 { stroke-dashoffset: 8682px; stroke-dasharray: 8682px; fill: transparent; transition: stroke-dashoffset 1s cubic-bezier(0.47, 0, 0.745, 0.715) ${delay + 0.75}s, fill 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) ${delay + 1.55}s; }
+          .logo-svg.active .svg-elem-16 { stroke-dashoffset: 0; fill: rgb(50, 200, 255); }
+          .logo-svg .svg-elem-17 { stroke-dashoffset: 7638.6494140625px; stroke-dasharray: 7638.6494140625px; fill: transparent; transition: stroke-dashoffset 1s cubic-bezier(0.47, 0, 0.745, 0.715) ${delay + 0.8}s, fill 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) ${delay + 1.6}s; }
+          .logo-svg.active .svg-elem-17 { stroke-dashoffset: 0; fill: rgb(50, 200, 255); }
+          .logo-svg .svg-elem-18 { stroke-dashoffset: 5291.3603515625px; stroke-dasharray: 5291.3603515625px; fill: transparent; transition: stroke-dashoffset 1s cubic-bezier(0.47, 0, 0.745, 0.715) ${delay + 0.85}s, fill 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) ${delay + 1.65}s; }
+          .logo-svg.active .svg-elem-18 { stroke-dashoffset: 0; fill: rgb(50, 200, 255); }
+          .logo-svg .svg-elem-19 { stroke-dashoffset: 17446.423828125px; stroke-dasharray: 17446.423828125px; fill: transparent; transition: stroke-dashoffset 1s cubic-bezier(0.47, 0, 0.745, 0.715) ${delay + 0.9}s, fill 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) ${delay + 1.7}s; }
+          .logo-svg.active .svg-elem-19 { stroke-dashoffset: 0; fill: rgb(200, 155, 60); }
+          .logo-svg .svg-elem-20 { stroke-dashoffset: 3742px; stroke-dasharray: 3742px; fill: transparent; transition: stroke-dashoffset 1s cubic-bezier(0.47, 0, 0.745, 0.715) ${delay + 0.95}s, fill 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) ${delay + 1.75}s; }
+          .logo-svg.active .svg-elem-20 { stroke-dashoffset: 0; fill: rgb(200, 155, 60); }
+          .logo-svg .svg-elem-21 { stroke-dashoffset: 1300.5067138671875px; stroke-dasharray: 1300.5067138671875px; fill: transparent; transition: stroke-dashoffset 1s cubic-bezier(0.47, 0, 0.745, 0.715) ${delay + 1}s, fill 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) ${delay + 1.8}s; }
+          .logo-svg.active .svg-elem-21 { stroke-dashoffset: 0; fill: rgb(200, 155, 60); }
+          .logo-svg .svg-elem-22 { stroke-dashoffset: 4822px; stroke-dasharray: 4822px; fill: transparent; transition: stroke-dashoffset 1s cubic-bezier(0.47, 0, 0.745, 0.715) ${delay + 1.05}s, fill 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) ${delay + 1.85}s; }
+          .logo-svg.active .svg-elem-22 { stroke-dashoffset: 0; fill: rgb(200, 155, 60); }
+          .logo-svg .svg-elem-23 { stroke-dashoffset: 10075.8076171875px; stroke-dasharray: 10075.8076171875px; fill: transparent; transition: stroke-dashoffset 1s cubic-bezier(0.47, 0, 0.745, 0.715) ${delay + 1.1}s, fill 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) ${delay + 1.9}s; }
+          .logo-svg.active .svg-elem-23 { stroke-dashoffset: 0; fill: rgb(200, 155, 60); }
+          .logo-svg .svg-elem-24 { stroke-dashoffset: 11795.25390625px; stroke-dasharray: 11795.25390625px; fill: transparent; transition: stroke-dashoffset 1s cubic-bezier(0.47, 0, 0.745, 0.715) ${delay + 1.15}s, fill 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) ${delay + 1.95}s; }
+          .logo-svg.active .svg-elem-24 { stroke-dashoffset: 0; fill: rgb(200, 155, 60); }
+          .logo-svg .svg-elem-25 { stroke-dashoffset: 3722.0712890625px; stroke-dasharray: 3722.0712890625px; fill: transparent; transition: stroke-dashoffset 1s cubic-bezier(0.47, 0, 0.745, 0.715) ${delay + 1.2}s, fill 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) ${delay + 2}s; }
+          .logo-svg.active .svg-elem-25 { stroke-dashoffset: 0; fill: rgb(200, 155, 60); }
+          .logo-svg .svg-elem-26 { stroke-dashoffset: 1298.940673828125px; stroke-dasharray: 1298.940673828125px; fill: transparent; transition: stroke-dashoffset 1s cubic-bezier(0.47, 0, 0.745, 0.715) ${delay + 1.25}s, fill 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) ${delay + 2.05}s; }
+          .logo-svg.active .svg-elem-26 { stroke-dashoffset: 0; fill: rgb(200, 155, 60); }
+          .logo-svg .svg-elem-27 { stroke-dashoffset: 6723.63720703125px; stroke-dasharray: 6723.63720703125px; fill: transparent; transition: stroke-dashoffset 1s cubic-bezier(0.47, 0, 0.745, 0.715) ${delay + 1.3}s, fill 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) ${delay + 2.1}s; }
+          .logo-svg.active .svg-elem-27 { stroke-dashoffset: 0; fill: rgb(200, 155, 60); }
+          .logo-svg .svg-elem-28 { stroke-dashoffset: 6046.43310546875px; stroke-dasharray: 6046.43310546875px; fill: transparent; transition: stroke-dashoffset 1s cubic-bezier(0.47, 0, 0.745, 0.715) ${delay + 1.35}s, fill 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) ${delay + 2.15}s; }
+          .logo-svg.active .svg-elem-28 { stroke-dashoffset: 0; fill: rgb(200, 155, 60); }
+          .logo-svg .svg-elem-29 { stroke-dashoffset: 1394.8450927734375px; stroke-dasharray: 1394.8450927734375px; fill: transparent; transition: stroke-dashoffset 1s cubic-bezier(0.47, 0, 0.745, 0.715) ${delay + 1.4}s, fill 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) ${delay + 2.2}s; }
+          .logo-svg.active .svg-elem-29 { stroke-dashoffset: 0; fill: rgb(50, 200, 255); }
+        `}
+      </style>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={active ? { opacity: 1 } : {}}
+        transition={{ duration: 1, delay }}
+        className="w-full h-full flex items-center justify-center pt-1"
       >
-        <g strokeWidth="0.5" stroke="rgba(200, 155, 60, 0.5)">
-          <path className="svg-elem-1" d="M0 49.20L0 43.90L4.70 43.90L4.70 19.50L0 19.50L0 14.20L14.25 14.20Q21.25 14.20 24.95 17.75Q28.65 21.30 28.65 28.40L28.65 35Q28.65 42.10 24.95 45.65Q21.25 49.20 14.25 49.20L0 49.20M10.70 43.75L14.30 43.75Q18.55 43.75 20.60 41.55Q22.65 39.35 22.65 35.20L22.65 28.25Q22.65 24 20.60 21.83Q18.55 19.65 14.30 19.65L10.70 19.65L10.70 43.75Z" />
-          <path className="svg-elem-2" d="M34.60 49.20L34.60 24.50L40.25 24.50L40.25 27.35L41.10 27.35Q41.65 25.80 42.95 25.10Q44.25 24.40 46.05 24.40L49.05 24.40L49.05 29.50L45.95 29.50Q43.45 29.50 41.90 30.83Q40.35 32.15 40.35 34.90L40.35 49.20L34.60 49.20Z" />
-          <path className="svg-elem-3" d="M61.15 49.90Q58.55 49.90 56.45 48.98Q54.35 48.05 53.13 46.30Q51.90 44.55 51.90 42Q51.90 39.50 53.13 37.80Q54.35 36.10 56.50 35.23Q58.65 34.35 61.40 34.35L68.55 34.35L68.55 32.85Q68.55 30.90 67.35 29.68Q66.15 28.45 63.60 28.45Q61.10 28.45 59.83 29.63Q58.55 30.80 58.15 32.65L52.85 30.90Q53.45 28.95 54.78 27.35Q56.10 25.75 58.30 24.78Q60.50 23.80 63.70 23.80Q68.55 23.80 71.33 26.23Q74.10 28.65 74.10 33.25L74.10 42.95Q74.10 44.45 75.50 44.45L77.60 44.45L77.60 49.20L73.55 49.20Q71.75 49.20 70.60 48.30Q69.45 47.40 69.45 45.85L69.45 45.75L68.60 45.75Q68.30 46.45 67.55 47.45Q66.80 48.45 65.28 49.18Q63.75 49.90 61.15 49.90M62.10 45.20Q64.95 45.20 66.75 43.58Q68.55 41.95 68.55 39.20L68.55 38.70L61.75 38.70Q59.90 38.70 58.75 39.50Q57.60 40.30 57.60 41.85Q57.60 43.35 58.80 44.28Q60 45.20 62.10 45.20Z" />
-          <path className="svg-elem-4" d="M84.90 49.20L84.90 29.25L78.30 29.25L78.30 24.50L84.90 24.50L84.90 19.50Q84.90 17.05 86.33 15.63Q87.75 14.20 90.10 14.20L96.50 14.20L96.50 18.95L92 18.95Q90.60 18.95 90.60 20.45L90.60 24.50L97.40 24.50L97.40 29.25L90.60 29.25L90.60 49.20L84.90 49.20Z" />
-          <path className="svg-elem-5" d="M106.25 49.20Q103.85 49.20 102.43 47.78Q101.00 46.35 101.00 43.90L101.00 29.25L94.55 29.25L94.55 24.50L101.00 24.50L101.00 16.55L106.75 16.55L106.75 24.50L113.85 24.50L113.85 29.25L106.75 29.25L106.75 42.95Q106.75 44.45 108.15 44.45L113.10 44.45L113.10 49.20L106.25 49.20Z" />
-          <path className="svg-elem-6" d="M132.25 49.20L132.25 14.20L146.40 14.20Q149.70 14.20 152.20 15.50Q154.70 16.80 156.15 19.18Q157.60 21.55 157.60 24.80L157.60 25.50Q157.60 28.70 156.13 31.10Q154.65 33.50 152.13 34.80Q149.60 36.10 146.40 36.10L138.30 36.10L138.30 49.20L132.25 49.20M138.30 30.65L145.80 30.65Q148.40 30.65 149.98 29.25Q151.55 27.85 151.55 25.40L151.55 24.90Q151.55 22.45 150 21.05Q148.45 19.65 145.80 19.65L138.30 19.65L138.30 30.65Z" />
-          <path className="svg-elem-7" d="M162.60 49.20L162.60 24.50L168.35 24.50L168.35 49.20L162.60 49.20M165.45 21.35Q163.90 21.35 162.78 20.33Q161.65 19.30 161.65 17.60Q161.65 15.90 162.78 14.88Q163.90 13.85 165.45 13.85Q167.10 13.85 168.18 14.88Q169.25 15.90 169.25 17.60Q169.25 19.30 168.18 20.33Q167.10 21.35 165.45 21.35Z" />
-          <path className="svg-elem-8" d="M187.20 49.90Q183.60 49.90 180.70 48.40Q177.80 46.90 176.13 44.05Q174.45 41.20 174.45 37.20L174.45 36.50Q174.45 32.50 176.13 29.65Q177.80 26.80 180.70 25.30Q183.60 23.80 187.20 23.80Q190.75 23.80 193.28 25.05Q195.80 26.30 197.35 28.48Q198.90 30.65 199.35 33.35L193.80 34.50Q193.60 32.95 192.85 31.68Q192.10 30.40 190.73 29.65Q189.35 28.90 187.35 28.90Q185.30 28.90 183.68 29.78Q182.05 30.65 181.13 32.40Q180.20 34.15 180.20 36.60L180.20 37.10Q180.20 39.55 181.13 41.28Q182.05 43 183.68 43.90Q185.30 44.80 187.35 44.80Q190.40 44.80 191.98 43.23Q193.55 41.65 193.95 39.15L199.50 40.45Q198.90 43.05 197.35 45.20Q195.80 47.35 193.28 48.63Q190.75 49.90 187.20 49.90Z" />
-          <path className="svg-elem-9" d="M205.10 49.20L205.10 14.20L210.85 14.20L210.85 33.85L211.70 33.85L220.60 24.50L228.15 24.50L216.20 36.45L228.55 49.20L221.10 49.20L211.70 39.15L210.85 39.15L210.85 49.20L205.10 49.20Z" />
-          <path className="svg-elem-10" d="M242.50 49.20L252.10 14.20L262.55 14.20L272.15 49.20L265.95 49.20L263.85 41.20L250.80 41.20L248.70 49.20L242.50 49.20M252.20 35.70L262.45 35.70L257.75 17.95L256.90 17.95L252.20 35.70Z" />
-          <path className="svg-elem-11" d="M287.00 49.90Q282.20 49.90 279.10 47.80Q276.00 45.70 275.35 41.65L280.65 40.30Q281.00 42.20 281.90 43.30Q282.80 44.40 284.13 44.85Q285.45 45.30 287.00 45.30Q289.35 45.30 290.53 44.45Q291.70 43.60 291.70 42.30Q291.70 40.95 290.58 40.30Q289.45 39.65 287.15 39.20L285.60 38.95Q283.05 38.45 280.95 37.58Q278.85 36.70 277.58 35.18Q276.30 33.65 276.30 31.30Q276.30 27.70 278.98 25.75Q281.65 23.80 286.00 23.80Q290.15 23.80 292.85 25.65Q295.55 27.50 296.35 30.60L291.05 32.20Q290.65 30.10 289.30 29.23Q287.95 28.35 286.00 28.35Q284.00 28.35 282.93 29.05Q281.85 29.75 281.85 31.05Q281.85 32.35 282.95 33Q284.05 33.65 285.90 33.95L287.45 34.25Q290.20 34.75 292.43 35.55Q294.65 36.35 295.95 37.85Q297.25 39.35 297.25 41.90Q297.25 45.75 294.48 47.83Q291.70 49.90 287.00 49.90Z" />
-          <path className="svg-elem-12" d="M313.25 49.90Q308.45 49.90 305.35 47.80Q302.25 45.70 301.60 41.65L306.90 40.30Q307.25 42.20 308.15 43.30Q309.05 44.40 310.38 44.85Q311.70 45.30 313.25 45.30Q315.60 45.30 316.78 44.45Q317.95 43.60 317.95 42.30Q317.95 40.95 316.83 40.30Q315.70 39.65 313.40 39.20L311.85 38.95Q309.30 38.45 307.20 37.58Q305.10 36.70 303.83 35.18Q302.55 33.65 302.55 31.30Q302.55 27.70 305.23 25.75Q307.90 23.80 312.25 23.80Q316.40 23.80 319.10 25.65Q321.80 27.50 322.60 30.60L317.30 32.20Q316.90 30.10 315.55 29.23Q314.20 28.35 312.25 28.35Q310.25 28.35 309.18 29.05Q308.10 29.75 308.10 31.05Q308.10 32.35 309.20 33Q310.30 33.65 312.15 33.95L313.70 34.25Q316.45 34.75 318.68 35.55Q320.90 36.35 322.20 37.85Q323.50 39.35 323.50 41.90Q323.50 45.75 320.73 47.83Q317.95 49.90 313.25 49.90Z" />
-          <path className="svg-elem-13" d="M329.30 49.20L329.30 24.50L335.05 24.50L335.05 49.20L329.30 49.20M332.15 21.35Q330.60 21.35 329.48 20.33Q328.35 19.30 328.35 17.60Q328.35 15.90 329.48 14.88Q330.60 13.85 332.15 13.85Q333.80 13.85 334.88 14.88Q335.95 15.90 335.95 17.60Q335.95 19.30 334.88 20.33Q333.80 21.35 332.15 21.35Z" />
-          <path className="svg-elem-14" d="M352.55 49.90Q347.75 49.90 344.65 47.80Q341.55 45.70 340.90 41.65L346.20 40.30Q346.55 42.20 347.45 43.30Q348.35 44.40 349.68 44.85Q351.00 45.30 352.55 45.30Q354.90 45.30 356.08 44.45Q357.25 43.60 357.25 42.30Q357.25 40.95 356.13 40.30Q355.00 39.65 352.70 39.20L351.15 38.95Q348.60 38.45 346.50 37.58Q344.40 36.70 343.13 35.18Q341.85 33.65 341.85 31.30Q341.85 27.70 344.53 25.75Q347.20 23.80 351.55 23.80Q355.70 23.80 358.40 25.65Q361.10 27.50 361.90 30.60L356.60 32.20Q356.20 30.10 354.85 29.23Q353.50 28.35 351.55 28.35Q349.55 28.35 348.48 29.05Q347.40 29.75 347.40 31.05Q347.40 32.35 348.50 33Q349.60 33.65 351.45 33.95L353.00 34.25Q355.75 34.75 357.98 35.55Q360.20 36.35 361.50 37.85Q362.80 39.35 362.80 41.90Q362.80 45.75 360.03 47.83Q357.25 49.90 352.55 49.90Z" />
-          <path className="svg-elem-15" d="M377.50 49.20Q375.10 49.20 373.68 47.78Q372.25 46.35 372.25 43.90L372.25 29.25L365.80 29.25L365.80 24.50L372.25 24.50L372.25 16.55L378.00 16.55L378.00 24.50L385.10 24.50L385.10 29.25L378.00 29.25L378.00 42.95Q378.00 44.45 379.40 44.45L384.35 44.45L384.35 49.20L377.50 49.20Z" />
-          <path className="svg-elem-16" d="M398.55 49.90Q395.95 49.90 393.85 48.98Q391.75 48.05 390.53 46.30Q389.30 44.55 389.30 42Q389.30 39.50 390.53 37.80Q391.75 36.10 393.90 35.23Q396.05 34.35 398.80 34.35L405.95 34.35L405.95 32.85Q405.95 30.90 404.75 29.68Q403.55 28.45 401.00 28.45Q398.50 28.45 397.23 29.63Q395.95 30.80 395.55 32.65L390.25 30.90Q390.85 28.95 392.18 27.35Q393.50 25.75 395.70 24.78Q397.90 23.80 401.10 23.80Q405.95 23.80 408.73 26.23Q411.50 28.65 411.50 33.25L411.50 42.95Q411.50 44.45 412.90 44.45L415.00 44.45L415.00 49.20L410.95 49.20Q409.15 49.20 408.00 48.30Q406.85 47.40 406.85 45.85L406.85 45.75L406.00 45.75Q405.70 46.45 404.95 47.45Q404.20 48.45 402.68 49.18Q401.15 49.90 398.55 49.90M399.50 45.20Q402.35 45.20 404.15 43.58Q405.95 41.95 405.95 39.20L405.95 38.70L399.15 38.70Q397.30 38.70 396.15 39.50Q395.00 40.30 395.00 41.85Q395.00 43.35 396.20 44.28Q397.40 45.20 399.50 45.20Z" />
-          <path className="svg-elem-17" d="M419.75 49.20L419.75 24.50L425.40 24.50L425.40 27.95L426.25 27.95Q426.90 26.55 428.60 25.30Q430.30 24.05 433.75 24.05Q436.60 24.05 438.80 25.35Q441.00 26.65 442.23 28.95Q443.45 31.25 443.45 34.40L443.45 49.20L437.70 49.20L437.70 34.85Q437.70 31.85 436.23 30.38Q434.75 28.90 432.05 28.90Q429.00 28.90 427.25 30.93Q425.50 32.95 425.50 36.70L425.50 49.20L419.75 49.20Z" />
-          <path className="svg-elem-18" d="M459.20 49.20Q456.80 49.20 455.38 47.78Q453.95 46.35 453.95 43.90L453.95 29.25L447.50 29.25L447.50 24.50L453.95 24.50L453.95 16.55L459.70 16.55L459.70 24.50L466.80 24.50L466.80 29.25L459.70 29.25L459.70 42.95Q459.70 44.45 461.10 44.45L466.05 44.45L466.05 49.20L459.20 49.20Z" />
-        </g>
-      </svg>
+        <svg
+          viewBox="0 0 2000 554"
+          className={cn("logo-svg w-full h-full overflow-visible", active && "active")}
+          xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="xMidYMid meet"
+        >
+          <g transform="translate(0,554) scale(0.1,-0.1)" strokeWidth="10" strokeLinejoin="round">
+            {/* DRAFT ASSISTANT - WHITE */}
+            <path className="svg-elem-1" stroke="#FFFFFF" d="M190 4400 l0 -1022 438 4 c399 4 448 7 562 27 374 68 576 186 716 419 101 168 149 501 109 762 -32 212 -111 366 -261 511 -149 143 -359 240 -625 290 -101 19 -161 22 -526 26 l-413 5 0 -1022z m945 672 c174 -47 312 -140 393 -264 83 -128 114 -286 101 -514 -12 -199 -66 -340 -168 -438 -138 -131 -323 -176 -723 -176 l-178 0 0 711 0 711 248 -4 c212 -4 258 -8 327 -26z" />
+            <path className="svg-elem-2" stroke="#FFFFFF" d="M2240 4125 l0 -745 184 0 185 0 3 383 c4 332 7 389 22 436 58 178 170 236 499 257 l97 6 0 204 0 204 -67 0 c-153 -1 -290 -51 -391 -145 -66 -61 -101 -112 -137 -201 l-22 -53 -11 177 c-7 97 -12 187 -12 200 0 22 0 22 -175 22 l-175 0 0 -745z" />
+            <path className="svg-elem-3" stroke="#FFFFFF" d="M3733 4856 c-178 -44 -303 -179 -367 -398 -75 -258 -55 -626 45 -836 67 -139 212 -249 359 -272 256 -40 476 45 589 227 l28 45 21 -78 c11 -44 26 -98 32 -121 l11 -43 159 0 160 0 0 745 0 745 -190 0 -190 0 0 -152 0 -152 -36 60 c-69 115 -171 194 -293 226 -79 20 -251 22 -328 4z m386 -316 c81 -14 130 -39 175 -91 74 -87 109 -266 88 -448 -19 -166 -71 -265 -163 -311 -61 -32 -167 -45 -250 -31 -88 14 -135 38 -183 91 -70 78 -99 181 -99 355 1 261 90 403 273 434 76 12 86 12 159 1z" />
+            <path className="svg-elem-4" stroke="#FFFFFF" d="M5320 5473 c-51 -8 -134 -58 -167 -101 -53 -69 -65 -125 -70 -324 l-5 -178 -99 0 -99 0 0 -130 0 -130 100 0 100 0 0 -620 0 -620 185 0 185 0 0 620 0 620 185 0 185 0 0 130 0 130 -185 0 -185 0 2 163 3 162 188 3 187 2 0 140 0 140 -242 -1 c-134 -1 -254 -4 -268 -6z" />
+            <path className="svg-elem-5" stroke="#FFFFFF" d="M6240 5188 c0 -91 -18 -187 -43 -233 -27 -50 -74 -74 -161 -82 l-66 -6 0 -128 0 -129 110 0 110 0 0 -422 c0 -233 5 -463 10 -512 14 -116 46 -186 109 -231 76 -56 129 -65 369 -65 l212 0 0 145 0 145 -175 0 -175 0 0 470 0 470 170 0 170 0 0 130 0 130 -170 0 -170 0 0 190 0 190 -150 0 -150 0 0 -62z" />
+            <path className="svg-elem-6" stroke="#FFFFFF" d="M8381 5353 c-11 -38 -158 -495 -325 -1018 l-304 -950 186 -3 c103 -1 191 -1 197 2 6 2 49 130 95 285 l85 281 399 -2 399 -3 86 -282 86 -283 197 0 c109 0 198 1 198 3 0 1 -150 459 -334 1017 l-333 1015 -306 3 -305 2 -21 -67z m639 -1105 c0 -5 -137 -8 -305 -8 -234 0 -305 3 -305 12 0 11 160 549 272 913 l30 100 154 -505 c84 -278 154 -508 154 -512z" />
+            <path className="svg-elem-7" stroke="#FFFFFF" d="M10285 4913 c-146 -13 -298 -71 -381 -146 -119 -107 -148 -317 -66 -470 65 -121 199 -196 496 -277 271 -74 341 -110 366 -186 26 -79 -9 -147 -98 -191 -52 -26 -66 -28 -172 -28 -127 0 -185 18 -244 73 -32 30 -76 116 -76 149 0 53 0 53 -176 53 -131 0 -166 -3 -170 -14 -9 -24 17 -138 44 -196 41 -86 158 -196 262 -248 302 -149 716 -110 902 84 65 68 83 122 83 249 0 137 -20 188 -104 268 -91 87 -185 128 -461 202 -187 50 -248 73 -297 111 -95 72 -81 193 27 254 42 23 55 25 175 25 114 0 136 -3 180 -23 90 -41 135 -98 144 -181 l6 -56 170 0 170 0 -4 60 c-19 323 -342 526 -776 488z" />
+            <path className="svg-elem-8" stroke="#FFFFFF" d="M11680 4913 c-165 -17 -320 -82 -398 -168 -68 -74 -87 -131 -87 -260 0 -87 4 -107 26 -156 71 -152 192 -224 529 -314 246 -66 326 -107 350 -181 26 -79 -9 -147 -98 -191 -53 -26 -65 -28 -177 -27 -133 1 -168 11 -230 66 -43 37 -71 89 -86 158 l-11 50 -164 0 c-137 0 -166 -3 -170 -15 -10 -25 14 -136 43 -195 41 -86 159 -197 263 -248 138 -67 220 -86 390 -86 115 0 163 5 232 22 165 41 282 121 335 231 25 51 28 66 28 166 0 100 -2 115 -28 167 -17 34 -50 77 -84 108 -91 83 -182 122 -453 195 -242 65 -311 98 -346 167 -23 44 -14 121 17 154 53 58 93 69 234 69 114 0 136 -3 180 -23 90 -41 133 -97 144 -187 l6 -50 169 -3 169 -2 -6 80 c-14 208 -179 386 -412 444 -115 29 -256 40 -365 29z" />
+            <path className="svg-elem-9" stroke="#FFFFFF" d="M12680 4125 l0 -745 185 0 185 0 0 745 0 745 -185 0 -185 0 0 -745z" />
+            <path className="svg-elem-10" stroke="#FFFFFF" d="M12800 5459 c-59 -11 -90 -35 -117 -89 -38 -73 -26 -197 24 -252 47 -53 161 -71 248 -41 41 15 54 26 75 63 21 38 25 58 25 125 0 134 -43 186 -160 198 -27 3 -70 1 -95 -4z" />
+            <path className="svg-elem-11" stroke="#FFFFFF" d="M13730 4908 c-216 -26 -379 -131 -432 -276 -27 -74 -24 -222 6 -294 65 -158 180 -228 533 -323 284 -77 353 -122 353 -232 0 -44 -5 -58 -30 -86 -43 -50 -119 -79 -215 -85 -197 -11 -314 64 -350 222 l-11 51 -167 3 -167 2 0 -44 c0 -69 36 -168 84 -233 79 -108 202 -187 373 -240 80 -25 102 -27 243 -26 126 0 170 4 235 22 243 65 357 189 359 391 1 103 -20 171 -74 238 -77 98 -198 157 -479 232 -114 31 -215 65 -261 88 -66 32 -78 43 -98 84 -32 63 -24 116 24 163 44 44 115 65 219 65 200 0 315 -76 332 -219 l6 -51 170 0 170 0 -6 68 c-32 338 -367 536 -817 480z" />
+            <path className="svg-elem-12" stroke="#FFFFFF" d="M14897 5152 c-12 -181 -50 -250 -147 -271 -28 -6 -67 -11 -85 -11 l-35 0 0 -130 0 -130 109 0 110 0 3 -492 c3 -482 4 -494 25 -548 31 -77 74 -124 141 -157 57 -28 57 -28 295 -31 l238 -4 -3 144 -3 143 -172 3 -173 2 0 470 0 470 170 0 170 0 0 130 0 130 -170 0 -170 0 0 190 0 190 -148 0 -149 0 -6 -98z" />
+            <path className="svg-elem-13" stroke="#FFFFFF" d="M16120 4859 c-25 -5 -77 -25 -117 -44 -131 -65 -218 -187 -270 -382 -25 -92 -27 -112 -27 -328 -1 -210 1 -238 22 -320 49 -189 147 -327 272 -388 220 -107 525 -60 673 104 31 33 62 74 70 91 8 16 17 26 19 22 3 -5 18 -60 34 -121 l29 -113 157 0 158 0 0 745 0 745 -190 0 -190 0 0 -147 0 -148 -32 53 c-63 110 -176 193 -303 227 -64 16 -229 19 -305 4z m455 -343 c136 -62 193 -202 182 -454 -11 -293 -107 -407 -342 -406 -208 1 -308 90 -346 310 -17 99 -7 273 22 357 26 78 88 156 150 188 85 43 243 46 334 5z" />
+            <path className="svg-elem-14" stroke="#FFFFFF" d="M17330 4125 l0 -745 184 0 184 0 5 413 c5 444 9 482 61 586 33 64 106 127 169 146 65 19 189 19 253 0 57 -17 115 -68 146 -129 42 -83 48 -147 48 -593 l0 -423 185 0 185 0 0 383 c0 570 -17 728 -91 868 -37 68 -126 156 -192 188 -76 37 -180 54 -292 48 -164 -9 -268 -57 -370 -169 -30 -33 -62 -80 -72 -104 -10 -24 -21 -44 -24 -44 -3 0 -18 66 -33 148 -15 81 -29 153 -31 160 -3 9 -44 12 -160 12 l-155 0 0 -745z" />
+            <path className="svg-elem-15" stroke="#FFFFFF" d="M19123 5128 c-19 -194 -56 -242 -197 -255 l-66 -6 0 -128 0 -129 110 0 110 0 0 -458 c0 -288 4 -480 11 -517 21 -114 73 -184 169 -229 41 -19 67 -21 283 -24 l238 -4 -3 144 -3 143 -172 3 -173 2 0 470 0 470 170 0 170 0 0 130 0 130 -170 0 -170 0 0 190 0 190 -148 0 -148 0 -11 -122z" />
+
+            {/* FOR - BLUE */}
+            <path className="svg-elem-16" stroke="#32C8FF" d="M9513 2199 c-113 -56 -119 -272 -10 -353 40 -29 196 -31 244 -2 71 43 98 191 54 291 -16 36 -29 50 -63 65 -60 27 -169 27 -225 -1z" />
+            <path className="svg-elem-17" stroke="#32C8FF" d="M15230 2198 c-88 -45 -118 -173 -65 -286 31 -67 78 -92 175 -92 136 0 194 60 195 200 0 56 -5 85 -20 114 -32 63 -62 79 -157 83 -72 4 -89 1 -128 -19z" />
+            <path className="svg-elem-18" stroke="#32C8FF" d="M16125 2226 c-65 -16 -105 -38 -146 -78 -66 -67 -89 -163 -89 -380 l0 -138 -100 0 -100 0 0 -135 0 -135 100 0 100 0 0 -615 0 -615 185 0 185 0 0 615 0 615 185 0 185 0 0 135 0 135 -185 0 -185 0 0 160 0 160 190 0 190 0 0 145 0 145 -232 -1 c-149 0 -251 -5 -283 -13z" />
+
+            {/* WILD RIFT - GOLD */}
+            <path className="svg-elem-19" stroke="#C89B3C" d="M1570 1155 l0 -1025 180 0 180 0 0 465 0 465 420 0 420 0 0 150 0 150 -420 0 -420 0 0 250 0 250 545 0 545 0 0 160 0 160 -725 0 -725 0 0 -1025z" />
+            <path className="svg-elem-20" stroke="#C89B3C" d="M3550 1619 c-296 -35 -504 -206 -588 -481 -48 -154 -50 -364 -7 -533 47 -184 175 -345 335 -423 136 -67 188 -77 390 -77 196 1 253 11 375 70 172 83 288 233 340 439 31 123 38 234 25 356 -38 344 -227 572 -528 634 -91 19 -251 26 -342 15z m232 -290 c191 -41 280 -184 282 -454 0 -174 -30 -279 -106 -361 -68 -74 -151 -104 -286 -104 -221 0 -337 104 -378 340 -39 224 25 444 153 529 42 28 67 38 138 54 39 9 145 7 197 -4z" />
+            <path className="svg-elem-21" stroke="#C89B3C" d="M4635 1618 c-3 -7 -4 -344 -3 -748 l3 -735 183 -3 182 -2 0 312 c0 457 13 545 94 635 79 87 180 121 389 130 l137 6 0 210 0 210 -91 -8 c-115 -9 -186 -27 -263 -68 -108 -57 -192 -157 -247 -292 -11 -27 -14 -12 -25 135 -7 91 -12 180 -13 198 l-1 32 -170 0 c-127 0 -172 -3 -175 -12z" />
+            <path className="svg-elem-22" stroke="#C89B3C" d="M6410 2163 c1 -10 110 -470 244 -1023 l243 -1005 300 -3 299 -2 163 757 c89 417 166 769 170 783 8 24 9 24 15 -10 4 -19 80 -370 170 -780 l162 -745 297 -3 296 -2 10 37 c12 43 465 1931 476 1981 l7 32 -195 0 -195 0 -11 -47 c-22 -94 -381 -1816 -381 -1826 0 -6 -2 -8 -5 -5 -3 2 -102 418 -220 924 -119 505 -218 927 -221 937 -5 15 -23 17 -199 17 l-194 0 -10 -37 c-6 -21 -105 -443 -221 -938 -116 -494 -213 -901 -215 -904 -3 -2 -5 0 -5 5 0 8 -335 1614 -380 1822 l-12 52 -194 0 c-178 0 -194 -1 -194 -17z" />
+            <path className="svg-elem-23" stroke="#C89B3C" d="M9440 880 l0 -750 185 0 185 0 0 750 0 750 -185 0 -185 0 0 -750z" />
+            <path className="svg-elem-24" stroke="#C89B3C" d="M10090 1155 l0 -1025 180 0 180 0 0 1025 0 1025 -180 0 -180 0 0 -1025z" />
+            <path className="svg-elem-25" stroke="#C89B3C" d="M11830 1738 l-1 -443 -29 57 c-117 225 -375 323 -665 251 -250 -62 -402 -289 -423 -636 -20 -329 41 -568 181 -711 71 -72 137 -109 245 -137 86 -22 239 -26 324 -8 126 26 257 119 329 233 l37 59 11 -39 c5 -21 20 -83 32 -136 l22 -98 159 0 158 0 0 1025 0 1025 -190 0 -190 0 0 -442z m-232 -464 c74 -21 161 -106 191 -186 34 -93 46 -220 32 -322 -17 -127 -45 -191 -111 -257 -75 -76 -129 -94 -275 -94 -93 0 -118 4 -160 23 -135 62 -205 205 -205 420 0 209 77 355 217 411 80 32 208 34 311 5z" />
+            <path className="svg-elem-26" stroke="#C89B3C" d="M13240 1155 l0 -1025 185 0 185 0 0 424 0 424 143 7 c161 8 340 -6 423 -32 72 -22 126 -70 153 -134 19 -44 24 -80 31 -235 5 -100 14 -202 20 -226 61 -223 275 -320 478 -217 l67 34 3 108 3 107 -70 -6 c-122 -12 -147 24 -180 253 -24 164 -49 240 -99 295 -38 43 -99 78 -132 78 -35 0 -13 17 32 24 146 24 274 160 324 346 22 82 25 291 5 370 -62 248 -263 383 -625 419 -60 6 -297 11 -528 11 l-418 0 0 -1025z m873 714 c225 -17 307 -53 355 -158 22 -48 26 -70 26 -151 1 -111 -14 -168 -54 -214 -68 -77 -177 -96 -567 -96 l-263 0 0 315 0 315 183 0 c100 0 244 -5 320 -11z" />
+            <path className="svg-elem-27" stroke="#C89B3C" d="M15160 880 l0 -750 183 2 182 3 0 745 0 745 -182 3 -183 2 0 -750z" />
+            <path className="svg-elem-28" stroke="#C89B3C" d="M17047 1908 c-12 -213 -62 -278 -214 -278 l-53 0 0 -135 0 -135 110 0 110 0 0 -412 c0 -227 5 -456 10 -508 17 -157 69 -234 190 -282 49 -19 80 -22 278 -26 l222 -4 0 146 0 146 -175 0 -175 0 0 470 0 470 170 0 170 0 0 135 0 135 -170 0 -170 0 0 190 0 190 -149 0 -148 0 -6 -102z" />
+
+            {/* FINAL DOT - BLUE */}
+            <path className="svg-elem-29" stroke="#32C8FF" d="M18000 548 c-63 -32 -95 -97 -95 -193 0 -145 68 -215 211 -215 83 0 118 10 157 48 52 50 72 176 42 263 -31 87 -84 119 -198 119 -56 0 -83 -5 -117 -22z" />
+          </g>
+        </svg>
+      </motion.div>
+
+      {/* Background glow remains for premium feel */}
+      {active && (
+        <motion.div 
+           animate={{ 
+             opacity: [0.03, 0.08, 0.03],
+             scale: [1, 1.1, 1]
+           }}
+           transition={{ 
+             duration: 6, 
+             repeat: Infinity,
+             ease: "easeInOut" 
+           }}
+           className="absolute inset-0 bg-amber-500/10 blur-[50px] -z-10 rounded-full"
+        />
+      )}
     </div>
   );
 };

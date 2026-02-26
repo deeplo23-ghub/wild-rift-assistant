@@ -40,7 +40,7 @@
         "waveclear",
         "aoe"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/norra.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/norra.webp"
     },
     {
       "id": "teemo",
@@ -79,7 +79,7 @@
         "scaling",
         "range"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/teemo.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/teemo.webp"
     },
     {
       "id": "brand",
@@ -117,7 +117,7 @@
         "peel",
         "utility"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/brand.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/brand.webp"
     },
     {
       "id": "morgana",
@@ -156,7 +156,7 @@
         "peel",
         "utility"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/morgana.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/morgana.webp"
     },
     {
       "id": "zyra",
@@ -194,7 +194,7 @@
         "peel",
         "utility"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/zyra.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/zyra.webp"
     },
     {
       "id": "smolder",
@@ -234,7 +234,7 @@
         "scaling",
         "range"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/smolder.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/smolder.webp"
     },
     {
       "id": "kennen",
@@ -273,7 +273,7 @@
         "scaling",
         "range"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/kennen.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/kennen.webp"
     },
     {
       "id": "swain",
@@ -315,7 +315,7 @@
         "cc",
         "engage"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/swain.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/swain.webp"
     },
     {
       "id": "nasus",
@@ -353,7 +353,7 @@
         "cc",
         "engage"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/nasus.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/nasus.webp"
     },
     {
       "id": "viktor",
@@ -388,7 +388,7 @@
         "waveclear",
         "aoe"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/viktor.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/viktor.webp"
     },
     {
       "id": "heimerdinger",
@@ -425,7 +425,7 @@
         "peel",
         "utility"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/heimerdinger.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/heimerdinger.webp"
     },
     {
       "id": "ahri",
@@ -463,7 +463,7 @@
         "waveclear",
         "aoe"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/ahri.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/ahri.webp"
     },
     {
       "id": "vex",
@@ -498,7 +498,7 @@
         "waveclear",
         "aoe"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/vex.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/vex.webp"
     },
     {
       "id": "syndra",
@@ -533,7 +533,7 @@
         "waveclear",
         "aoe"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/syndra.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/syndra.webp"
     },
     {
       "id": "lissandra",
@@ -570,7 +570,7 @@
         "peel",
         "utility"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/lissandra.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/lissandra.webp"
     },
     {
       "id": "twisted-fate",
@@ -608,7 +608,7 @@
         "scaling",
         "range"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/twisted-fate.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/twisted-fate.webp"
     },
     {
       "id": "veigar",
@@ -646,7 +646,7 @@
         "peel",
         "utility"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/veigar.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/veigar.webp"
     },
     {
       "id": "orianna",
@@ -683,7 +683,7 @@
         "peel",
         "utility"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/orianna.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/orianna.webp"
     },
     {
       "id": "lux",
@@ -721,7 +721,7 @@
         "peel",
         "utility"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/lux.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/lux.webp"
     },
     {
       "id": "ryze",
@@ -757,7 +757,7 @@
         "waveclear",
         "aoe"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/ryze.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/ryze.webp"
     },
     {
       "id": "kayle",
@@ -794,7 +794,7 @@
         "peel",
         "utility"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/kayle.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/kayle.webp"
     },
     {
       "id": "yasuo",
@@ -832,7 +832,7 @@
         "early",
         "skirmisher"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/yasuo.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/yasuo.webp"
     },
     {
       "id": "kassadin",
@@ -870,7 +870,7 @@
         "waveclear",
         "aoe"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/kassadin.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/kassadin.webp"
     },
     {
       "id": "fizz",
@@ -909,7 +909,7 @@
         "waveclear",
         "aoe"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/fizz.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/fizz.webp"
     },
     {
       "id": "ziggs",
@@ -944,7 +944,7 @@
         "waveclear",
         "aoe"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/ziggs.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/ziggs.webp"
     },
     {
       "id": "aurora",
@@ -982,7 +982,7 @@
         "waveclear",
         "aoe"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/aurora.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/aurora.webp"
     },
     {
       "id": "galio",
@@ -1021,7 +1021,7 @@
         "cc",
         "engage"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/galio.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/galio.webp"
     },
     {
       "id": "zed",
@@ -1057,7 +1057,7 @@
         "burst",
         "dive"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/zed.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/zed.webp"
     },
     {
       "id": "aurelion-sol",
@@ -1092,7 +1092,7 @@
         "waveclear",
         "aoe"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/aurelion-sol.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/aurelion-sol.webp"
     },
     {
       "id": "velkoz",
@@ -1130,7 +1130,7 @@
         "peel",
         "utility"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/velkoz.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/velkoz.webp"
     },
     {
       "id": "yone",
@@ -1169,7 +1169,7 @@
         "early",
         "skirmisher"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/yone.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/yone.webp"
     },
     {
       "id": "vladimir",
@@ -1204,7 +1204,7 @@
         "waveclear",
         "aoe"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/vladimir.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/vladimir.webp"
     },
     {
       "id": "diana",
@@ -1242,7 +1242,7 @@
         "waveclear",
         "aoe"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/diana.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/diana.webp"
     },
     {
       "id": "annie",
@@ -1279,7 +1279,7 @@
         "peel",
         "utility"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/annie.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/annie.webp"
     },
     {
       "id": "jayce",
@@ -1317,7 +1317,7 @@
         "scaling",
         "range"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/jayce.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/jayce.webp"
     },
     {
       "id": "malphite",
@@ -1356,7 +1356,7 @@
         "cc",
         "engage"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/malphite.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/malphite.webp"
     },
     {
       "id": "irelia",
@@ -1394,7 +1394,7 @@
         "early",
         "skirmisher"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/irelia.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/irelia.webp"
     },
     {
       "id": "ekko",
@@ -1433,7 +1433,7 @@
         "waveclear",
         "aoe"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/ekko.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/ekko.webp"
     },
     {
       "id": "katarina",
@@ -1471,7 +1471,7 @@
         "waveclear",
         "aoe"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/katarina.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/katarina.webp"
     },
     {
       "id": "akali",
@@ -1509,7 +1509,7 @@
         "waveclear",
         "aoe"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/akali.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/akali.webp"
     },
     {
       "id": "vayne",
@@ -1548,7 +1548,7 @@
         "scaling",
         "range"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/vayne.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/vayne.webp"
     },
     {
       "id": "wukong",
@@ -1586,7 +1586,7 @@
         "cc",
         "engage"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/wukong.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/wukong.webp"
     },
     {
       "id": "renekton",
@@ -1620,7 +1620,7 @@
         "early",
         "skirmisher"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/renekton.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/renekton.webp"
     },
     {
       "id": "garen",
@@ -1657,7 +1657,7 @@
         "cc",
         "engage"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/garen.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/garen.webp"
     },
     {
       "id": "rumble",
@@ -1694,7 +1694,7 @@
         "waveclear",
         "aoe"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/rumble.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/rumble.webp"
     },
     {
       "id": "tryndamere",
@@ -1729,7 +1729,7 @@
         "early",
         "skirmisher"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/tryndamere.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/tryndamere.webp"
     },
     {
       "id": "ambessa",
@@ -1766,7 +1766,7 @@
         "early",
         "skirmisher"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/ambessa.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/ambessa.webp"
     },
     {
       "id": "kalista",
@@ -1802,7 +1802,7 @@
         "scaling",
         "range"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/kalista.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/kalista.webp"
     },
     {
       "id": "ornn",
@@ -1840,7 +1840,7 @@
         "cc",
         "engage"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/ornn.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/ornn.webp"
     },
     {
       "id": "shen",
@@ -1877,7 +1877,7 @@
         "cc",
         "engage"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/shen.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/shen.webp"
     },
     {
       "id": "singed",
@@ -1915,7 +1915,7 @@
         "cc",
         "engage"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/singed.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/singed.webp"
     },
     {
       "id": "nautilus",
@@ -1954,7 +1954,7 @@
         "cc",
         "engage"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/nautilus.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/nautilus.webp"
     },
     {
       "id": "sion",
@@ -1988,7 +1988,7 @@
         "early",
         "skirmisher"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/sion.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/sion.webp"
     },
     {
       "id": "urgot",
@@ -2025,7 +2025,7 @@
         "cc",
         "engage"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/urgot.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/urgot.webp"
     },
     {
       "id": "fiora",
@@ -2062,7 +2062,7 @@
         "early",
         "skirmisher"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/fiora.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/fiora.webp"
     },
     {
       "id": "mordekaiser",
@@ -2096,7 +2096,7 @@
         "early",
         "skirmisher"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/mordekaiser.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/mordekaiser.webp"
     },
     {
       "id": "sett",
@@ -2134,7 +2134,7 @@
         "cc",
         "engage"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/sett.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/sett.webp"
     },
     {
       "id": "gnar",
@@ -2168,7 +2168,7 @@
         "early",
         "skirmisher"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/gnar.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/gnar.webp"
     },
     {
       "id": "poppy",
@@ -2203,7 +2203,7 @@
         "cc",
         "engage"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/poppy.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/poppy.webp"
     },
     {
       "id": "camille",
@@ -2237,7 +2237,7 @@
         "early",
         "skirmisher"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/camille.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/camille.webp"
     },
     {
       "id": "volibear",
@@ -2275,7 +2275,7 @@
         "cc",
         "engage"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/volibear.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/volibear.webp"
     },
     {
       "id": "dr-mundo",
@@ -2313,7 +2313,7 @@
         "cc",
         "engage"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/dr-mundo.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/dr-mundo.webp"
     },
     {
       "id": "aatrox",
@@ -2351,7 +2351,7 @@
         "cc",
         "engage"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/aatrox.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/aatrox.webp"
     },
     {
       "id": "darius",
@@ -2386,7 +2386,7 @@
         "early",
         "skirmisher"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/darius.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/darius.webp"
     },
     {
       "id": "jax",
@@ -2421,7 +2421,7 @@
         "early",
         "skirmisher"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/jax.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/jax.webp"
     },
     {
       "id": "gwen",
@@ -2455,7 +2455,7 @@
         "early",
         "skirmisher"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/gwen.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/gwen.webp"
     },
     {
       "id": "riven",
@@ -2493,7 +2493,7 @@
         "early",
         "skirmisher"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/riven.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/riven.webp"
     },
     {
       "id": "rammus",
@@ -2528,7 +2528,7 @@
         "cc",
         "engage"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/rammus.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/rammus.webp"
     },
     {
       "id": "amumu",
@@ -2565,7 +2565,7 @@
         "cc",
         "engage"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/amumu.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/amumu.webp"
     },
     {
       "id": "warwick",
@@ -2602,7 +2602,7 @@
         "cc",
         "engage"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/warwick.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/warwick.webp"
     },
     {
       "id": "shyvana",
@@ -2639,7 +2639,7 @@
         "cc",
         "engage"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/shyvana.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/shyvana.webp"
     },
     {
       "id": "master-yi",
@@ -2676,7 +2676,7 @@
         "early",
         "skirmisher"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/master-yi.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/master-yi.webp"
     },
     {
       "id": "nunu-and-willump",
@@ -2714,7 +2714,7 @@
         "cc",
         "engage"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/nunu-willump.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/nunu-willump.webp"
     },
     {
       "id": "lillia",
@@ -2748,7 +2748,7 @@
         "early",
         "skirmisher"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/lillia.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/lillia.webp"
     },
     {
       "id": "pantheon",
@@ -2785,7 +2785,7 @@
         "early",
         "skirmisher"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/pantheon.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/pantheon.webp"
     },
     {
       "id": "graves",
@@ -2822,7 +2822,7 @@
         "scaling",
         "range"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/graves.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/graves.webp"
     },
     {
       "id": "xin-zhao",
@@ -2859,7 +2859,7 @@
         "cc",
         "engage"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/xin-zhao.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/xin-zhao.webp"
     },
     {
       "id": "nocturne",
@@ -2894,7 +2894,7 @@
         "burst",
         "dive"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/nocturne.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/nocturne.webp"
     },
     {
       "id": "gragas",
@@ -2932,7 +2932,7 @@
         "cc",
         "engage"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/gragas.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/gragas.webp"
     },
     {
       "id": "jarvan-iv",
@@ -2969,7 +2969,7 @@
         "cc",
         "engage"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/jarvan-iv.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/jarvan-iv.webp"
     },
     {
       "id": "vi",
@@ -3003,7 +3003,7 @@
         "early",
         "skirmisher"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/vi.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/vi.webp"
     },
     {
       "id": "nidalee",
@@ -3041,7 +3041,7 @@
         "waveclear",
         "aoe"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/nidalee.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/nidalee.webp"
     },
     {
       "id": "kindred",
@@ -3076,7 +3076,7 @@
         "scaling",
         "range"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/kindred.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/kindred.webp"
     },
     {
       "id": "evelynn",
@@ -3111,7 +3111,7 @@
         "burst",
         "dive"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/evelynn.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/evelynn.webp"
     },
     {
       "id": "fiddlesticks",
@@ -3146,7 +3146,7 @@
         "waveclear",
         "aoe"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/fiddlesticks.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/fiddlesticks.webp"
     },
     {
       "id": "viego",
@@ -3181,7 +3181,7 @@
         "burst",
         "dive"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/viego.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/viego.webp"
     },
     {
       "id": "khazix",
@@ -3216,7 +3216,7 @@
         "burst",
         "dive"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/khazix.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/khazix.webp"
     },
     {
       "id": "kayn",
@@ -3253,7 +3253,7 @@
         "early",
         "skirmisher"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/kayn.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/kayn.webp"
     },
     {
       "id": "lee-sin",
@@ -3290,7 +3290,7 @@
         "early",
         "skirmisher"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/lee-sin.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/lee-sin.webp"
     },
     {
       "id": "rengar",
@@ -3327,7 +3327,7 @@
         "early",
         "skirmisher"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/rengar.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/rengar.webp"
     },
     {
       "id": "olaf",
@@ -3361,7 +3361,7 @@
         "early",
         "skirmisher"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/olaf.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/olaf.webp"
     },
     {
       "id": "talon",
@@ -3396,7 +3396,7 @@
         "burst",
         "dive"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/talon.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/talon.webp"
     },
     {
       "id": "hecarim",
@@ -3430,7 +3430,7 @@
         "early",
         "skirmisher"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/hecarim.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/hecarim.webp"
     },
     {
       "id": "kogmaw",
@@ -3468,7 +3468,7 @@
         "scaling",
         "range"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/kogmaw.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/kogmaw.webp"
     },
     {
       "id": "miss-fortune",
@@ -3506,7 +3506,7 @@
         "scaling",
         "range"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/miss-fortune.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/miss-fortune.webp"
     },
     {
       "id": "caitlyn",
@@ -3541,7 +3541,7 @@
         "scaling",
         "range"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/caitlyn.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/caitlyn.webp"
     },
     {
       "id": "ashe",
@@ -3578,7 +3578,7 @@
         "peel",
         "utility"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/ashe.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/ashe.webp"
     },
     {
       "id": "jinx",
@@ -3613,7 +3613,7 @@
         "scaling",
         "range"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/jinx.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/jinx.webp"
     },
     {
       "id": "jhin",
@@ -3651,7 +3651,7 @@
         "scaling",
         "range"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/jhin.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/jhin.webp"
     },
     {
       "id": "xayah",
@@ -3686,7 +3686,7 @@
         "scaling",
         "range"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/xayah.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/xayah.webp"
     },
     {
       "id": "lucian",
@@ -3721,7 +3721,7 @@
         "scaling",
         "range"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/lucian.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/lucian.webp"
     },
     {
       "id": "ezreal",
@@ -3759,7 +3759,7 @@
         "scaling",
         "range"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/ezreal.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/ezreal.webp"
     },
     {
       "id": "tristana",
@@ -3794,7 +3794,7 @@
         "scaling",
         "range"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/tristana.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/tristana.webp"
     },
     {
       "id": "samira",
@@ -3829,7 +3829,7 @@
         "scaling",
         "range"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/samira.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/samira.webp"
     },
     {
       "id": "sivir",
@@ -3864,7 +3864,7 @@
         "scaling",
         "range"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/sivir.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/sivir.webp"
     },
     {
       "id": "twitch",
@@ -3899,7 +3899,7 @@
         "scaling",
         "range"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/twitch.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/twitch.webp"
     },
     {
       "id": "zeri",
@@ -3934,7 +3934,7 @@
         "scaling",
         "range"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/zeri.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/zeri.webp"
     },
     {
       "id": "varus",
@@ -3972,7 +3972,7 @@
         "scaling",
         "range"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/varus.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/varus.webp"
     },
     {
       "id": "draven",
@@ -4007,7 +4007,7 @@
         "scaling",
         "range"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/draven.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/draven.webp"
     },
     {
       "id": "kaisa",
@@ -4045,7 +4045,7 @@
         "scaling",
         "range"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/kaisa.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/kaisa.webp"
     },
     {
       "id": "corki",
@@ -4083,7 +4083,7 @@
         "scaling",
         "range"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/corki.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/corki.webp"
     },
     {
       "id": "braum",
@@ -4120,7 +4120,7 @@
         "cc",
         "engage"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/braum.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/braum.webp"
     },
     {
       "id": "zilean",
@@ -4157,7 +4157,7 @@
         "peel",
         "utility"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/zilean.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/zilean.webp"
     },
     {
       "id": "nami",
@@ -4194,7 +4194,7 @@
         "peel",
         "utility"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/nami.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/nami.webp"
     },
     {
       "id": "janna",
@@ -4231,7 +4231,7 @@
         "peel",
         "utility"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/janna.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/janna.webp"
     },
     {
       "id": "maokai",
@@ -4268,7 +4268,7 @@
         "cc",
         "engage"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/maokai.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/maokai.webp"
     },
     {
       "id": "soraka",
@@ -4305,7 +4305,7 @@
         "peel",
         "utility"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/soraka.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/soraka.webp"
     },
     {
       "id": "leona",
@@ -4342,7 +4342,7 @@
         "cc",
         "engage"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/leona.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/leona.webp"
     },
     {
       "id": "karma",
@@ -4379,7 +4379,7 @@
         "peel",
         "utility"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/karma.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/karma.webp"
     },
     {
       "id": "sona",
@@ -4416,7 +4416,7 @@
         "peel",
         "utility"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/sona.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/sona.webp"
     },
     {
       "id": "milio",
@@ -4453,7 +4453,7 @@
         "peel",
         "utility"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/milio.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/milio.webp"
     },
     {
       "id": "senna",
@@ -4490,7 +4490,7 @@
         "peel",
         "utility"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/senna.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/senna.webp"
     },
     {
       "id": "blitzcrank",
@@ -4527,7 +4527,7 @@
         "cc",
         "engage"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/blitzcrank.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/blitzcrank.webp"
     },
     {
       "id": "seraphine",
@@ -4564,7 +4564,7 @@
         "peel",
         "utility"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/seraphine.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/seraphine.webp"
     },
     {
       "id": "lulu",
@@ -4601,7 +4601,7 @@
         "peel",
         "utility"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/lulu.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/lulu.webp"
     },
     {
       "id": "alistar",
@@ -4638,7 +4638,7 @@
         "cc",
         "engage"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/alistar.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/alistar.webp"
     },
     {
       "id": "rakan",
@@ -4675,7 +4675,7 @@
         "cc",
         "engage"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/rakan.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/rakan.webp"
     },
     {
       "id": "pyke",
@@ -4712,7 +4712,7 @@
         "peel",
         "utility"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/pyke.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/pyke.webp"
     },
     {
       "id": "thresh",
@@ -4749,7 +4749,7 @@
         "cc",
         "engage"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/thresh.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/thresh.webp"
     },
     {
       "id": "bard",
@@ -4786,7 +4786,7 @@
         "peel",
         "utility"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/bard.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/bard.webp"
     },
     {
       "id": "rell",
@@ -4823,7 +4823,7 @@
         "cc",
         "engage"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/rell.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/rell.webp"
     },
     {
       "id": "yuumi",
@@ -4860,7 +4860,7 @@
         "peel",
         "utility"
       ],
-      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/yuumi.webp?v=1771599633417"
+      "iconUrl": "https://jungler.gg/games/wildrift/images/champion-squares-new/yuumi.webp"
     },
     {
       "id": "akshan",

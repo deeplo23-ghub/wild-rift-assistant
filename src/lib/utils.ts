@@ -7,20 +7,17 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export function getJunglerIcon(name: string): string {
-  // Map various champion name formats to Data Dragon ID (PascalCase, no special characters)
-  const ddragonId = name
-    .replace(/'/g, "")
-    .replace(/[ .&]/g, "")
-    // Special cases where Riot's ID differs from simple CamelCase
-    .replace("JarvanIV", "JarvanIV")
-    .replace("LeeSin", "LeeSin")
-    .replace("XinZhao", "XinZhao")
-    .replace("Dr.Mundo", "DrMundo")
-    .replace("Wukong", "MonkeyKing");
+  if (!name) return "";
 
-  // Using a stable version of Data Dragon
-  const version = "14.24.1";
-  return `https://ddragon.leagueoflegends.com/cdn/${version}/img/champion/${ddragonId}.png`;
+  const slug = name
+    .toLowerCase()
+    .trim()
+    .replace(/'/g, "")
+    .replace(/[ .&]+/g, "-")
+    .replace(/-+/g, "-");
+
+  // Jungler.gg specific URL structure for Wild Rift icons
+  return `https://jungler.gg/games/wildrift/images/champion-squares-new/${slug}.webp`;
 }
 
 export function getRoleIcon(role: Role | string): string {

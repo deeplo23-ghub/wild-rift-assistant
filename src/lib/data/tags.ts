@@ -282,7 +282,7 @@ export const SYNERGY_RULES: readonly SynergyRule[] = [
 // ─── Counter Category Mapping ───────────────────────────────────────────────
 
 /**
- * Maps categorical matchup labels (from wr-meta.com) to numerical values.
+ * Maps categorical matchup labels (from community datasets) to numerical values.
  * Range: -5 to +5.
  * See ARCHITECTURE.md §4.6 and §5.4.
  */

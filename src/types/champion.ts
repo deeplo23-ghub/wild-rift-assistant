@@ -135,7 +135,7 @@ export interface CounterEntry {
   readonly value: number;
 }
 
-/** Categorical matchup labels from wr-meta.com */
+/** Categorical matchup labels from community datasets */
 export enum MatchupCategory {
   ExtremeAdvantage = "Extreme Advantage",
   MajorAdvantage = "Major Advantage",
