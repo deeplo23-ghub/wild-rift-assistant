@@ -49,7 +49,7 @@
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
+  --background: oklch(0.141 0.005 285.823);
   --foreground: oklch(0.141 0.005 285.823);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.141 0.005 285.823);
@@ -143,31 +143,6 @@
     100% {
       background-position: 200% 0;
     }
-  }
-
-  .animate-shimmer {
-    background: linear-gradient(
-      90deg,
-      rgba(234, 179, 8, 0) 0%,
-      rgba(234, 179, 8, 0.4) 50%,
-      rgba(234, 179, 8, 0) 100%
-    );
-    background-size: 200% 100%;
-    animation: shimmer 3s infinite linear;
-  }
-
-  @keyframes sparkle {
-    0%,
-    100% {
-      opacity: 0.3;
-    }
-    50% {
-      opacity: 1;
-    }
-  }
-
-  .animate-sparkle {
-    animation: sparkle 2s infinite ease-in-out;
   }
 
   .border-gold-shimmer {

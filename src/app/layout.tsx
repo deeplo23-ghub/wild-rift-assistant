@@ -14,7 +14,6 @@ export const metadata: Metadata = {
 };
 
 import { TRPCProvider } from "@/lib/trpc/TRPCProvider";
-import { Background } from "@/components/ui/background";
 import { TooltipProvider } from "@/components/ui/tooltip";
 
 export default function RootLayout({
@@ -24,8 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark h-full">
-      <body className={`${spaceGrotesk.variable} font-sans antialiased text-zinc-100 bg-transparent h-full overflow-hidden`}>
-        <Background />
+      <body className={`${spaceGrotesk.variable} font-sans antialiased text-zinc-100 bg-zinc-950 h-full overflow-hidden`}>
         <TooltipProvider>
           <TRPCProvider>{children}</TRPCProvider>
         </TooltipProvider>

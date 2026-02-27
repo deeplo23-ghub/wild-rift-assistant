@@ -6,6 +6,8 @@ import { useDraftStore } from "@/store/draftStore";
 import { TeamPanel } from "@/components/draft/TeamPanel";
 import { ChampionPool } from "@/components/draft/ChampionPool";
 import { MatchupAnalysis } from "@/components/draft/MatchupAnalysis";
+import { MobileDraftAssistant } from "@/components/draft/MobileDraftAssistant";
+import { useMediaQuery } from "@/hooks/useMediaQuery";
 import { Button } from "@/components/ui/button";
 import {
   Loader2,
@@ -18,7 +20,6 @@ import {
 } from "lucide-react";
 import { SyncProgressNotification } from "@/components/brand/SyncProgressNotification";
 import { LogoText } from "@/components/brand/LogoText";
-import { ParticleBackground } from "@/components/ui/ParticleBackground";
 import { motion, AnimatePresence, useSpring, useTransform } from "framer-motion";
 import { TeamSide, ALL_ROLES, TeamState } from "@/types/draft";
 import { Champion } from "@/types/champion";
@@ -51,6 +52,13 @@ function SettingRow({ label, desc, checked, onChange }: { label: string; desc: s
 export default function DraftPage() {
   const utils = trpc.useUtils();
   const [activeJobId, setActiveJobId] = useState<string | null>(null);
+  const [isMounted, setIsMounted] = useState(false);
+  const isMobileQuery = useMediaQuery("(max-width: 768px)");
+  const isMobile = isMounted ? isMobileQuery : false;
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   const {
     data: champions,
@@ -262,7 +270,7 @@ export default function DraftPage() {
   const isSyncing = syncMutation.isPending || (!!activeJobId && (!currentSyncJob || currentSyncJob.status === "RUNNING"));
 
   return (
-    <AnimatePresence mode="wait">
+    <AnimatePresence>
       {loadingChamps || loadingMatrix || isAnimating ? (
         <motion.div
           key="loading"
@@ -294,20 +302,14 @@ export default function DraftPage() {
               transition={{ delay: 0.8, duration: 1 }}
               className="flex flex-col items-center gap-4 w-64"
             >
-              {/* Progress Bar Container */}
               <div className="w-full h-[2px] bg-white/5 rounded-full overflow-hidden relative">
-                {/* Glow/Pulse background */}
                 <div className="absolute inset-0 bg-white/10 animate-pulse" />
-
-                {/* Active Progress */}
                 <motion.div
                   className="absolute top-0 left-0 h-full bg-white shadow-[0_0_10px_rgba(255,255,255,0.3)]"
                   initial={{ width: "0%" }}
                   animate={{ width: `${progress}%` }}
                   transition={{ ease: "easeOut", duration: 0.1 }}
                 />
-
-                {/* Lead Edge Glow */}
                 <motion.div
                   className="absolute top-0 h-full w-8 bg-white/20 blur-sm"
                   animate={{ left: `${progress}%` }}
@@ -315,8 +317,6 @@ export default function DraftPage() {
                   transition={{ ease: "easeOut", duration: 0.1 }}
                 />
               </div>
-
-              {/* Percentage & Status */}
               <div className="flex justify-between w-full px-0.5">
                 <span className="text-[9px] font-black tracking-[0.2em] text-white/40 uppercase">
                   LOADING...
@@ -326,7 +326,6 @@ export default function DraftPage() {
                 </span>
               </div>
             </motion.div>
-
             <div className="absolute inset-0 bg-white/5 blur-[120px] rounded-full -z-10" />
           </div>
         </motion.div>
@@ -338,9 +337,7 @@ export default function DraftPage() {
           className="flex h-screen w-full items-center justify-center bg-zinc-950 text-red-500 font-sans p-10 text-center"
         >
           <div className="max-w-md space-y-4">
-            <h2 className="text-xl font-bold tracking-tight">
-              System Link Failure
-            </h2>
+            <h2 className="text-xl font-bold tracking-tight">System Link Failure</h2>
             <p className="text-sm text-zinc-500 leading-relaxed font-bold">
               Could not establish connection to the cloud data layer. Ensure the
               PostgreSQL database is online and the connection string is valid.
@@ -354,9 +351,19 @@ export default function DraftPage() {
             </Button>
           </div>
         </motion.div>
+      ) : isMobile ? (
+        <motion.div
+          key="mobile-main"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="h-screen w-full"
+        >
+          <MobileDraftAssistant />
+        </motion.div>
       ) : (
         <motion.main
-          key="content"
+          key="desktop-main"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{
@@ -378,8 +385,6 @@ export default function DraftPage() {
         >
           {!settings.disableTransparency && (
             <div className="fixed inset-0 pointer-events-none -z-10 overflow-hidden flex">
-              <ParticleBackground splitBias={currentBias} />
-              
               {/* Ally Side (Left) - Blue/Cyan Influence */}
               <motion.div 
                 className="relative h-full overflow-hidden border-r border-white/5"
